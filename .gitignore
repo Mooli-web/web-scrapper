@@ -1,0 +1,111 @@
+# ============================================================================
+# 🔐 اسرار و کلیدها — هرگز کامیت نشود
+# ============================================================================
+.env
+.env.*
+*.env
+**/.env
+gsk_*.txt
+*_api_key*.txt
+
+# ============================================================================
+# 🗄️ دیتابیس‌ها و داده‌های لوکال — بزرگ/شخصی‌اند، جایشان گیت نیست
+# ============================================================================
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+5_unified_local_hub/data/
+**/data/*.db
+market_backup_*.db
+
+# فایل‌های خروجی تولیدی (هر بار توسط اسکریپت‌ها بازتولید می‌شوند)
+5_unified_local_hub/exports/*.csv
+5_unified_local_hub/exports/*.json
+5_unified_local_hub/exports/ml_training/
+5_unified_local_hub/exports/weekly_report_*.md
+# کارت مستندات دیتاست را نگه می‌داریم (دور ریخته نمی‌شود):
+!5_unified_local_hub/exports/DATASET_CARD.md
+
+# ============================================================================
+# 🐍 پایتون
+# ============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.python-version
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.log
+
+# ============================================================================
+# 🟢 جاوااسکریپت / Node (داشبوردهای React)
+# ============================================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm/
+.yarn/
+*.tsbuildinfo
+
+# خروجی باندل داشبوردهای React — با هر بیلد بازتولید می‌شود
+1_digikala_cloud/dashboard/dist/
+1_digikala_cloud/dashboard/build/
+2_divar_cloud/dashboard/dist/
+2_divar_cloud/dashboard/build/
+4_esam_cloud/dashboard/dist/
+4_esam_cloud/dashboard/build/
+
+# کش موقت کامپایل CSS داشبورد هاب
+5_unified_local_hub/dashboard/.build/
+
+# ============================================================================
+# 🖥️ سیستم‌عامل و IDE
+# ============================================================================
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ============================================================================
+# 🧪 فایل‌های آزمایشی و موقت
+# ============================================================================
+test_*.local.*
+*.tmp
+*.bak
+.arena/
+
+# ============================================================================
+# 🚫 خزنده‌ی ترب (لوکال ویندوز) — فقط کد؛ پیوست‌های سنگین/شخصی حذف
+# ============================================================================
+3_torob_windows/chrome_profile/
+3_torob_windows/venv/
+3_torob_windows/.venv/
+3_torob_windows/*.db
+3_torob_windows/*.db-wal
+3_torob_windows/*.db-shm
+3_torob_windows/*.json.gz
+3_torob_windows/__pycache__/
+3_torob_windows/*.log
+# فایل‌های خروجی بزرگ کاتالوگ ترب (هر بار بازتولید می‌شوند):
+3_torob_windows/torob_catalog_db.json
+3_torob_windows/torob_cache.json
+3_torob_windows/torob_products.json
+3_torob_windows/

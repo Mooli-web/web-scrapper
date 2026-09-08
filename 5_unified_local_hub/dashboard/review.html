@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🧹 میز بررسی — هاب چهاربازار</title>
+<style>
+  :root { --bg:#0b1220; --card:#0f172a; --line:#1e293b; --txt:#f1f5f9; --dim:#94a3b8; --faint:#64748b;
+          --green:#10b981; --red:#f43f5e; --blue:#0ea5e9; }
+  * { box-sizing:border-box; font-family:Vazirmatn,Tahoma,sans-serif; }
+  body { margin:0; background:var(--bg); color:var(--txt); }
+  header { position:sticky; top:0; z-index:20; background:#0b1220ee; border-bottom:1px solid var(--line); padding:10px 16px; display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; }
+  .bar { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  h1 { font-size:15px; margin:0; }
+  .meta { font-size:12px; color:var(--dim); }
+  .big { font-size:18px; font-weight:900; }
+  .green { color:var(--green); } .red { color:var(--red); } .blue { color:var(--blue); }
+  button { cursor:pointer; border:1px solid var(--line); background:var(--card); color:var(--txt); border-radius:10px; padding:6px 10px; font-size:12px; font-weight:700; }
+  button:hover { background:#16203a; }
+  button:disabled { opacity:.35; cursor:default; }
+  .mark { width:44px; height:44px; font-size:19px; font-weight:900; border-radius:12px; }
+  .mv { border-color:#065f46; color:var(--green); } .mj { border-color:#7f1d1d; color:var(--red); } .mc { border-color:#075985; color:var(--blue); }
+  .row { display:flex; gap:10px; align-items:center; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:9px 11px; margin:7px 0; }
+  .row.mv { border-color:#10b98166; background:#10b98114; } .row.mj { border-color:#f43f5e66; background:#f43f5e14; } .row.mc { border-color:#0ea5e966; background:#0ea5e914; }
+  .info { flex:1; min-width:0; } .t { font-weight:700; font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .s { font-size:11px; color:var(--faint); margin-top:2px; }
+  .price { font-size:13px; font-weight:800; color:var(--green); white-space:nowrap; }
+  .cat-badge { font-size:10px; background:#16203a; border:1px solid var(--line); color:var(--dim); padding:2px 7px; border-radius:8px; white-space:nowrap; }
+  .btns { display:flex; gap:8px; }
+  main { max-width:980px; margin:0 auto; padding:14px 16px 90px; }
+  footer { position:fixed; bottom:0; right:0; left:0; background:#0b1220f2; border-top:1px solid var(--line); padding:10px 16px; display:flex; gap:10px; align-items:center; justify-content:center; z-index:20; flex-wrap:wrap; }
+  .apply { background:linear-gradient(90deg,#059669,#e11d48); border:none; color:#fff; font-size:13px; padding:9px 18px; border-radius:12px; }
+  .modal-bg { position:fixed; inset:0; background:#000c; display:none; align-items:center; justify-content:center; z-index:50; padding:14px; }
+  .modal { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px; width:100%; max-width:430px; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; max-height:46vh; overflow:auto; margin-top:10px; }
+  .opt { text-align:right; padding:9px 10px; font-size:11.5px; border-radius:10px; }
+  .opt.sel { border-color:var(--red); color:var(--red); }
+  .opt.selc { border-color:var(--blue); color:var(--blue); }
+  input[type=text] { width:100%; background:#0b1220; border:1px solid var(--line); color:var(--txt); border-radius:10px; padding:8px 10px; font-size:12px; margin-top:10px; }
+  .mfoot { display:flex; justify-content:space-between; margin-top:12px; padding-top:10px; border-top:1px solid var(--line); }
+  .done { text-align:center; padding:60px 10px; font-size:15px; }
+  .pg { display:flex; gap:10px; align-items:center; justify-content:center; margin:12px 0 4px; color:var(--dim); font-size:12px; }
+  a { color:var(--blue); text-decoration:none; font-size:12px; }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>🧹 میز بررسی — باقی‌مانده‌ها</h1>
+    <div class="meta">باقی‌مانده: <span class="big" id="m_total">…</span> آگهی | <span id="m_page"></span></div>
+  </div>
+  <div class="bar">
+    <button id="sort_btn" onclick="toggleSort()">🔤 الفبا</button>
+    <button onclick="markAllPage()" title="همه‌ی ردیف‌های همین صفحه ✓ (اعمال نمی‌شود)">✓✓ علامت همه‌ی صفحه</button>
+    <a href="/">→ داشبورد اصلی</a>
+  </div>
+</header>
+<main><div id="list"></div><div class="pg">
+  <button onclick="page(-1)" id="pg_prev">→ قبلی</button><span id="pg_num"></span><button onclick="page(1)" id="pg_next">بعدی ←</button>
+</div></main>
+<footer>
+  <span id="hint" style="font-size:11px;color:var(--faint)">✓ تایید · ✗ چرت (دلیل همان لحظه) · 🗂 تغییر دسته (مقصد همان لحظه)</span>
+  <button class="apply" id="apply_btn" onclick="applyAll()" style="display:none">🏷 اعمال علامت‌ها</button>
+</footer>
+
+<div class="modal-bg" id="reason_m" onclick="if(event.target===this)closeM('reason_m')"><div class="modal">
+  <b style="font-size:13px">🗑 دلیل چرت بودن</b>
+  <div class="grid" id="reason_opts"></div>
+  <input type="text" id="reason_custom" placeholder="یا دلیل دلخواه بنویسید...">
+  <div class="mfoot"><button onclick="closeM('reason_m')">انصراف</button>
+  <button style="background:#e11d48;border:none;color:#fff" onclick="confirmReason()">🗑 ثبت دلیل</button></div>
+</div></div>
+
+<div class="modal-bg" id="cat_m" onclick="if(event.target===this)closeM('cat_m')"><div class="modal">
+  <b style="font-size:13px">🗂 دسته‌ی درست این آگهی</b>
+  <div class="grid" id="cat_opts"></div>
+  <div class="mfoot"><button onclick="closeM('cat_m')">انصراف</button><span style="font-size:10px;color:var(--faint)">علامت ثبت می‌شود؛ اعمال در پایان یکجاست</span></div>
+</div></div>
+
+<script>
+const CATS = [['mobile','📱 گوشی'],['laptop','💻 لپ‌تاپ'],['tablet','📋 تبلت'],['console','🎮 کنسول'],['gpu','🎛 گرافیک'],['cpu','⚙️ پردازنده'],['ram','🧠 رم'],['storage','💾 هارد/SSD'],['motherboard','🔌 مادربرد'],['desktop-pc','🖥 سیستم آماده'],['monitor','🖼 مانیتور'],['watch','⌚ ساعت'],['headphone','🎧 هدفون'],['other','📦 متفرقه']];
+const REASONS = ['لوازم جانبی (قاب، شارژر، گلس، کابل...)','کالای غیردیجیتال (پوشاک، طلا، خانگی)','قطعه معیوب یا شکسته','آگهی خرید/معاوضه — نه فروش','کالای مجازی (اکانت، گیفت، اشتراک)','قیمت غیرواقعی / کلیکی','تبلیغاتی','عنوان مبهم','کالای فیک','آگهی تکراری / هرز','خارج از حوزه‌ی کاری'];
+const CAT_FA = Object.fromEntries(CATS);
+let sort='alpha', pageNum=1, pages=1, total=0, marks=new Map(), curJunk=null, curCat=null, picked='', pickedC='';
+
+async function load() {
+  const r = await fetch(`/api/analytics/category-products?category=all&limit=100&offset=${(pageNum-1)*100}&hide_verified=true&sort=${sort}`);
+  const d = await r.json();
+  total = d.listings_total || 0; pages = Math.max(1, Math.ceil(total/100));
+  if (pageNum > pages) { pageNum = pages; return load(); }
+  document.getElementById('m_total').textContent = total.toLocaleString('fa-IR');
+  document.getElementById('m_page').textContent = `صفحه ${pageNum.toLocaleString('fa-IR')} از ${pages.toLocaleString('fa-IR')}`;
+  document.getElementById('pg_num').textContent = `${pageNum} / ${pages}`;
+  document.getElementById('pg_prev').disabled = pageNum<=1;
+  document.getElementById('pg_next').disabled = pageNum>=pages;
+  const el = document.getElementById('list');
+  if (!total) { el.innerHTML = `<div class="done">🎉 همه‌ی آگهی‌ها بررسی شدند!<br><br><a href="/">بازگشت به داشبورد اصلی</a></div>`; return; }
+  el.innerHTML = (d.items||[]).map(i => `
+    <div class="row" id="row-${i.id}">
+      <div class="info"><div class="t">${i.title_fa}</div>
+      <div class="s">${i.store_key} | ${(i.item_category?((CAT_FA[i.item_category]||i.item_category)+' | '):'')}${i.condition||'—'}</div></div>
+      <span class="price">${Number(i.price_toman).toLocaleString('fa-IR')} ت</span>
+      <div class="btns">
+        <button class="mark mv" onclick="mk(${i.id},'verify')" title="تایید">✓</button>
+        <button class="mark mj" onclick="mk(${i.id},'junk')" title="چرت — دلیل همان لحظه">✗</button>
+        <button class="mark mc" onclick="mk(${i.id},'cat')" title="تغییر دسته — مقصد همان لحظه">🗂</button>
+      </div>
+    </div>`).join('');
+}
+
+function page(d){ pageNum=Math.min(pages,Math.max(1,pageNum+d)); load(); }
+function toggleSort(){ sort = sort==='alpha'?'newest':sort==='newest'?'price':'alpha';
+  document.getElementById('sort_btn').textContent = sort==='alpha'?'🔤 الفبا':sort==='newest'?'🆕 جدیدترین':'💰 گران‌ترین'; pageNum=1; load(); }
+
+function mk(id,kind){
+  const row=document.getElementById('row-'+id);
+  if(kind==='junk'){ curJunk=id; picked=''; document.getElementById('reason_custom').value='';
+    document.getElementById('reason_opts').innerHTML = REASONS.map((r,i)=>`<button class="opt" onclick="picked='${r.replace(/'/g,"\\'")}';sel(this)" id="rr${i}">${r}</button>`).join('');
+    openM('reason_m'); return; }
+  if(kind==='cat'){ curCat=id; pickedC='';
+    document.getElementById('cat_opts').innerHTML = CATS.map(([k,n])=>`<button class="opt" onclick="pickedC='${k}';selc(this)" id="cc${k}">${n}</button>`).join('');
+    openM('cat_m'); return; }
+  if(marks.get(id)==='verify'){ marks.delete(id); row.className='row'; }
+  else { marks.set(id,'verify'); row.className='row mv'; }
+  ui();
+}
+function sel(b){ document.querySelectorAll('#reason_opts .opt').forEach(x=>x.classList.remove('sel')); b.classList.add('sel'); }
+function selc(b){ document.querySelectorAll('#cat_opts .opt').forEach(x=>x.classList.remove('selc')); b.classList.add('selc'); }
+function confirmReason(){ const c=document.getElementById('reason_custom').value.trim(); const r=c||picked;
+  if(!r){ alert('یک دلیل انتخاب کن یا بنویس.'); return; }
+  marks.set(curJunk,{kind:'junk',reason:r});
+  const row=document.getElementById('row-'+curJunk); row.className='row mj';
+  closeM('reason_m'); ui(); }
+document.getElementById('cat_m').addEventListener('click',e=>{},false);
+function catChosen(){ if(!pickedC){ alert('یک دسته انتخاب کن.'); return; }
+  marks.set(curCat,{kind:'cat',cat:pickedC});
+  const row=document.getElementById('row-'+curCat); row.className='row mc';
+  closeM('cat_m'); ui(); }
+// دکمه تأیید داخل مودال دسته به catChosen وصل شود (اضافه در DOM آماده)
+document.querySelectorAll('#cat_m .mfoot')[0].insertAdjacentHTML('afterbegin','<button style="background:#0284c7;border:none;color:#fff" onclick="catChosen()">🗂 ثبت مقصد</button>');
+
+function markAllPage(){ document.querySelectorAll('.row[id^=row-]').forEach(row=>{
+  const id=Number(row.id.replace('row-','')); if(marks.has(id))return;
+  marks.set(id,'verify'); row.className='row mv'; }); ui(); }
+
+function ui(){ const ks=[...marks.values()];
+  const btn=document.getElementById('apply_btn');
+  if(!ks.length){ btn.style.display='none'; return; }
+  btn.style.display='block';
+  const v=ks.filter(k=>k==='verify').length, j=ks.filter(k=>typeof k==='object'&&k.kind==='junk').length, c=ks.length-v-j;
+  btn.textContent=`🏷 اعمال ${ks.length.toLocaleString('fa-IR')} علامت (${v}✓ / ${j}✗ / ${c}🗂)`; }
+
+async function applyAll(){
+  const vIds=[],jg=new Map(),cg=new Map();
+  marks.forEach((m,id)=>{ if(m==='verify')vIds.push(id);
+    else if(m.kind==='junk'){ if(!jg.has(m.reason))jg.set(m.reason,[]); jg.get(m.reason).push(id); }
+    else if(m.kind==='cat'){ if(!cg.has(m.cat))cg.set(m.cat,[]); cg.get(m.cat).push(id); } });
+  if(!vIds.length&&!jg.size&&!cg.size) return;
+  const b=document.getElementById('apply_btn'); b.disabled=true; b.textContent='⏳ در حال اعمال...';
+  // NEW: هر گروه مستقل اعمال می‌شود — خطای یک گروه (مثلاً 404 آیتمِ حذف‌شده‌ی بین‌راه)
+  // بقیه را متوقف نمی‌کند؛ در پایان گزارش جمعی داده می‌شود.
+  const done={v:0,j:0,c:0,err:0};
+  async function safe(fn,counter){ try{ await fn(); done[counter]++; }catch(e){ done.err++; console.warn(e.message); } }
+  try{
+    if(vIds.length) await safe(()=>post({ids:vIds,action:'verify'}),'v');
+    for(const [r,ids] of jg) await safe(()=>post({ids,action:'junk',reason:r}),'j');
+    // در میز بررسی، 🗂 یعنی «بازدید شد + دسته درست» → همراه با انتقال، تایید انسانی هم ثبت می‌شود
+    for(const [c,ids] of cg){
+      await safe(async()=>{ await post({ids,action:'set-category',category:c}); await post({ids,action:'verify'}); },'c');
+    }
+  } finally {
+    marks.clear();
+    b.disabled=false;
+    ui();            // NEW: دکمه همیشه به حالت عادی برمی‌گردد
+    await load();    // لیست تازه می‌شود — آیتم‌های رفته واقعاً رفته‌اند
+    const msg=`اعمال شد: ${done.v}✓ / ${done.j}✗ / ${done.c}🗂` + (done.err?` — ${done.err} گروه ناموجود (تکراریِ حذف‌شده، بی‌خطر)`:'');
+    b.textContent='🏷 '+msg; setTimeout(ui, 2500);
+  }
+}
+async function post(body){ body.source='review';
+  const r=await fetch('/api/audit/bulk-action',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  const d=await r.json(); if(!r.ok) throw new Error(d.detail||'خطا'); return d; }
+function openM(id){ document.getElementById(id).style.display='flex'; }
+function closeM(id){ document.getElementById(id).style.display='none'; }
+load();
+</script>
+</body>
+</html>
