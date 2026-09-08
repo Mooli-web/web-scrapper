@@ -25,6 +25,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from database.db_manager import db  # noqa: E402
+from core.taxonomy import ensure_category_columns  # noqa: E402
 
 OUT_DIR = Path(__file__).resolve().parent / "exports" / "ml_training"
 
@@ -39,6 +40,9 @@ def write_jsonl(name, rows):
 
 def main():
     OUT_DIR.mkdir(parents=True, exist_ok=True)
+    # FIX: این ستون‌ها/جدول در schema.sql نیستند و runtime ساخته می‌شوند؛
+    # بدون این خط، روی دیتابیس نوساخته «no such column: c.category_std» می‌داد.
+    ensure_category_columns()
     print("=" * 62)
     print("🎓 ساخت دیتاست‌های آموزش از برچسب‌های انسانی/AI")
     print("=" * 62)

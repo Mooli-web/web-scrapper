@@ -23,10 +23,14 @@ market_backup_*.db
 # فایل‌های خروجی تولیدی (هر بار توسط اسکریپت‌ها بازتولید می‌شوند)
 5_unified_local_hub/exports/*.csv
 5_unified_local_hub/exports/*.json
-5_unified_local_hub/exports/ml_training/
 5_unified_local_hub/exports/weekly_report_*.md
+# خروجی ml_training: فایل‌های آموزش commit می‌شوند، آرشیو چرتِ بزرگ نه
+5_unified_local_hub/exports/ml_training/*
+!5_unified_local_hub/exports/ml_training/*.jsonl
+5_unified_local_hub/exports/ml_training/purged_junk_archive.jsonl
 # کارت مستندات دیتاست را نگه می‌داریم (دور ریخته نمی‌شود):
 !5_unified_local_hub/exports/DATASET_CARD.md
+# بسته‌ی export_training_bundle.py (exports/training_bundle/) عمداً ignore نمی‌شود
 
 # ============================================================================
 # 🐍 پایتون
