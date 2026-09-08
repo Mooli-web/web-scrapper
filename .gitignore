@@ -117,4 +117,5 @@ test_*.local.*
 3_torob_windows/torob_catalog_db.json
 3_torob_windows/torob_cache.json
 3_torob_windows/torob_products.json
-3_torob_windows/
+# NOTE: خط «3_torob_windows/» که کل پوشه را ignore می‌کرد حذف شد — کد خزنده‌ی ترب
+# فقط روی دیسک لوکال بود و در گیت پشتیبان نداشت. موارد سنگین بالا ignore می‌مانند.
