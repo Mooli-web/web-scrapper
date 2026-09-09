@@ -1,0 +1,99 @@
+{
+  "generated_at": "2026-09-09T13:46:24",
+  "source_db": "D:\\pythons\\web-scrapper\\5_unified_local_hub\\data\\market.db",
+  "source_db_bytes": 222498816,
+  "pii_scrubbed": true,
+  "files": {
+    "canonical_products.jsonl": {
+      "rows": 11135,
+      "bytes": 5957462,
+      "sha256": "5b91c04377c34f1f7f98a21b2cce052d326a71c8153a38faac1848f43c4432cf"
+    },
+    "category_history.jsonl": {
+      "rows": 1391,
+      "bytes": 333631,
+      "sha256": "b258fe0d9c935d163306cd2765bc2897e48616e6af9ec6146afac0569f5a923e"
+    },
+    "learned_junk_signals.jsonl": {
+      "rows": 235,
+      "bytes": 56707,
+      "sha256": "377506079bbf82aa37ec3bf4ada590347eee39bae61915b98d328130f1eec938"
+    },
+    "ai_review_cache.jsonl": {
+      "rows": 7739,
+      "bytes": 2345747,
+      "sha256": "477c58631a5356165b8315db24089625d7531f92df5e7faca84da4d39641a1a8"
+    },
+    "listings.jsonl": {
+      "rows": 20345,
+      "bytes": 14010722,
+      "sha256": "96c6256d2a10f5ab1b3690a274ffc8a8cd87b702d50c54d1dafdf7f132b08852",
+      "pii_columns_dropped": [
+        "seller_name",
+        "location_district",
+        "url",
+        "image_url"
+      ]
+    },
+    "price_summary.csv": {
+      "rows": 11798,
+      "bytes": 1134586,
+      "sha256": "27be4c53888403b3cf328ab273d83331d6416222c21a5b390af356cec7ff6d25"
+    },
+    "price_history_sample.csv": {
+      "rows": 10050,
+      "bytes": 653631,
+      "sha256": "1b4e94e2b149b1e77053b5eb4733b3fa295ed897e8ed116a28d65c200643303b",
+      "sampled_from": 1420913,
+      "step": 142
+    }
+  },
+  "notes": [],
+  "stats": {
+    "listings_by_store_status": {
+      "digikala/VERIFIED": 6870,
+      "divar/VERIFIED": 4187,
+      "esam/AI_REJECTED": 2521,
+      "torob/VERIFIED": 2330,
+      "divar/ACCESSORY_OR_JUNK": 784,
+      "divar/CONFIRMED_JUNK": 668,
+      "esam/FAKE_PRICE": 656,
+      "esam/VERIFIED": 634,
+      "esam/ACCESSORY_OR_JUNK": 457,
+      "torob/ACCESSORY_OR_JUNK": 377,
+      "digikala/ACCESSORY_OR_JUNK": 322,
+      "divar/FAKE_PRICE": 210,
+      "divar/AI_REJECTED": 204,
+      "torob/CONFIRMED_JUNK": 42,
+      "esam/CONFIRMED_JUNK": 38,
+      "digikala/AI_REJECTED": 27,
+      "divar/DEFECTIVE_PARTS": 8,
+      "esam/DEFECTIVE_PARTS": 7,
+      "digikala/CONFIRMED_JUNK": 2,
+      "torob/FAKE_PRICE": 1
+    },
+    "canonical_by_category_source": {
+      "ai": 1022,
+      "manual": 1129,
+      "rule": 8984
+    },
+    "canonical_by_category_std": {
+      "other": 2491,
+      "mobile": 1798,
+      "headphone": 1620,
+      "watch": 1391,
+      "laptop": 1302,
+      "storage": 822,
+      "tablet": 358,
+      "cpu": 288,
+      "desktop-pc": 254,
+      "console": 253,
+      "ram": 191,
+      "gpu": 139,
+      "motherboard": 134,
+      "monitor": 94
+    },
+    "price_history_rows_total": 1420913
+  },
+  "total_bytes": 24492486
+}
