@@ -30,6 +30,12 @@ STANDARD_CATEGORIES = {
     "monitor":      "مانیتور",
     "watch":        "ساعت هوشمند",
     "headphone":    "هدفون و ایرباد",
+    # pc-parts = قطعه‌ی جداگانه‌ی کامپیوتر: کیس خالی، منبع تغذیه/پاور، خنک‌کننده
+    #            و کولر، فن، کارت صدا/شبکه/کپچر. «سیستم/کیس آماده» همچنان
+    #            desktop-pc است.
+    "pc-parts":     "قطعات کامپیوتر",
+    # other = متفرقه: روتر و تجهیزات شبکه، لوازم جانبی بی‌دسته و هر آنچه
+    #         در دسته‌های بالا جا نمی‌شود.
     "other":        "متفرقه",
 }
 
@@ -41,6 +47,8 @@ _RAW_CATEGORY_RULES = [
     ("smart-watch", "watch"), ("watch", "watch"), ("wearable", "watch"),
     ("apple-watch", "watch"),
     ("headphone", "headphone"), ("audio", "headphone"),
+    ("power-supply", "pc-parts"), ("psu", "pc-parts"), ("case", "pc-parts"),
+    ("cooling", "pc-parts"), ("cooler", "pc-parts"), ("fan", "pc-parts"),
     ("storage", "storage"), ("hard", "storage"), ("ssd", "storage"), ("flash", "storage"),
     ("monitor", "monitor"), ("screen", "monitor"),
     ("motherboard", "motherboard"), ("mainboard", "motherboard"),
@@ -72,6 +80,17 @@ _TITLE_RULES = [
     (re.compile(r'لپ\s*تاپ|لپتاپ|لپ‌تاپ|مک\s*بوک|macbook|thinkpad|ideapad|legion|vivobook|zenbook', re.I), "laptop"),
     (re.compile(r'تبلت|آیپد|ipad|galaxy\s*tab', re.I), "tablet"),
     (re.compile(r'گوشی|موبایل|آیفون|ایفون|iphone|گلکسی\s*[sa]\d|redmi|poco|تلفن\s*همراه', re.I), "mobile"),
+    # ── قطعات کامپیوتر (کیس خالی، منبع تغذیه، خنک‌کننده، کارت جانبی)
+    #   عمداً «آخر» آمده تا عنوان کامل (سیستم/لپ‌تاپ/کیس گیمینگ) اول به دسته‌ی
+    #   خودش برود و فقط قطعه‌ی جداگانه اینجا بیفتد.
+    (re.compile(r'منبع\s*تغذیه|\bpsu\b|power\s*supply|پاور\s*(?:کامپیوتر|گیمینگ|ماژولار)|'
+                r'\bsfx\b', re.I), "pc-parts"),
+    (re.compile(r'خنک\s*کننده|کولر|واتر\s*کولر|کولینگ|هیت\s*سینک|هیتسینک|'
+                r'فن\s*(?:کیس|پردازنده|cpu)|\bcpu\s*cooler\b|خمیر\s*سیلیکون', re.I), "pc-parts"),
+    (re.compile(r'کیس(?:\s*کامپیوتر)?\s*(?:خالی|بدون\s*قطعه|mid\s*tower|full\s*tower)|'
+                r'\bcomputer\s*case\b|\bchassis\b', re.I), "pc-parts"),
+    (re.compile(r'کارت\s*(?:صدا|شبکه|توسعه|کپچر)|sound\s*card|network\s*card|'
+                r'capture\s*card', re.I), "pc-parts"),
 ]
 
 
@@ -89,8 +108,14 @@ _LEADING_TITLE_RULES = [
     # FIX: کیسِ همراه با قطعات (cpu/gpu/ram/نسل/آماده/مونتاژ) → سیستم؛ کیسِ خالی یا مبهم → other
     # (ترتیب مهم: اول آیا قطعه دارد؟ اگر نه → other؛ در نهایت سیستم/ریگ/ماینر)
     (re.compile(r'^کیس(?=.{0,45}(?:i[3579]\s*-?\d|ryzen|نسل|آماده|مونتاژ|سیستم\s*کامل|ddr))', re.I), "desktop-pc"),  # باید سیگنال cpu/آماده هم باشد — فقط gpu کافی نیست (کیس با فن RTX هم نام دارد)
-    (re.compile(r'^کیس', re.I), "other"),
+    # کیسِ خالی/بدون قطعه → قطعه‌ی کامپیوتر؛ بقیه‌ی کیس‌های مبهم → متفرقه
+    (re.compile(r'^کیس(?!\s*(?:کامپیوتر\s*)?(?:خالی|بدون\s*قطعه|mid\s*tower|full\s*tower))', re.I), "other"),
     (re.compile(r'^سیستم|^ریگ|^ماینر', re.I), "desktop-pc"),
+    # خنک‌کننده/کولر در «آغاز» عنوان = قطعه‌ی جداگانه (وگرنه «پردازنده» در
+    # «خنک کننده پردازنده» آن را به cpu می‌برد). قواعد بالاتر (سیستم/کیس) اول اجرا
+    # می‌شوند، پس «سیستم با واتر کولر» همچنان desktop-pc می‌ماند.
+    (re.compile(r'^خنک\s*کننده|^کولر|^واتر\s*کولر|^هیت\s*سینک|^هیتسینک|'
+                r'^فن\s*(?:کیس|پردازنده|cpu)|^خمیر\s*سیلیکون', re.I), "pc-parts"),
     (re.compile(r'^کارت\s*گرافیک|^گرافیک|^رافیک', re.I), "gpu"),
     (re.compile(r'^مادربرد', re.I), "motherboard"),
     (re.compile(r'^پردازنده|^سی\s*پی\s*یو|^cpu|core\s*i\d|ryzen', re.I), "cpu"),

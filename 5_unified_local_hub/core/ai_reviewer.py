@@ -52,8 +52,8 @@ SYSTEM_PROMPT = (
     "and out-of-scope goods (shoes, jewelry, stamps, home appliances, toys, clothing).\n"
     "Prices are in Toman: real phone ≥15M, laptop ≥25M, console ≥20M, GPU ≥10M typically.\n"
     "ALSO classify each item into EXACTLY ONE standard category key from this list: "
-    "mobile, laptop, tablet, console, gpu, cpu, ram, storage, motherboard, desktop-pc, monitor, watch, headphone, other "
-    "(desktop-pc = complete ready PC/mining rig; gpu = graphics card only). Use the title AND the description "
+    "mobile, laptop, tablet, console, gpu, cpu, ram, storage, motherboard, desktop-pc, monitor, watch, headphone, pc-parts, other "
+    "(desktop-pc = complete ready PC/mining rig; gpu = graphics card only; pc-parts = bare case, power supply, cooler/fan, sound/network card; other = routers and networking gear and anything else). Use the title AND the description "
     "(desc) as evidence — the desc often reveals the true product type. "
     "Answer ONLY with a valid JSON object, no extra text."
 )
@@ -347,7 +347,7 @@ class AIBatchReviewer:
             user_prompt = (
                 "Classify each listing into EXACTLY ONE standard category key: "
                 "mobile, laptop, tablet, console, gpu, cpu, ram, storage, motherboard, "
-                "desktop-pc, monitor, watch, headphone, other. "
+                "desktop-pc, monitor, watch, headphone, pc-parts, other. "
                 "The current_category may be WRONG — decide from title AND desc yourself.\n"
                 'Respond ONLY as JSON: {"verdicts":[{"i":1,"category":"gpu"}, ...]}\n\n'
                 + json.dumps(payload_items, ensure_ascii=False)

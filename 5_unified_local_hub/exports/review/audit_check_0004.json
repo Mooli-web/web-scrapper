@@ -1,0 +1,14 @@
+{"audit": [
+ {"id": 1783518, "decision": "junk", "reason_code": "TRADE_REQUEST"},
+ {"id": 1619810, "decision": "junk", "reason_code": "PRICE_BELOW_FLOOR"},
+ {"id": 1223358, "decision": "verify", "category": "laptop"},
+ {"id": 1367,    "decision": "verify", "category": "tablet"},
+ {"id": 1222619, "decision": "verify", "category": "laptop"},
+ {"id": 1706185, "decision": "junk", "reason_code": "OUT_OF_SCOPE"},
+ {"id": 1017,    "decision": "verify", "category": "laptop"},
+ {"id": 1706574, "decision": "junk", "reason_code": "OUT_OF_SCOPE"},
+ {"id": 5163,    "decision": "verify", "category": "desktop-pc"},
+ {"id": 1706460, "decision": "junk", "reason_code": "OUT_OF_SCOPE"},
+ {"id": 1806467, "decision": "junk", "reason_code": "OUT_OF_SCOPE"},
+ {"id": 1620296, "decision": "junk", "reason_code": "TRADE_REQUEST"}
+]}

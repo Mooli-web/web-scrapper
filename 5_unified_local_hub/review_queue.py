@@ -57,7 +57,7 @@ BUNDLE = HUB / "exports" / "training_bundle"
 REVIEW = HUB / "exports" / "review"
 
 CATEGORIES = ["mobile", "laptop", "tablet", "console", "gpu", "cpu", "ram", "storage",
-              "motherboard", "desktop-pc", "monitor", "watch", "headphone", "other"]
+              "motherboard", "desktop-pc", "monitor", "watch", "headphone", "pc-parts", "other"]
 DECISIONS = ("verify", "junk", "set-category", "uncertain")
 
 # کدهای ماشین‌خوان دلیل — برای شمارش، توازن کلاس و آموزش مدلِ دلیل‌ساز
@@ -310,7 +310,9 @@ PARTS_PAT = re.compile(r"سوخته|معیوب|اوراقی|اسقاطی|جهت 
 # کلکسیونی/خارج از حوزه — باید «پیش از» کف قیمت بررسی شود وگرنه کد دلیل
 # این‌ها PRICE_BELOW_FLOOR می‌شود در حالی که ذاتاً خارج از حوزه‌اند (۵۷٪ موارد)
 OOS_PAT = re.compile(r"تمبر|اسکناس|سکه|عقیق|کلکسیون|پهلوی|قاجار|ریالی|تومانی|انگشتر|طلا\b|"
-                     r"جواهر|کفش|کتاب|فرش|عتیقه|نسخه خطی|شمشیر|خنجر|ظروف")
+                     r"جواهر|کفش|کتاب|فرش|عتیقه|نسخه خطی|شمشیر|خنجر|ظروف|"
+                     # شماره سریال اسکناس و سکه‌های خارجی هم کلکسیونی‌اند
+                     r"سوپربانکی|سریال\s*(?:بانکی|سوپر)|نیم\s*اسکودو|اسکودو")
 DEVICE_PAT = re.compile(r"گوشی|موبایل|آیفون|سامسونگ|شیائومی|لپ ?تاپ|تبلت|کنسول|پلی ?استیشن|"
                         r"xbox|ایکس باکس|ساعت هوشمند|هدفون|ایرپاد|مانیتور|کارت گرافیک|کیس")
 
@@ -861,13 +863,17 @@ def cmd_audit(args):
     می‌ماند، تا بازبین بدون لنگر انداختن قضاوت کند.
     """
     queue_by_id = {x["id"]: x for x in _load("queue.jsonl")}
-    pool = []
+    # دفترکل ضمیمه‌ای است: یک آگهی ممکن است چند بار تصمیم گرفته باشد (مثلاً
+    # بازطبقه‌بندی یا اصلاح کد دلیل). فقط «آخرین» تصمیم مبناست، وگرنه ممیزی کور
+    # با رکورد منسوخ مقایسه می‌کند و اختلاف کدِ کاذب گزارش می‌دهد.
+    latest_by_id = {}
     for d in _load("decisions.jsonl"):
         if d.get("scope") == "audit":
             continue
         for i in d.get("affected_ids") or []:
             if i in queue_by_id:
-                pool.append((d, queue_by_id[i]))
+                latest_by_id[i] = d
+    pool = [(d, queue_by_id[i]) for i, d in latest_by_id.items()]
     if not pool:
         print("❌ هنوز تصمیمی ثبت نشده")
         return

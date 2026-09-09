@@ -1,0 +1,14 @@
+{"audit": [
+ {"id": 4969,    "decision": "verify", "category": "laptop"},
+ {"id": 9189,    "decision": "verify", "category": "watch"},
+ {"id": 4628,    "decision": "verify", "category": "laptop"},
+ {"id": 7061,    "decision": "verify", "category": "laptop"},
+ {"id": 5088,    "decision": "verify", "category": "laptop"},
+ {"id": 1706480, "decision": "junk", "reason_code": "OUT_OF_SCOPE"},
+ {"id": 1706331, "decision": "junk", "reason_code": "OUT_OF_SCOPE"},
+ {"id": 5831,    "decision": "verify", "category": "laptop"},
+ {"id": 7928,    "decision": "verify", "category": "laptop"},
+ {"id": 1706363, "decision": "junk", "reason_code": "OUT_OF_SCOPE"},
+ {"id": 34368,   "decision": "junk", "reason_code": "OUT_OF_SCOPE"},
+ {"id": 6236,    "decision": "verify", "category": "laptop"}
+]}

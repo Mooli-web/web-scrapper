@@ -1,0 +1,152 @@
+# بسته‌ی ۱۲ (flat) — دیجی‌کالا، ۱۵۰ آگهی ۱۵٫۹ تا ۱۸٫۰ میلیون تومان؛ همه خوانده شد
+# storage 55 · headphone 37 · watch 23 · pc-parts 15 · gpu 5 · ram 5 · motherboard 4 · cpu 3 · junk 2 · mobile 1
+4496 v gpu
+459 v watch
+1476 v headphone
+6552 v watch
+3305 v headphone
+76 v storage
+2601 v storage
+3296 v headphone
+5686 v headphone
+7156 v storage
+7234 v headphone
+7300 v headphone
+8116 v gpu
+6173 v storage
+8714 v storage
+7459 v headphone
+7460 v headphone
+2590 v storage
+6084 v storage
+1830 v storage
+5282 v ram
+3542 v cpu
+284 v storage
+5222 v storage
+1873 v watch
+1086 v headphone
+1559 v storage
+1912 v headphone
+2613 v storage # فلش مموری سن‌دیسک iXPAND → storage (حافظه‌ی قابل حمل در دسته‌ی حافظه می‌ماند).
+3301 v headphone
+4495 v gpu
+6295 v ram
+7382 v storage
+7458 v headphone
+1069122 v ram
+6356 v pc-parts # خنک‌کننده‌ی آبی پردازنده ردراگون → pc-parts.
+1613 v watch
+2656 v storage
+3306 v headphone
+2598 v storage
+2627 v storage
+7457 v headphone
+2605 v storage
+2630 v storage
+7268 v storage
+2622 v storage
+1758 v watch
+5185 v gpu
+9194 v watch
+230735 v pc-parts # منبع تغذیه ایسوس Prime Bronze 750W → pc-parts.
+1752 v watch
+8019 v ram
+9193 v watch
+2594 v storage
+2616 v storage
+2617 v storage
+2620 v storage
+3297 v headphone
+3509 v pc-parts
+3593 v mobile
+4335 v pc-parts # کیس کامپیوتر کولر مستر MasterBox MB520 → pc-parts: شاسی خالی کیس است، نه سیستم آماده.
+6346 v storage
+6402 v headphone
+6946 v pc-parts # کیس کامپیوتر کولر مستر MasterBox MB511 → pc-parts (شاسی خالی).
+7175 v headphone
+7456 v headphone
+8685 v storage
+8686 v storage
+8690 v storage
+1908 v headphone
+5684 v headphone
+3299 v headphone
+9192 v watch
+1555 v storage
+2585 v storage
+6417 v pc-parts
+7455 v headphone
+8687 v storage
+4338 v pc-parts
+647 v pc-parts # کیس کامپیوتر گیمینگ فاطر FG-880B → pc-parts: «گیمینگ» صفت کیس است و قطعه‌ای در عنوان نیست، پس سیستم آماده نیست.
+3298 v headphone
+4419 v ram # رم سرور DDR4 اس‌کی‌هاینیکس → ram (رم سرور هم رم است).
+6171 v storage
+6986 v pc-parts
+1950 v pc-parts
+3283 v headphone
+3397 v pc-parts
+7154 v storage
+8710 v storage
+2618 v storage
+1962 v cpu
+3115 v watch
+1327 v storage
+1831 v storage
+2609 v storage
+4793 v motherboard
+8713 v storage
+8717 v storage
+9191 v watch
+1218500 v storage
+1219363 v storage
+1221640 v gpu
+1411515 v motherboard
+1648 v motherboard
+520 v watch
+1910 v headphone
+5683 v headphone
+7454 v headphone
+2625 v storage
+6661 v headphone
+6312 v watch # مچ‌بند هوشمند هوآوی Band 11 Pro → watch (مچ‌بند و ساعت هوشمند یک دسته‌اند).
+59 v storage
+4337 v pc-parts
+7155 v storage
+1217579 v storage
+224 v watch # حلقه هوشمند (اسمارت رینگ) R30-ECG → watch: پوشیدنی است و دسته‌ی جداگانه‌ای برای حلقه نداریم.
+1556 v storage
+1915 v headphone
+2575 v storage
+2606 v storage
+3508 v pc-parts
+6921 v storage
+7039 v pc-parts
+7452 v headphone
+7453 v headphone
+7739 v cpu
+8701 v storage
+9190 v watch # ساعت «آی پی مکس مدل WATCH 4» — برند مستقل و بدون ادعای طرح اپل → watch (نگه داشته شد).
+1411459 v headphone
+1546571 v storage
+483494 v pc-parts
+9189 v watch
+293 v watch
+1909 v headphone
+7450 v headphone
+458 v watch
+4769 v headphone
+5506 v watch
+6660 v headphone
+9187 v watch
+9188 v watch
+3295 j COUNTERFEIT_CLAIM # هدفون بی‌برند با نام مدل «AirPods Max» — استفاده از نام محصول پرچمدار اپل بدون ذکر برند اپل، به‌همراه قیمت ۱۶ م.ت در برابر ~۴۰ م.ت بازار = ادعای کالای طرح.
+1337468 v motherboard
+886120 v watch
+317 j AMBIGUOUS_NO_MODEL # هندزفری بی‌سیم «مدل New Arrival business» — نه برند دارد نه مدل واقعی؛ عنوان جای‌نگهدار است و برای آموزش قابل استفاده نیست.
+2604 v storage
+2611 v storage
+2612 v storage
+3116 v watch
+5681 v headphone
