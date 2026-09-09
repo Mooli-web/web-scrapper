@@ -13,6 +13,15 @@
   ۳) هر تصمیم با نمونه‌ی شاهد و امکان واگردانی ثبت می‌شود و دقت با ممیزی
      کور اندازه‌گیری می‌شود.
 
+سیاست برچسب‌گذاری (تصمیم‌شده توسط صاحب داده، ۱۴۰۴/۰۶/۱۸):
+  • کالای «طرح / کپی / های‌کپی / فیک / replica» = junk و حذف می‌شود، حتی اگر
+    سخت‌افزار واقعی باشد — چون مقایسه‌ی قیمت و آموزش مدل را آلوده می‌کند.
+  • هر آگهی جدا قضاوت می‌شود: «شرایط» (condition) و قیمت هر آگهی می‌تواند با
+    هم‌خوشه‌هایش فرق کند. تصمیم خوشه‌ای فقط وقتی مجاز است که ۱۰۰٪ اعضا خوانده
+    شده باشند و یکدست باشند؛ در دفترکل با review_mode ثبت می‌شود.
+  • uncertain = از دیتاست آموزش کنار گذاشته می‌شود (نه clean، نه junk). این
+    تنها راهی است که نمونه‌ی مبهم مدل را «سردرگم» نکند.
+
 لایه‌ها (هر لایه صف را کوچک‌تر می‌کند):
   L0  برچسب انسانی        → تصمیم قطعی، دست نمی‌خورد
   L1  ارث از canonical_key → همان محصول، انسان قبلاً تصمیم گرفته
@@ -44,7 +53,7 @@ REVIEW = HUB / "exports" / "review"
 
 CATEGORIES = ["mobile", "laptop", "tablet", "console", "gpu", "cpu", "ram", "storage",
               "motherboard", "desktop-pc", "monitor", "watch", "headphone", "other"]
-DECISIONS = ("verify", "junk", "set-category")
+DECISIONS = ("verify", "junk", "set-category", "uncertain")
 
 
 def thash(t):
@@ -149,7 +158,8 @@ def cmd_build(args):
             "median_price": prices[len(prices) // 2] if prices else 0,
             "signal_hit": items[0].get("signal_hit"),
             "samples": [{"id": x["id"], "title": x["title"], "price": x["price"],
-                         "store": x["store"], "category": x.get("category")}
+                         "store": x["store"], "category": x.get("category"),
+                         "condition": x.get("condition")}
                         for x in sorted(items, key=lambda z: -z["price"])[:args.samples]],
             "member_ids": [x["id"] for x in items],
         })
@@ -266,7 +276,7 @@ def cmd_next(args):
               '{"cluster":"C0124","decision":"junk","reason":"..."}]}')
         for c in chunk:
             s = c["samples"][0]
-            print(f'[{c["cluster_id"]}] {s["title"]}  |  {s["price"]:,}  |  {s["store"]}')
+            print(f'[{c["cluster_id"]}] {s["title"]}  |  {s["price"]:,}  |  {s["store"]}  |  {s.get("condition") or "-"}')
         return
 
     pkt = packets[n - 1]
@@ -284,12 +294,90 @@ def cmd_next(args):
         print(f'[{c["cluster_id"]}] {c["n_titles"]} عنوان / {c["n_listings"]} آگهی  '
               f'میانه قیمت {c["median_price"]:,}  سایت‌ها {c["stores"]}{sig}')
         for s in c["samples"]:
-            print(f'    - {s["title"][:110]}  |  {s["price"]:,}  |  {s["store"]}')
+            print(f'    - {s["title"][:100]}  |  {s["price"]:,}  |  {s["store"]}  |  {s.get("condition") or "-"}')
         print("")
     print('قالب پاسخ: {"decisions":[{"cluster":"C0001","decision":"verify","category":"desktop-pc"}, ...]}')
 
 
 # ----------------------------------------------------------------------------
+def cmd_members(args):
+    """همه‌ی اعضای یک خوشه با id — برای قضاوت آگهی‌به‌آگهی."""
+    clusters = {c["cluster_id"]: c for c in _load("clusters.jsonl")}
+    q = {x["id"]: x for x in _load("queue.jsonl")}
+    decided = _decided_ids()
+    ids = []
+    for ref in args.clusters.split(","):
+        c = clusters.get(ref.strip())
+        if not c:
+            print(f"❌ خوشه‌ی {ref} پیدا نشد")
+            sys.exit(1)
+        ids += c["member_ids"]
+    print(f"# PER-LISTING — {len(ids)} آگهی (هر ردیف یک تصمیم جدا با id)")
+    print('قالب: {"decisions":[{"id":123,"decision":"verify","category":"gpu"}, ...]}')
+    for i in ids:
+        it = q[i]
+        flag = "  [قبلاً تصمیم دارد]" if i in decided else ""
+        print(f'  id={i}  {it["title"][:95]}  |  {it["price"]:,}  |  {it["store"]}  '
+              f'|  {it.get("condition") or "-"}{flag}')
+
+
+FAKE_PATTERNS = {
+    # ⚠️ «فیک» باید مرز کلمه داشته باشد وگرنه داخل «گرافیک» تطابق می‌شود!
+    "فیک (کلمه‌ی مستقل)": r"(?<![\u0600-\u06FF])فیک(?![\u0600-\u06FF])",
+    "کپی / های‌کپی": r"(?<![\u0600-\u06FF])(?:های[  ]?کپی|هایکپی|کپی)(?![\u0600-\u06FF])",
+    "طرحِ برند": r"طرح\s*(?:اپل|apple|آیفون|iphone|سامسونگ|samsung|ایرپاد|airpod|گالکسی|galaxy|اولترا|ultra|پلی\s*استیشن|ps\d|رولکس|rolex|امگا|omega|جوردن|jordan|نایک|nike|آدیداس|adidas|شیائومی|xiaomi)",
+    "ساعت/هدفون طرح (بدون برند)": r"(?:ساعت|هدفون|ایرباد|هندزفری)\s+طرح(?:\s|$|[\u0600-\u06FF])",
+    "replica / clone / 1:1": r"\b(?:replica|1:1)\b|\bclone\b(?!\s+\d+\s+of)",
+    "مدل کپی معروف (ساعت)": r"(?<![A-Za-z])(?:KW\d{2,3}|HK\d{1,2}|TX\d{2}(?!\d)|T900|T800|T500)(?![A-Za-z0-9])",
+}
+
+
+def cmd_scan(args):
+    """اسکن دقیق کالای طرح/فیک — با مرز کلمه، و گزارش نمونه برای چشم‌گذرانی."""
+    import re
+    pats = {k: re.compile(v, re.I) for k, v in FAKE_PATTERNS.items()}
+    q = _load("queue.jsonl")
+    if not q:
+        print("❌ اول build را اجرا کن")
+        return
+    print("=" * 66)
+    print("🔎 اسکن کالای طرح/فیک")
+    print("=" * 66)
+    tot = Counter()
+    bysrc = defaultdict(Counter)
+    ex = defaultdict(list)
+    matched = {}
+    for it in q:
+        t = it["title"] or ""
+        for name, rx in pats.items():
+            m = rx.search(t)
+            if m:
+                tot[name] += 1
+                bysrc[name][it["tier"]] += 1
+                matched[it["id"]] = name
+                if len(ex[name]) < 8:
+                    lo, hi = max(0, m.start() - 25), min(len(t), m.end() + 25)
+                    ex[name].append((it["id"], t[lo:hi], it["price"], it["store"], it["tier"]))
+                break
+    total = sum(tot.values())
+    print(f"\n  جمع آگهی‌های طرح/فیک: {total:,} از {len(q):,}  ({total / len(q) * 100:.1f}٪)")
+    for name, n in tot.most_common():
+        print(f"\n  ▸ {name}: {n:,}")
+        print("     " + "  ".join(f"{t}:{c:,}" for t, c in bysrc[name].most_common()))
+        for i, ctx, pr, st, tier in ex[name]:
+            print(f"        id={i}  …{ctx}…  |  {pr:,}  |  {st}")
+    if args.dump:
+        out = REVIEW / "fake_candidates.jsonl"
+        REVIEW.mkdir(parents=True, exist_ok=True)
+        with open(out, "w", encoding="utf-8") as f:
+            for it in q:
+                if it["id"] in matched:
+                    r = dict(it)
+                    r["fake_pattern"] = matched[it["id"]]
+                    f.write(json.dumps(r, ensure_ascii=False) + "\n")
+        print(f"\n  📁 لیست کامل: {out}")
+
+
 def cmd_apply(args):
     path = Path(args.file)
     if not path.exists():
@@ -313,8 +401,8 @@ def cmd_apply(args):
         if dec not in DECISIONS:
             errs.append((i, f"decision نامعتبر: {dec}"))
             continue
-        if dec == "junk" and not (d.get("reason") or "").strip():
-            errs.append((i, f"{ref}: junk بدون reason"))
+        if dec in ("junk", "uncertain") and not (d.get("reason") or "").strip():
+            errs.append((i, f"{ref}: {dec} بدون reason"))
             continue
         cat = d.get("category")
         if dec in ("verify", "set-category") and cat is not None and cat not in CATEGORIES:
@@ -338,6 +426,8 @@ def cmd_apply(args):
             "ts": datetime.now().isoformat(timespec="seconds"),
             "scope": scope, "ref": ref, "decision": dec,
             "category": cat, "reason": (d.get("reason") or "").strip()[:200],
+            "review_mode": d.get("review_mode") or ("cluster" if scope == "cluster" else "per_listing"),
+            "members_read": d.get("members_read"),
             "decided_by": d.get("by") or "agent-arena",
             "note": (d.get("note") or "")[:200],
             "n_affected": len(ids), "affected_ids": ids,
@@ -428,6 +518,12 @@ def main():
     n.add_argument("--clusters", type=int, default=25)
     n.add_argument("--max-titles", type=int, default=250)
     n.set_defaults(fn=cmd_next)
+    m = sub.add_parser("members")
+    m.add_argument("--clusters", required=True)
+    m.set_defaults(fn=cmd_members)
+    sc = sub.add_parser("scan")
+    sc.add_argument("--dump", action="store_true")
+    sc.set_defaults(fn=cmd_scan)
     a = sub.add_parser("apply")
     a.add_argument("--file", required=True)
     a.set_defaults(fn=cmd_apply)

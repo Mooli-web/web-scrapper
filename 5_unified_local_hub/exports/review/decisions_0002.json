@@ -1,0 +1,69 @@
+{
+ "packet": "0002-correction",
+ "policy": "clone/fake => junk",
+ "decisions": [
+  {
+   "id": 1618213,
+   "decision": "junk",
+   "reason": "کالای طرح/کپی — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "اصلاحیه‌ی بسته‌ی ۱: قبلاً verify+watch گرفته بودم"
+  },
+  {
+   "id": 1619644,
+   "decision": "junk",
+   "reason": "کالای طرح/کپی — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "اصلاحیه‌ی بسته‌ی ۱: قبلاً verify+watch گرفته بودم"
+  },
+  {
+   "id": 1619647,
+   "decision": "junk",
+   "reason": "کالای طرح/کپی — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "اصلاحیه‌ی بسته‌ی ۱: قبلاً verify+watch گرفته بودم"
+  },
+  {
+   "id": 1619653,
+   "decision": "junk",
+   "reason": "کالای طرح/کپی — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "اصلاحیه‌ی بسته‌ی ۱: قبلاً verify+watch گرفته بودم"
+  },
+  {
+   "id": 1619659,
+   "decision": "junk",
+   "reason": "کالای طرح/کپی — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "اصلاحیه‌ی بسته‌ی ۱: قبلاً verify+watch گرفته بودم"
+  },
+  {
+   "id": 1661583,
+   "decision": "junk",
+   "reason": "کالای طرح/کپی — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "اصلاحیه‌ی بسته‌ی ۱: قبلاً verify+watch گرفته بودم"
+  },
+  {
+   "id": 1620701,
+   "decision": "junk",
+   "reason": "ادعای برند اپل با مدل کپی KW83max — طرح/فیک",
+   "review_mode": "per_listing",
+   "note": "اصلاحیه‌ی بسته‌ی ۱"
+  },
+  {
+   "id": 1661580,
+   "decision": "uncertain",
+   "reason": "«سری اچ کا» بدون مدل — احتمالاً کپی ولی قطعی نیست؛ از دیتاست آموزش کنار گذاشته شود",
+   "review_mode": "per_listing",
+   "note": "نیاز به تأیید انسان"
+  },
+  {
+   "id": 1806590,
+   "decision": "uncertain",
+   "reason": "Haino Teko برند مستقل است ولی طراحی کپی اپل‌واچ اولترا — مرز سیاست روشن نیست",
+   "review_mode": "per_listing",
+   "note": "نیاز به تأیید انسان"
+  }
+ ]
+}
