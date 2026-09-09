@@ -101,5 +101,12 @@
       "decisions_0025_rule_align.dsl",
       "decisions_0026_trade_recode.dsl"
     ]
+  },
+  {
+    "session": "S14",
+    "label": "بسته‌ی تخت ۱۷ + ابزار نشاندن دفترکل روی دیتابیس",
+    "files": [
+      "decisions_0027_flat17.dsl"
+    ]
   }
 ]
