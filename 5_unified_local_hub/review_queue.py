@@ -317,16 +317,29 @@ DEVICE_PAT = re.compile(r"گوشی|موبایل|آیفون|سامسونگ|شیا
                         r"xbox|ایکس باکس|ساعت هوشمند|هدفون|ایرپاد|مانیتور|کارت گرافیک|کیس")
 
 
+# کاراکترهای نامرئی/کنترلی که در عنوان‌های خزیده‌شده دیده شده‌اند. دو نوع‌اند:
+#  - نویز بی‌ضرر داده (LRM و soft hyphen در عنوان‌های دیجی‌کالا)
+#  - جاسازی عمدی برای فرار از فیلتر (۴× U+034F داخل «G99 Ultra» در id 1872)
+# پیش از هر تطبیق کلیدواژه حذف می‌شوند تا نه پنهان‌سازی کار کند و نه نویز.
+INVISIBLE = dict.fromkeys(
+    [0x00AD, 0x034F, 0x200B, 0x200C, 0x200D, 0x200E, 0x200F, 0xFEFF])
+
+
+def strip_invisible(text):
+    return (text or "").translate(INVISIBLE)
+
+
 def is_out_of_scope(title):
     """کلکسیونی/خارج از حوزه، ولی اگر کالای دیجیتال باشد نه."""
-    return bool(OOS_PAT.search(title)) and not DEVICE_PAT.search(title)
+    t = strip_invisible(title)
+    return bool(OOS_PAT.search(t)) and not DEVICE_PAT.search(t)
 
 
 def prefilter_hits(todo):
     """سه فیلتر مکانیکی. خروجی: (id, code, دلیل فارسی با شاهد)."""
     out = []
     for x in todo:
-        t, pr = x["title"], x["price"]
+        t, pr = strip_invisible(x["title"]), x["price"]
         if is_out_of_scope(t):
             out.append((x["id"], "OUT_OF_SCOPE",
                         f"کالای کلکسیونی/غیردیجیتال است («{OOS_PAT.search(t).group(0)}» در عنوان)؛ "

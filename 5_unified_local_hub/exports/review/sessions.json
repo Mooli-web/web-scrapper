@@ -83,5 +83,13 @@
       "decisions_0019_flat12.dsl",
       "decisions_0020_oos_recode.dsl"
     ]
+  },
+  {
+    "session": "S12",
+    "label": "بسته‌های تخت ۱۳ و ۱۴ — ۳۰۰ آگهی دیجی‌کالا",
+    "files": [
+      "decisions_0021_flat13.dsl",
+      "decisions_0022_flat14.dsl"
+    ]
   }
 ]

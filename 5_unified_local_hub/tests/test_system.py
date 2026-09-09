@@ -35,6 +35,9 @@ class TestTaxonomy:
         ("", "کیس گیمینگ کامل با i7 13700 و RTX4060", "desktop-pc"),
         ("", "سیستم گیمینگ با پاور ماژولار 1000 وات و RTX4070", "desktop-pc"),
         ("", "لپ تاپ گیمینگ 16 اینچی با خنک کننده مایع", "laptop"),
+        # «سیستم خنک کننده ...» فن پردازنده است، نه سیستم آماده
+        ("", "سیستم خنک کننده بادی پردازنده ردراگون مدل CC-2311", "pc-parts"),
+        ("", "سیستم گیمینگ با پاور ماژولار 1000 وات و RTX4070", "desktop-pc"),
     ]
 
     def test_normalize(self):
@@ -47,6 +50,22 @@ class TestTaxonomy:
         from core.taxonomy import category_label
         assert category_label("gpu") == "کارت گرافیک"
         assert category_label("unknown_xx") == "متفرقه"
+
+
+class TestInvisibleChars:
+    """کاراکتر نامرئی نباید کلیدواژه را پنهان کند (id 1872: G\u034f9\u034f9\u034f Ultra)."""
+
+    def test_stripped(self):
+        from review_queue import strip_invisible
+        assert strip_invisible("G\u034f9\u034f9\u034f U\u034fltra") == "G99 Ultra"
+        assert strip_invisible("RTX\u00ad\u00ad\u2122 4070") == "RTX\u2122 4070"
+        assert strip_invisible(None) == ""
+
+    def test_evasion_detected(self):
+        from review_queue import is_out_of_scope
+        # با کاراکتر نامرئی بین حروف هم باید کلکسیونی شناخته شود
+        assert is_out_of_scope("ت\u034fم\u034fب\u034fر نیوزلند") is True
+        assert is_out_of_scope("لپ تاپ 15.6 اینچی ایسوس مدل TUF") is False
 
 
 # ---------------------------------------------------------------------------
