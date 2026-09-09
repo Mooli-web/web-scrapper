@@ -1,0 +1,27 @@
+# ==============================================================================
+# Render Blueprint - Standalone Divar Cloud Crawler Platform
+# ==============================================================================
+
+services:
+  - type: web
+    name: divar-market-intelligence
+    runtime: python
+    plan: free
+    region: frankfurt
+    buildCommand: |
+      pip install -r requirements.txt
+      cd dashboard && npm install && npm run build && cd ..
+    startCommand: python -m uvicorn server.app:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.8
+      - key: DATABASE_URL
+        sync: false # Set in Render Dashboard with Divar CockroachDB connection string
+      - key: DASHBOARD_ADMIN_USER
+        value: "admin"
+      - key: DASHBOARD_ADMIN_PASS
+        value: "admin123"
+      - key: CRAWLER_DELAY_SEC
+        value: "1.8"
+      - key: ENABLE_INTERNAL_SCHEDULER
+        value: "true"
