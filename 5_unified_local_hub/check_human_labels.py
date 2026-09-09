@@ -15,9 +15,15 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from database.db_manager import db  # noqa: E402
+from core.taxonomy import ensure_category_columns  # noqa: E402
 
 
 def main():
+    # FIX: ستون‌های category_std/category_source و جدول category_history در
+    # schema.sql نیستند و توسط core.taxonomy ساخته می‌شوند؛ بدون این فراخوانی
+    # روی کلون تازه (یا دیتابیس نوساخته) همه‌ی کوئری‌ها با
+    # «no such column: c.category_std» می‌شکستند.
+    ensure_category_columns()
     print("=" * 62)
     print("🕵️ گزارش برچسب‌های انسانی (✋ تایید / 🗑 چرت)")
     print("=" * 62)

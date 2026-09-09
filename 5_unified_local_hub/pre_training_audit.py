@@ -22,7 +22,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from database.db_manager import db  # noqa: E402
-from core.taxonomy import normalize_category, STANDARD_CATEGORIES  # noqa: E402
+from core.taxonomy import normalize_category, STANDARD_CATEGORIES, ensure_category_columns  # noqa: E402
 
 GENERIC_OLD_REASON = "✋ تأیید شما: کالای چرت/غیرمرتبط"
 
@@ -35,6 +35,11 @@ def main():
     print("=" * 64)
     print("🎓 ممیزی پیش‌آموزش — آمار کامل برچسب‌ها و آمادگی ML")
     print("=" * 64)
+
+    # FIX: category_std / category_source / category_history در schema.sql نیستند
+    # و runtime توسط taxonomy ساخته می‌شوند — بدون این فراخوانی کوئری بعدی
+    # روی دیتابیس نوساخته با «no such column: category_std» می‌شکست.
+    ensure_category_columns()
 
     listings = {r["id"]: r for r in db.fetchall(
         "SELECT id, canonical_key, store_key, title_fa, description, price_toman, quality_status, rejection_reason FROM store_listings;")}

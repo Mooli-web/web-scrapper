@@ -23,10 +23,14 @@ market_backup_*.db
 # فایل‌های خروجی تولیدی (هر بار توسط اسکریپت‌ها بازتولید می‌شوند)
 5_unified_local_hub/exports/*.csv
 5_unified_local_hub/exports/*.json
-5_unified_local_hub/exports/ml_training/
 5_unified_local_hub/exports/weekly_report_*.md
+# خروجی ml_training: فایل‌های آموزش commit می‌شوند، آرشیو چرتِ بزرگ نه
+5_unified_local_hub/exports/ml_training/*
+!5_unified_local_hub/exports/ml_training/*.jsonl
+5_unified_local_hub/exports/ml_training/purged_junk_archive.jsonl
 # کارت مستندات دیتاست را نگه می‌داریم (دور ریخته نمی‌شود):
 !5_unified_local_hub/exports/DATASET_CARD.md
+# بسته‌ی export_training_bundle.py (exports/training_bundle/) عمداً ignore نمی‌شود
 
 # ============================================================================
 # 🐍 پایتون
@@ -85,6 +89,11 @@ desktop.ini
 *~
 
 # ============================================================================
+# 📋 خروجی اسکریپت انبارگردانی لوکال (حاوی مسیر/آمار ماشین شخصی است)
+# ============================================================================
+inventory_local_report.txt
+
+# ============================================================================
 # 🧪 فایل‌های آزمایشی و موقت
 # ============================================================================
 test_*.local.*
@@ -108,4 +117,5 @@ test_*.local.*
 3_torob_windows/torob_catalog_db.json
 3_torob_windows/torob_cache.json
 3_torob_windows/torob_products.json
-3_torob_windows/
+# NOTE: خط «3_torob_windows/» که کل پوشه را ignore می‌کرد حذف شد — کد خزنده‌ی ترب
+# فقط روی دیسک لوکال بود و در گیت پشتیبان نداشت. موارد سنگین بالا ignore می‌مانند.
