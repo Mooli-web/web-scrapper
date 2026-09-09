@@ -88,6 +88,20 @@ def src_of(l):
     return "rule"
 
 
+def prior_tag(x):
+    """برچسب قبلی = فقط شاهد، نه رأی."""
+    t = x.get("tier")
+    st = (x.get("status") or "?")
+    if t == "L0_human":
+        return "انسان:" + st[:14]
+    if t == "L1_inherit":
+        return "ارث:" + st[:12]
+    if t == "L2_ai_cache":
+        cat = x.get("ai_category")
+        return "AI:" + ("دستگاه" if x.get("ai_is_device") else "غیردستگاه") + (f"/{cat}" if cat else "")
+    return "بدون‌شاهد"
+
+
 def load_bundle():
     if not (BUNDLE / "listings.jsonl").exists():
         print(f"❌ {BUNDLE / 'listings.jsonl'} پیدا نشد — اول export_training_bundle.py را اجرا کن")
@@ -146,42 +160,75 @@ def cmd_build(args):
         for it in queue:
             f.write(json.dumps(it, ensure_ascii=False) + "\n")
 
-    # خوشه‌ها فقط روی صف واقعی
-    q = [it for it in queue if it["tier"] == "L3_queue"]
+    # ── خوشه‌ها روی «همه‌ی» آگهی‌ها؛ هیچ لایه‌ای معاف نیست
+    decided = set()
+    for d in _load("decisions.jsonl"):
+        ids = d.get("affected_ids")
+        if ids:
+            decided.update(ids)
+
     clusters = defaultdict(list)
-    for it in q:
-        clusters[cluster_key(it["title"])].append(it)
-    ordered = sorted(clusters.items(), key=lambda kv: -len(kv[1]))
+    for it in queue:
+        clusters[it.get("canonical_key") or norm_title(it["title"])].append(it)
+
+    # شناسه‌ی پایدار: کلیدهای قدیمی همان cid قبلی را نگه می‌دارند.
+    # اگر نسخه‌ی تابع خوشه‌سازی عوض شده باشد، cid های قدیمی معنا ندارند.
+    vk = REVIEW / "cluster_key.version"
+    cur_ver = "canonical-v1"
+    old_ids = {}
+    if vk.exists() and vk.read_text(encoding="utf-8").strip() == cur_ver:
+        old_ids = {c["key"]: c["cluster_id"] for c in _load("clusters.jsonl")}
+    vk.write_text(cur_ver, encoding="utf-8")
+    used = {int(v[1:]) for v in old_ids.values() if re.fullmatch(r"C\d{4,}", v)}
+    used = used if old_ids else set()
+    nxt = max(used, default=0)
+
+    def cid_for(k):
+        nonlocal nxt
+        if k in old_ids:
+            return old_ids[k]
+        nxt += 1
+        old_ids[k] = f"C{nxt:04d}"
+        return f"C{nxt:04d}"
+
     crows = []
-    for i, (k, items) in enumerate(ordered, 1):
-        cid = f"C{i:04d}"
+    for k, items in sorted(clusters.items(), key=lambda kv: (-len(kv[1]), kv[0])):
         prices = sorted(x["price"] for x in items if x["price"] > 0)
         crows.append({
-            "cluster_id": cid, "key": k, "n_titles": len({x["title"] for x in items}),
-            "n_listings": len(items),
+            "cluster_id": cid_for(k), "key": k,
+            "n_titles": len({x["title"] for x in items}), "n_listings": len(items),
+            "n_pending": sum(1 for x in items if x["id"] not in decided),
+            "priors": dict(Counter(x["tier"] for x in items)),
             "stores": dict(Counter(x["store"] for x in items)),
             "median_price": prices[len(prices) // 2] if prices else 0,
             "signal_hit": items[0].get("signal_hit"),
             "samples": [{"id": x["id"], "title": x["title"], "price": x["price"],
                          "store": x["store"], "category": x.get("category"),
-                         "condition": x.get("condition")}
+                         "condition": x.get("condition"), "tier": x["tier"]}
                         for x in sorted(items, key=lambda z: -z["price"])[:args.samples]],
             "member_ids": [x["id"] for x in items],
         })
+    # cid ها را بعد از تخصیص کامل، به‌ترتیب بزرگی بازنویسی نکن — فقط فایل را بنویس
     with open(REVIEW / "clusters.jsonl", "w", encoding="utf-8") as f:
         for c in crows:
             f.write(json.dumps(c, ensure_ascii=False) + "\n")
 
+    pend_clusters = [c for c in crows if c["n_pending"] > 0]
     print("=" * 62)
-    print("🧭 صف ساخته شد")
+    print("🧭 صف ساخته شد — همه‌ی آگهی‌ها در حوزه‌ی بازبینی‌اند")
     print("=" * 62)
     for t in ("L0_human", "L1_inherit", "L2_ai_cache", "L3_queue"):
-        print(f"   {t:<13} {tiers[t]:>7,} آگهی")
-    print(f"\n   خوشه‌ها: {len(crows):,} (روی {tiers['L3_queue']:,} آگهی صف)")
-    tot = sum(c["n_titles"] for c in crows)
+        n = sum(1 for x in queue if x["tier"] == t)
+        d = sum(1 for x in queue if x["tier"] == t and x["id"] in decided)
+        print(f"   {t:<13} {n:>7,} آگهی   (تصمیم‌گرفته {d:,} · باقی {n - d:,})")
+    print(f"\n   کل: {len(queue):,} آگهی · تصمیم‌گرفته {len(decided):,} "
+          f"· باقی {len(queue) - len(decided):,}  ({len(decided) / len(queue) * 100:.1f}٪)")
+    print(f"\n   خوشه‌ها: {len(crows):,} — با کار باقی‌مانده: {len(pend_clusters):,}")
+    print(f"   عنوان‌های یکتا: {len({x['title'] for x in queue}):,}")
     for n in (50, 100, 200, 400):
-        cov = sum(c["n_titles"] for c in crows[:n])
-        print(f"     {n:>4} خوشه‌ی بزرگ → {cov:,} عنوان ({cov / tot * 100:.0f}٪)")
+        cov = sum(c["n_pending"] for c in pend_clusters[:n])
+        tot = sum(c["n_pending"] for c in pend_clusters) or 1
+        print(f"     {n:>4} خوشه‌ی بزرگ → {cov:,} آگهی باقی‌مانده ({cov / tot * 100:.0f}٪)")
     print(f"\n   📁 {REVIEW}")
 
 
@@ -194,19 +241,23 @@ def _load(name):
 
 
 def _decided_ids():
-    """id های آگهی‌هایی که قبلاً تصمیم گرفته‌اند (مستقیم یا از راه خوشه)."""
+    """id های آگهی‌هایی که قبلاً تصمیم گرفته‌اند.
+
+    برای تصمیم‌های خوشه‌ای از `affected_ids` (عکس لحظه‌ی ثبت) استفاده می‌شود،
+    نه عضویت فعلی خوشه — وگرنه وقتی خوشه بعداً بزرگ‌تر شود، رأی قدیمی بی‌آنکه
+    اعضایش خوانده شده باشند گسترش پیدا می‌کند.
+    """
     clusters = {c["cluster_id"]: c for c in _load("clusters.jsonl")}
     out = {}
     for d in _load("decisions.jsonl"):
         if d.get("scope") == "cluster":
-            c = clusters.get(d["ref"])
-            if c:
-                for i in c["member_ids"]:
-                    out[i] = d
-        elif d.get("scope") == "title":
-            out[d["ref"]] = d
-        elif d.get("scope") == "id":
-            out[d["ref"]] = d
+            ids = d.get("affected_ids") or clusters.get(d["ref"], {}).get("member_ids", [])
+        elif d.get("scope") in ("title", "id"):
+            ids = [d["ref"]]
+        else:
+            continue
+        for i in ids:
+            out[i] = d
     return out
 
 
@@ -218,28 +269,24 @@ def cmd_status(args):
     clusters = _load("clusters.jsonl")
     dec = _load("decisions.jsonl")
     decided = _decided_ids()
-    q = [x for x in queue if x["tier"] == "L3_queue"]
-    done = [x for x in q if x["id"] in decided]
-    cdone = {d["ref"] for d in dec if d.get("scope") == "cluster"}
-    tdone = {d["ref"] for d in dec if d.get("scope") == "title"}
+    done = [x for x in queue if x["id"] in decided]
 
     print("=" * 62)
-    print("📊 وضعیت بازبینی")
+    print("📊 وضعیت بازبینی — همه‌ی آگهی‌ها در حوزه")
     print("=" * 62)
     print(f"   کل آگهی‌ها:            {len(queue):>7,}")
     for t in ("L0_human", "L1_inherit", "L2_ai_cache", "L3_queue"):
-        n = sum(1 for x in queue if x["tier"] == t)
-        print(f"     {t:<13} {n:>7,}")
-    print(f"\n   صف واقعی:             {len(q):>7,} آگهی")
-    print(f"   تصمیم‌گرفته‌شده:        {len(done):>7,}  ({len(done) / max(1, len(q)) * 100:.1f}٪)")
-    print(f"   باقی‌مانده:            {len(q) - len(done):>7,}")
-    print(f"\n   خوشه‌ها: {len(cdone):,} از {len(clusters):,} تصمیم گرفته شده")
-    print(f"   عنوان‌های منفرد: {len(tdone):,}")
+        rows = [x for x in queue if x["tier"] == t]
+        d = sum(1 for x in rows if x["id"] in decided)
+        print(f"     {t:<13} {len(rows):>7,}   تصمیم {d:>6,}   باقی {len(rows) - d:>6,}")
+    print(f"\n   تصمیم‌گرفته‌شده:        {len(done):>7,}  ({len(done) / len(queue) * 100:.1f}٪)")
+    print(f"   باقی‌مانده:            {len(queue) - len(done):>7,}")
+    print(f"\n   خوشه‌ها: {len(clusters):,} کل · "
+          f"{sum(1 for c in clusters if c['n_pending'] > 0):,} با کار باقی‌مانده")
     print(f"   کل رکوردهای دفترکل: {len(dec):,}")
     if dec:
-        kinds = Counter((d["decision"], d.get("scope")) for d in dec)
         print("\n   تفکیک تصمیم‌ها:")
-        for (dd, sc), n in kinds.most_common():
+        for (dd, sc), n in Counter((d["decision"], d.get("scope")) for d in dec).most_common():
             print(f"     {dd:<13} ({sc}) {n:>6,}")
     audits = [d for d in dec if d.get("scope") == "audit"]
     if audits:
@@ -248,60 +295,101 @@ def cmd_status(args):
 
 
 # ----------------------------------------------------------------------------
+def cmd_flat(args):
+    """بسته‌ی تخت: آگهی‌ها یکی‌یکی، بدون خوشه — همان چیزی که صاحب داده خواست.
+
+    ترتیب پایدار (سایت، بعد دسته‌ی حدسی، بعد قیمت نزولی) تا سیاست‌ها در طول
+    بسته یکدست بماند و نشست بعدی دقیقاً از همان‌جا ادامه پیدا کند.
+    """
+    queue = _load("queue.jsonl")
+    if not queue:
+        print("❌ اول build را اجرا کن")
+        return
+    decided = _decided_ids()
+    todo = [x for x in queue if x["id"] not in decided]
+    todo.sort(key=lambda x: (x["store"] or "", x.get("tier", ""), -x["price"], x["id"]))
+    if not todo:
+        print("✅ هیچ آگهی باقی‌مانده‌ای نیست")
+        return
+    start = (args.packet - 1) * args.rows
+    chunk = todo[start:start + args.rows]
+    if not chunk:
+        print(f"✅ بسته‌ی {args.packet} وجود ندارد — "
+              f"{(len(todo) + args.rows - 1) // args.rows} بسته کار باقی است")
+        return
+    npk = (len(todo) + args.rows - 1) // args.rows
+    print(f"# PACKET {args.packet:04d} — {len(chunk)} آگهی از {len(todo):,} باقی‌مانده "
+          f"({npk} بسته در کل)")
+    print("# قالب پاسخ:  <id> v|j|s|u [category] [# دلیل]")
+    print(f"# سایت: {chunk[0]['store']}")
+    for x in chunk:
+        print(f'{x["id"]} | {x["title"][:70]} | {x["price"]:,} | {x.get("condition") or "-"} '
+              f'| {prior_tag(x)}')
+
+
 def cmd_next(args):
+    """بسته‌ی بعدی کار: خوشه‌هایی که هنوز عضو تصمیم‌نگرفته دارند.
+
+    هیچ خوشه‌ای به‌خاطر برچسب انسانی/AI رد نمی‌شود؛ برچسب فقط کنار هر آگهی
+    به‌عنوان شاهد چاپ می‌شود و رأی نهایی را بازبین می‌دهد.
+    """
     clusters = _load("clusters.jsonl")
     if not clusters:
         print("❌ اول build را اجرا کن")
         return
+    queue_by_id = {x["id"]: x for x in _load("queue.jsonl")}
     decided = _decided_ids()
-    dec_refs = {d["ref"] for d in _load("decisions.jsonl")}
-    todo = [c for c in clusters if c["cluster_id"] not in dec_refs and c["n_listings"] > 1]
-    singles = [c for c in clusters if c["n_listings"] == 1 and c["cluster_id"] not in dec_refs]
+    todo = sorted((c for c in clusters if c["n_pending"] > 0), key=lambda c: -c["n_pending"])
+    if not todo:
+        print("✅ هیچ کار باقی‌مانده‌ای نیست")
+        return
 
-    packets, cur, cur_n = [], [], 0
+    packets, cur, cur_rows = [], [], 0
     for c in todo:
         cur.append(c)
-        cur_n += c["n_titles"]
-        if len(cur) >= args.clusters or cur_n >= args.max_titles:
+        cur_rows += c["n_pending"]
+        if len(cur) >= args.clusters or cur_rows >= args.max_rows:
             packets.append(cur)
-            cur, cur_n = [], 0
+            cur, cur_rows = [], 0
     if cur:
         packets.append(cur)
 
-    n = args.packet
-    if n > len(packets):
-        # دم بلند: بسته‌های تک‌عنوانی
-        start = (n - len(packets) - 1) * args.max_titles
-        chunk = singles[start:start + args.max_titles]
-        if not chunk:
-            print("✅ هیچ کار باقی‌مانده‌ای نیست")
-            return
-        print(f"# PACKET {n:04d} — {len(chunk)} عنوان منفرد")
-        print('خروجی: {"decisions":[{"cluster":"C0123","decision":"verify","category":"desktop-pc"},'
-              '{"cluster":"C0124","decision":"junk","reason":"..."}]}')
-        for c in chunk:
-            s = c["samples"][0]
-            print(f'[{c["cluster_id"]}] {s["title"]}  |  {s["price"]:,}  |  {s["store"]}  |  {s.get("condition") or "-"}')
+    if args.packet > len(packets):
+        print(f"✅ بسته‌ی {args.packet} وجود ندارد — {len(packets)} بسته کار باقی است")
         return
 
-    pkt = packets[n - 1]
-    print(f"# PACKET {n:04d} — {len(pkt)} خوشه، پوشش {sum(c['n_titles'] for c in pkt):,} عنوان "
-          f"/ {sum(c['n_listings'] for c in pkt):,} آگهی")
+    pkt = packets[args.packet - 1]
+    rows = sum(c["n_pending"] for c in pkt)
+    print(f"# PACKET {args.packet:04d} — {len(pkt)} خوشه / {rows:,} آگهی "
+          f"(بسته‌های باقی‌مانده: {len(packets):,})")
     print("")
-    print("تصمیم برای هر خوشه (دقیقاً یکی):")
-    print('  verify       → کالای اصلی واقعی است (+ category درست اگر لازم است)')
-    print('  junk         → چرت/جانبی/خارج از حوزه (+ reason فارسی)')
-    print('  set-category → اصلی است ولی دسته‌اش غلط است (+ category)')
-    print('  split        → خوشه یکدست نیست؛ باید خرد شود (من اعضا را جدا می‌فرستم)')
+    print("تصمیم برای هر خوشه (دقیقاً یکی) — اگر اعضا یکدست نبود، تصمیم آگهی‌به‌آگهی بده:")
+    print("  verify       → کالای اصلی واقعی (+ category درست)")
+    print("  junk         → حذف (+ reason فارسی)   ·   set-category → فقط اصلاح دسته")
+    print("  uncertain    → قابل قضاوت نیست، از دیتاست بیرون می‌رود (+ reason)")
+    print('  برای آگهی خاص: {"id": 12345, "decision": "junk", "reason": "..."}')
     print("")
     for c in pkt:
-        sig = f"  ⚑ سیگنال: «{c['signal_hit']}»" if c.get("signal_hit") else ""
-        print(f'[{c["cluster_id"]}] {c["n_titles"]} عنوان / {c["n_listings"]} آگهی  '
-              f'میانه قیمت {c["median_price"]:,}  سایت‌ها {c["stores"]}{sig}')
-        for s in c["samples"]:
-            print(f'    - {s["title"][:100]}  |  {s["price"]:,}  |  {s["store"]}  |  {s.get("condition") or "-"}')
+        sig = f"  ⚑ «{c['signal_hit']}»" if c.get("signal_hit") else ""
+        print(f'[{c["cluster_id"]}] {c["n_titles"]} عنوان / {c["n_listings"]} آگهی · '
+              f'باقی {c["n_pending"]} · میانه {c["median_price"]:,} · {c["priors"]}{sig}')
+        pend = [queue_by_id[i] for i in c["member_ids"] if i in queue_by_id and i not in decided]
+        if len(pend) > args.max_per_cluster:
+            pr = sorted(x["price"] for x in pend if x["price"] > 0)
+            cond = Counter(x.get("condition") or "-" for x in pend)
+            pr2 = Counter(x.get("tier") for x in pend)
+            print(f"    ▸ {len(pend)} عضو | قیمت min/میانه/max = "
+                  f"{pr[0]:,}/{pr[len(pr) // 2]:,}/{pr[-1]:,}" if pr else f"    ▸ {len(pend)} عضو | بدون قیمت")
+            print(f"    ▸ وضعیت: {dict(cond.most_common(4))} | شاهد: {dict(pr2)}")
+        shown = pend[:args.max_per_cluster]
+        for x in sorted(shown, key=lambda z: -z["price"]):
+            print(f'    · {x["id"]} | {x["title"][:64]} | {x["price"]:,} | {x["store"]} | '
+                  f'{x.get("condition") or "-"} | {prior_tag(x)}')
+        if len(pend) > len(shown):
+            print(f"    … {len(pend) - len(shown)} آگهی دیگر (اگر خوشه یکدست است "
+                  f'خوشه‌ای رأی بده، وگرنه "split")')
         print("")
-    print('قالب پاسخ: {"decisions":[{"cluster":"C0001","decision":"verify","category":"desktop-pc"}, ...]}')
+    print('قالب پاسخ: {"decisions":[{"cluster":"C0123","decision":"verify","category":"watch"}, ...]}')
 
 
 # ----------------------------------------------------------------------------
@@ -320,13 +408,9 @@ def cmd_report(args):
         if d:
             return {"verify": "clean", "set-category": "clean",
                     "junk": "junk", "uncertain": "excluded"}[d["decision"]]
-        return {
-            "L0_human": "clean" if x["status"] == "VERIFIED" else "junk",
-            "L1_inherit": "pending", "L2_ai_cache": "pending", "L3_queue": "pending",
-        }[x["tier"]]
+        return "pending"   # برچسب قبلی رأی نیست — تا بازبین تصمیم ندهد، بررسی‌نشده است
 
     tot = Counter(bucket(x) for x in queue)
-    byq = Counter(bucket(x) for x in q)
     mine = Counter()
     for x in queue:
         d = decided.get(x["id"])
@@ -335,7 +419,7 @@ def cmd_report(args):
                   "junk": "junk", "uncertain": "excluded"}[d["decision"]]] += 1
 
     print("=" * 62)
-    print("📋 خلاصه‌ی بازبینی داده")
+    print("📋 خلاصه‌ی بازبینی داده — همه‌ی آگهی‌ها در حوزه")
     print("=" * 62)
     print(f"  کل آگهی‌ها:                 {len(queue):>8,}")
     print(f"    ├─ تمیز (clean):         {tot['clean']:>8,}")
@@ -344,15 +428,21 @@ def cmd_report(args):
     print(f"    └─ هنوز بررسی‌نشده:       {tot['pending']:>8,}")
     print(f"\n  پوشش بازبینی: {(len(queue) - tot['pending']) / len(queue) * 100:.1f}٪ "
           f"({len(queue) - tot['pending']:,} از {len(queue):,})")
-    print(f"\n  از صف واقعی ({len(q):,} آگهی):")
-    for k in ("clean", "junk", "excluded", "pending"):
-        print(f"    {k:<10} {byq[k]:>7,}  ({byq[k] / len(q) * 100:.1f}٪)")
+    print("\n  باقی‌مانده به تفکیک برچسب قبلی (فقط شاهد است، پذیرفته نشده):")
+    for t in ("L0_human", "L1_inherit", "L2_ai_cache", "L3_queue"):
+        rows = [x for x in queue if x["tier"] == t and x["id"] not in decided]
+        v = sum(1 for x in rows if x["status"] == "VERIFIED")
+        print(f"    {t:<13} {len(rows):>7,}   (برچسب قبلی‌شان: {v:,} تأیید · {len(rows) - v:,} رد)")
     print(f"\n  تصمیم‌های این ایجنت: {sum(mine.values()):,} آگهی "
           f"(clean {mine['clean']:,} · junk {mine['junk']:,} · excluded {mine['excluded']:,})")
+    dec = [d for d in _load("decisions.jsonl") if d.get("scope") != "audit"]
     print(f"  رکوردهای دفترکل: {len(dec):,}")
     modes = Counter(d.get("review_mode") or ("cluster" if d.get("scope") == "cluster" else "per_listing")
                     for d in dec)
     print(f"  حالت بازبینی: {dict(modes)}")
+    clusters = _load("clusters.jsonl")
+    print(f"  خوشه‌های با کار باقی‌مانده: "
+          f"{sum(1 for c in clusters if c['n_pending'] > 0):,} از {len(clusters):,}")
     audits = [d for d in _load("decisions.jsonl") if d.get("scope") == "audit"]
     if audits:
         ok = sum(1 for a in audits if a.get("agree"))
@@ -437,13 +527,54 @@ def cmd_scan(args):
         print(f"\n  📁 لیست کامل: {out}")
 
 
+DSL_DOC = """قالب فشرده (هر خط یک تصمیم):
+   <ref> <d> [category] [# دلیل/یادداشت]      ·  ref = id عددی یا Cxxxx
+   d: v=verify · j=junk · s=set-category · u=uncertain
+   مثال:  1234 v laptop   |   1235 j # لوازم جانبی   |   C0001 v watch
+"""
+
+
+def parse_dsl(text):
+    """تبدیل قالب فشرده به همان ساختار JSON تصمیم‌ها."""
+    out = []
+    for ln, line in enumerate(text.splitlines(), 1):
+        line = line.split("//")[0].strip()
+        if not line or line.startswith("#") and " " not in line.strip("# "):
+            continue
+        note = ""
+        if "#" in line:
+            line, note = line.split("#", 1)
+            line, note = line.strip(), note.strip()
+        if not line:
+            continue
+        parts = line.split()
+        if len(parts) < 2:
+            raise ValueError(f"خط {ln}: «{line}» — قالب: <ref> <d> [category] [# دلیل]")
+        ref, d = parts[0], parts[1].lower()
+        cat = parts[2] if len(parts) > 2 else None
+        m = {"v": "verify", "j": "junk", "s": "set-category", "u": "uncertain"}
+        if d not in m:
+            raise ValueError(f"خط {ln}: کد نامعتبر «{d}» (v/j/s/u)")
+        ref = int(ref) if ref.isdigit() else ref
+        row = {"cluster" if isinstance(ref, str) else "id": ref,
+               "decision": m[d], "category": cat}
+        if note:
+            row["reason" if m[d] in ("junk", "uncertain") else "note"] = note
+        out.append(row)
+    return out
+
+
 def cmd_apply(args):
     path = Path(args.file)
     if not path.exists():
         print(f"❌ {path} پیدا نشد")
         sys.exit(1)
-    data = json.loads(path.read_text(encoding="utf-8"))
-    rows = data.get("decisions", data) if isinstance(data, dict) else data
+    raw = path.read_text(encoding="utf-8")
+    if path.suffix in (".txt", ".dsl") or not raw.lstrip().startswith(("{", "[")):
+        rows = parse_dsl(raw)
+    else:
+        data = json.loads(raw)
+        rows = data.get("decisions", data) if isinstance(data, dict) else data
     clusters = {c["cluster_id"]: c for c in _load("clusters.jsonl")}
     if not clusters:
         print("❌ اول build را اجرا کن")
@@ -480,6 +611,10 @@ def cmd_apply(args):
             ids = [x["id"] for x in queue_by_id.values() if x["title"] == ref]
         if not ids:
             errs.append((i, f"{ref}: هیچ آگهی‌ای مطابقت نکرد"))
+            continue
+        missing = [x for x in ids if x not in queue_by_id]
+        if missing:
+            errs.append((i, f"{ref}: {len(missing)} آگهی در صف نیست (نمونه {missing[:3]})"))
             continue
         ok.append({
             "ts": datetime.now().isoformat(timespec="seconds"),
@@ -568,7 +703,7 @@ def main():
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
     b = sub.add_parser("build")
-    b.add_argument("--samples", type=int, default=4)
+    b.add_argument("--samples", type=int, default=6)
     b.set_defaults(fn=cmd_build)
     s = sub.add_parser("status")
     s.set_defaults(fn=cmd_status)
@@ -576,7 +711,14 @@ def main():
     n.add_argument("--packet", type=int, default=1)
     n.add_argument("--clusters", type=int, default=25)
     n.add_argument("--max-titles", type=int, default=250)
+    n.add_argument("--max-rows", type=int, default=140, help="حداکثر آگهی در هر بسته")
+    n.add_argument("--max-per-cluster", type=int, default=25,
+                   help="حداکثر آگهی که از هر خوشه چاپ می‌شود")
     n.set_defaults(fn=cmd_next)
+    f = sub.add_parser("flat")
+    f.add_argument("--packet", type=int, default=1)
+    f.add_argument("--rows", type=int, default=250)
+    f.set_defaults(fn=cmd_flat)
     r = sub.add_parser("report")
     r.set_defaults(fn=cmd_report)
     m = sub.add_parser("members")

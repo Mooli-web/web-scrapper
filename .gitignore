@@ -123,3 +123,6 @@ test_*.local.*
 3_torob_windows/torob_products.json
 # NOTE: خط «3_torob_windows/» که کل پوشه را ignore می‌کرد حذف شد — کد خزنده‌ی ترب
 # فقط روی دیسک لوکال بود و در گیت پشتیبان نداشت. موارد سنگین بالا ignore می‌مانند.
+# artifacts بزرگ و بازتولیدپذیر بازبینی
+5_unified_local_hub/exports/review/clusters.jsonl
+5_unified_local_hub/exports/review/cluster_key.version
