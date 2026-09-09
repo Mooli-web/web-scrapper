@@ -1,0 +1,1172 @@
+{
+ "packet": "fake-sweep",
+ "policy": "own-brand-without-brand-claim => keep",
+ "decisions": [
+  {
+   "id": 79,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 102,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 150,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 274,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 360,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 416,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 2199,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 2927,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 2949,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 2984,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 3007,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 3018,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 3023,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 6183,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 6690,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 6829,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 6932,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 7161,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 8825,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 8837,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 8839,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 8888,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 8902,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 8930,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 8998,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 9158,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 9604,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 9609,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 9612,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 9630,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 9663,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 9665,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 9680,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 9707,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 9711,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 9722,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 9743,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 10056,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 10564,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 10683,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 10826,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 10880,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 10963,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 11089,
+   "decision": "junk",
+   "reason": "لوازم جانبی — نه کالای اصلی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 11234,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 11349,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 11396,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 11456,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 11546,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 11780,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 33747,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 35202,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 36243,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 37339,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 37372,
+   "decision": "junk",
+   "reason": "لوازم جانبی — نه کالای اصلی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 37540,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 37558,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 37562,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 37678,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 37679,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 37911,
+   "decision": "junk",
+   "reason": "لوازم جانبی — نه کالای اصلی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 37976,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 38633,
+   "decision": "junk",
+   "reason": "لوازم جانبی — نه کالای اصلی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 38736,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 38743,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 38751,
+   "decision": "junk",
+   "reason": "لوازم جانبی — نه کالای اصلی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 38767,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 38820,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 39007,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 50022,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 76546,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 240119,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 259194,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 259264,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 259475,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 259476,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 259496,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 299651,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 340196,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 379344,
+   "decision": "junk",
+   "reason": "ادعای اپل‌واچ روی مدل کپی — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 379349,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 379355,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 379368,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 379381,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 418447,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 418462,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 418475,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 418504,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 457686,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 457722,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 457727,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 528427,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 528456,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 528645,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 601510,
+   "decision": "junk",
+   "reason": "لوازم جانبی — نه کالای اصلی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 749446,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 822800,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 822801,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 895475,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1078350,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1114377,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1114966,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1117528,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1187839,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1215293,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 1215689,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 1217637,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 1218162,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 1221272,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 1224889,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 1225692,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1226986,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1227082,
+   "decision": "junk",
+   "reason": "ادعای اپل‌واچ روی مدل کپی — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1227289,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1227490,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1228728,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1251815,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1251885,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1251888,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1251889,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1347062,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1421104,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1421185,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1421216,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1421233,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1457205,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1457296,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1457321,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1483706,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "برند مستقل (ویرفیت/کیکویر/کینگ‌ویر/هواهنگ/اچ‌کا) بدون ادعای اپل → طبق سیاست می‌ماند"
+  },
+  {
+   "id": 1490837,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1490838,
+   "decision": "junk",
+   "reason": "ادعای اپل‌واچ روی مدل کپی — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1490886,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1490896,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1520090,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1591782,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1596943,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1616831,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1617019,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1617663,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1617967,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1618215,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1618218,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1618480,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1618753,
+   "decision": "junk",
+   "reason": "لوازم جانبی — نه کالای اصلی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1619512,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1619561,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1619562,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1619570,
+   "decision": "junk",
+   "reason": "لوازم جانبی — نه کالای اصلی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1619644,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1619647,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1619652,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1619653,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1619659,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1619854,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1620161,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1621174,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1621340,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1621536,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1621683,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1621693,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1621787,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1621790,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1621805,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1622085,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1639004,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1660687,
+   "decision": "junk",
+   "reason": "طرح برند دیگر (سیکو) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1661583,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1661617,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1706386,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1706900,
+   "decision": "junk",
+   "reason": "طرح برند دیگر (سیکو) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1706902,
+   "decision": "junk",
+   "reason": "طرح برند دیگر (سیکو) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1706907,
+   "decision": "junk",
+   "reason": "طرح برند دیگر (سیکو) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1707995,
+   "decision": "junk",
+   "reason": "خارج از حوزه (پوشاک)",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1708022,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1759672,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1783504,
+   "decision": "junk",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1813534,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1816928,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1824373,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1824611,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1828483,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1829073,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1829084,
+   "decision": "junk",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1829087,
+   "decision": "junk",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing"
+  },
+  {
+   "id": 1806590,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "Haino Teko برند مستقل است و ادعای اپل ندارد → می‌ماند"
+  },
+  {
+   "id": 1661580,
+   "decision": "verify",
+   "category": "watch",
+   "review_mode": "per_listing",
+   "note": "سری HK بدون ادعای برند دیگر → طبق سیاست می‌ماند"
+  }
+ ]
+}

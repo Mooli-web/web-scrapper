@@ -16,6 +16,11 @@
 سیاست برچسب‌گذاری (تصمیم‌شده توسط صاحب داده، ۱۴۰۴/۰۶/۱۸):
   • کالای «طرح / کپی / های‌کپی / فیک / replica» = junk و حذف می‌شود، حتی اگر
     سخت‌افزار واقعی باشد — چون مقایسه‌ی قیمت و آموزش مدل را آلوده می‌کند.
+    ⭕ استثنا (تصمیم نهایی صاحب داده): اگر کالا برند مستقلِ خودش را دارد و
+    هیچ ادعایی روی برند/طرح دیگری ندارد (مثلاً «ساعت ویرفیت مدل HK10 PRO MAX»
+    یا «Haino Teko G8») → می‌ماند و verify است. ملاک «ادعای برند دیگر» است،
+    نه شباهت ظاهری. آنچه junk می‌شود: «طرح اپل واچ»، «آیفون فول کپی»،
+    «مک بوک های‌کپی»، «ساعت طرح سیکو»، «آیفون فیک».
   • هر آگهی جدا قضاوت می‌شود: «شرایط» (condition) و قیمت هر آگهی می‌تواند با
     هم‌خوشه‌هایش فرق کند. تصمیم خوشه‌ای فقط وقتی مجاز است که ۱۰۰٪ اعضا خوانده
     شده باشند و یکدست باشند؛ در دفترکل با review_mode ثبت می‌شود.
@@ -300,6 +305,60 @@ def cmd_next(args):
 
 
 # ----------------------------------------------------------------------------
+def cmd_report(args):
+    """خلاصه‌ی نهایی: چند آگهی هست و چند تا بررسی/دسته‌بندی/حذف شده."""
+    queue = _load("queue.jsonl")
+    if not queue:
+        print("❌ اول build را اجرا کن")
+        return
+    decided = _decided_ids()
+    dec = [d for d in _load("decisions.jsonl") if d.get("scope") != "audit"]
+    q = [x for x in queue if x["tier"] == "L3_queue"]
+
+    def bucket(x):
+        d = decided.get(x["id"])
+        if d:
+            return {"verify": "clean", "set-category": "clean",
+                    "junk": "junk", "uncertain": "excluded"}[d["decision"]]
+        return {
+            "L0_human": "clean" if x["status"] == "VERIFIED" else "junk",
+            "L1_inherit": "pending", "L2_ai_cache": "pending", "L3_queue": "pending",
+        }[x["tier"]]
+
+    tot = Counter(bucket(x) for x in queue)
+    byq = Counter(bucket(x) for x in q)
+    mine = Counter()
+    for x in queue:
+        d = decided.get(x["id"])
+        if d:
+            mine[{"verify": "clean", "set-category": "clean",
+                  "junk": "junk", "uncertain": "excluded"}[d["decision"]]] += 1
+
+    print("=" * 62)
+    print("📋 خلاصه‌ی بازبینی داده")
+    print("=" * 62)
+    print(f"  کل آگهی‌ها:                 {len(queue):>8,}")
+    print(f"    ├─ تمیز (clean):         {tot['clean']:>8,}")
+    print(f"    ├─ حذف‌شده (junk):        {tot['junk']:>8,}")
+    print(f"    ├─ کنارگذاشته (uncertain):{tot['excluded']:>8,}")
+    print(f"    └─ هنوز بررسی‌نشده:       {tot['pending']:>8,}")
+    print(f"\n  پوشش بازبینی: {(len(queue) - tot['pending']) / len(queue) * 100:.1f}٪ "
+          f"({len(queue) - tot['pending']:,} از {len(queue):,})")
+    print(f"\n  از صف واقعی ({len(q):,} آگهی):")
+    for k in ("clean", "junk", "excluded", "pending"):
+        print(f"    {k:<10} {byq[k]:>7,}  ({byq[k] / len(q) * 100:.1f}٪)")
+    print(f"\n  تصمیم‌های این ایجنت: {sum(mine.values()):,} آگهی "
+          f"(clean {mine['clean']:,} · junk {mine['junk']:,} · excluded {mine['excluded']:,})")
+    print(f"  رکوردهای دفترکل: {len(dec):,}")
+    modes = Counter(d.get("review_mode") or ("cluster" if d.get("scope") == "cluster" else "per_listing")
+                    for d in dec)
+    print(f"  حالت بازبینی: {dict(modes)}")
+    audits = [d for d in _load("decisions.jsonl") if d.get("scope") == "audit"]
+    if audits:
+        ok = sum(1 for a in audits if a.get("agree"))
+        print(f"  ممیزی کور: {ok}/{len(audits)} = {ok / len(audits) * 100:.0f}٪")
+
+
 def cmd_members(args):
     """همه‌ی اعضای یک خوشه با id — برای قضاوت آگهی‌به‌آگهی."""
     clusters = {c["cluster_id"]: c for c in _load("clusters.jsonl")}
@@ -518,6 +577,8 @@ def main():
     n.add_argument("--clusters", type=int, default=25)
     n.add_argument("--max-titles", type=int, default=250)
     n.set_defaults(fn=cmd_next)
+    r = sub.add_parser("report")
+    r.set_defaults(fn=cmd_report)
     m = sub.add_parser("members")
     m.add_argument("--clusters", required=True)
     m.set_defaults(fn=cmd_members)
