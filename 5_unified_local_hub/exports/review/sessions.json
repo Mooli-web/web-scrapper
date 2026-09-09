@@ -1,10 +1,69 @@
 [
- {"session": "S01", "label": "بسته‌ی خوشه‌ای ۱ — خوشه‌های C0001 تا C0008", "files": ["decisions_0001.json"]},
- {"session": "S02", "label": "سیاست حذف کالای طرح/فیک + اصلاح بسته‌ی ۱", "files": ["decisions_0002.json"]},
- {"session": "S03", "label": "پویش کامل ۱۸۴ کاندیدای فیک، آگهی‌به‌آگهی", "files": ["decisions_0003.json"]},
- {"session": "S04", "label": "صف روی همه‌ی آگهی‌ها + بسته‌ی تخت ۱", "files": ["decisions_0004.dsl"]},
- {"session": "S05", "label": "توافق روی روش کار (بدون تصمیم)", "files": []},
- {"session": "S06", "label": "مرحله‌ی ۰: فیلترهای مکانیکی + بسته‌ی تخت ۲ + بازطبقه‌ی خارج‌ازحوزه", "files": ["decisions_0005_stage0.json", "decisions_0006_flat02.dsl", "decisions_0007_oos_reclass.json", "decisions_0008_backfill_codes.json"]},
- {"session": "S07", "label": "بسته‌های تخت ۳ و ۴ — ۳۰۰ آگهی دیجی‌کالا", "files": ["decisions_0009_flat03.dsl", "decisions_0010_flat04.dsl"]},
- {"session": "S08", "label": "بسته‌های تخت ۵ و ۶ — ۳۰۰ آگهی دیجی‌کالا", "files": ["decisions_0011_flat05.dsl", "decisions_0012_flat06.dsl"]}
+ {
+  "session": "S01",
+  "label": "بسته‌ی خوشه‌ای ۱ — خوشه‌های C0001 تا C0008",
+  "files": [
+   "decisions_0001.json"
+  ]
+ },
+ {
+  "session": "S02",
+  "label": "سیاست حذف کالای طرح/فیک + اصلاح بسته‌ی ۱",
+  "files": [
+   "decisions_0002.json"
+  ]
+ },
+ {
+  "session": "S03",
+  "label": "پویش کامل ۱۸۴ کاندیدای فیک، آگهی‌به‌آگهی",
+  "files": [
+   "decisions_0003.json"
+  ]
+ },
+ {
+  "session": "S04",
+  "label": "صف روی همه‌ی آگهی‌ها + بسته‌ی تخت ۱",
+  "files": [
+   "decisions_0004.dsl"
+  ]
+ },
+ {
+  "session": "S05",
+  "label": "توافق روی روش کار (بدون تصمیم)",
+  "files": []
+ },
+ {
+  "session": "S06",
+  "label": "مرحله‌ی ۰: فیلترهای مکانیکی + بسته‌ی تخت ۲ + بازطبقه‌ی خارج‌ازحوزه",
+  "files": [
+   "decisions_0005_stage0.json",
+   "decisions_0006_flat02.dsl",
+   "decisions_0007_oos_reclass.json",
+   "decisions_0008_backfill_codes.json"
+  ]
+ },
+ {
+  "session": "S07",
+  "label": "بسته‌های تخت ۳ و ۴ — ۳۰۰ آگهی دیجی‌کالا",
+  "files": [
+   "decisions_0009_flat03.dsl",
+   "decisions_0010_flat04.dsl"
+  ]
+ },
+ {
+  "session": "S08",
+  "label": "بسته‌های تخت ۵ و ۶ — ۳۰۰ آگهی دیجی‌کالا",
+  "files": [
+   "decisions_0011_flat05.dsl",
+   "decisions_0012_flat06.dsl"
+  ]
+ },
+ {
+  "session": "S09",
+  "label": "بسته‌های تخت ۷ و ۸ — ۳۰۰ آگهی دیجی‌کالا",
+  "files": [
+   "decisions_0013_flat07.dsl",
+   "decisions_0014_flat08.dsl"
+  ]
+ }
 ]
