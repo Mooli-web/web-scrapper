@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+env/
+venv/
+.venv/
+build/
+dist/
+
+# Node / Dashboard
+node_modules/
+dashboard/dist/
+dashboard/node_modules/
+.npm/
+.cache/
+
+# Secrets
+.env
+.env.local
+
+# Databases
+*.db
+*.sqlite
+local_crawler.db
