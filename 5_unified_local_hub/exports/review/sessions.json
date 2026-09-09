@@ -117,5 +117,14 @@
       "decisions_0029_flat19.dsl",
       "decisions_0030_flat20.dsl"
     ]
+  },
+  {
+    "session": "S16",
+    "label": "بسته‌های تخت ۲۱ و ۲۲ + اصلاح کد مدل اپل + ممیزی کور ۴",
+    "files": [
+      "decisions_0031_flat21.dsl",
+      "decisions_0032_flat22.dsl",
+      "decisions_0033_a2859_recode.dsl"
+    ]
   }
 ]
