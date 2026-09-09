@@ -853,3 +853,76 @@ class TestCaseAndRackFixes:
         for raw, title, expected in self.CASES:
             got = normalize_category(raw, title)
             assert got == expected, f"{title[:30]!r} → {got} != {expected}"
+
+
+# ---------------------------------------------------------------------------
+# نشاندن دفترکل روی دیتابیس (apply_decisions_to_db)
+# ---------------------------------------------------------------------------
+class TestApplyDecisionsToDb:
+    SCHEMA = """
+    CREATE TABLE store_listings (
+        id INTEGER PRIMARY KEY, canonical_key TEXT, title_fa TEXT,
+        is_verified INTEGER DEFAULT 0, quality_status TEXT DEFAULT '',
+        rejection_reason TEXT DEFAULT '', confidence_score REAL DEFAULT 0);
+    CREATE TABLE canonical_products (
+        canonical_key TEXT PRIMARY KEY, title_fa TEXT, category_key TEXT);
+    """
+
+    def _db(self, tmp_path):
+        import sqlite3
+        db = tmp_path / "t.db"
+        c = sqlite3.connect(db)
+        c.executescript(self.SCHEMA)
+        c.executemany(
+            "INSERT INTO store_listings (id, canonical_key, title_fa) VALUES (?,?,?)",
+            [(1, "k1", "لپ تاپ ایسوس"), (2, "k2", "تمبر پهلوی"),
+             (3, "k3", "ساعت هوشمند"), (4, "k4", "مادربرد گیگابایت"),
+             (5, "k5", "کالای بی‌تصمیم")])
+        c.executemany("INSERT INTO canonical_products (canonical_key, title_fa) VALUES (?,?)",
+                      [("k1", "لپ تاپ ایسوس"), ("k2", "تمبر پهلوی"),
+                       ("k3", "ساعت هوشمند"), ("k4", "مادربرد گیگابایت")])
+        c.commit()
+        return c
+
+    def _ledger(self, tmp_path):
+        """دفترکل ضمیمه‌ای: id 3 دو بار تصمیم گرفته و رأی دوم باید ببرد."""
+        import json
+        p = tmp_path / "d.jsonl"
+        rows = [
+            {"scope": "id", "ref": 1, "decision": "verify", "category": "laptop"},
+            {"scope": "id", "ref": 2, "decision": "junk", "reason_code": "OUT_OF_SCOPE"},
+            {"scope": "id", "ref": 3, "decision": "junk", "reason_code": "PRICE_BELOW_FLOOR"},
+            {"scope": "id", "ref": 3, "decision": "uncertain", "reason": "نامشخص"},
+            {"scope": "id", "ref": 4, "decision": "set-category", "category": "motherboard"},
+            {"scope": "audit", "ref": 5, "decision": "junk", "reason_code": "OUT_OF_SCOPE"},
+        ]
+        p.write_text("\n".join(json.dumps(r, ensure_ascii=False) for r in rows), encoding="utf-8")
+        return p
+
+    def test_projection(self, tmp_path):
+        from apply_decisions_to_db import latest_decisions, project
+        dec = latest_decisions(self._ledger(tmp_path))
+        assert set(dec) == {1, 2, 3, 4}, "ممیزی کور باید نادیده گرفته شود"
+        assert dec[3]["decision"] == "uncertain", "آخرین رأی باید ببرد"
+
+        c = self._db(tmp_path)
+        # پیش‌نمایش نباید چیزی بنویسد
+        plan, missing, _ = project(c, dec, apply=False)
+        assert c.execute("SELECT COUNT(*) FROM store_listings WHERE quality_status<>''").fetchone()[0] == 0
+        assert plan["_missing"] == 0
+
+        project(c, dec, apply=True)
+        got = dict(c.execute("SELECT id, quality_status FROM store_listings").fetchall())
+        assert got[1] == "VERIFIED"
+        assert got[2] == "CONFIRMED_JUNK"
+        assert got[3] == "NEEDS_REVIEW"
+        assert got[5] == "", "ردیف بی‌تصمیم نباید دست بخورد"
+        # هیچ ردیفی حذف نشده
+        assert c.execute("SELECT COUNT(*) FROM store_listings").fetchone()[0] == 5
+        # دلیل حذف با کد ثبت شده
+        reason = c.execute("SELECT rejection_reason FROM store_listings WHERE id=2").fetchone()[0]
+        assert reason.startswith("[OUT_OF_SCOPE]"), reason
+        # دسته روی canonical_products نشسته
+        cats = dict(c.execute("SELECT canonical_key, category_key FROM canonical_products").fetchall())
+        assert cats["k1"] == "laptop" and cats["k4"] == "motherboard"
+        assert cats["k2"] is None
