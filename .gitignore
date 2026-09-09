@@ -126,3 +126,5 @@ test_*.local.*
 # artifacts بزرگ و بازتولیدپذیر بازبینی
 5_unified_local_hub/exports/review/clusters.jsonl
 5_unified_local_hub/exports/review/cluster_key.version
+
+5_unified_local_hub/exports/review/decisions.jsonl.bak

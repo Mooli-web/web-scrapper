@@ -356,6 +356,117 @@ def prefilter_hits(todo):
     return out
 
 
+def _sessions_manifest():
+    p = REVIEW / "sessions.json"
+    return json.loads(p.read_text(encoding="utf-8")) if p.exists() else []
+
+
+def cmd_sessions(args):
+    """جدول تجمعی نشست‌ها: چه کسی، کی، چند آگهی، با چه نتیجه‌ای."""
+    if args.backfill:
+        man = _sessions_manifest()
+        if not man:
+            print(f"❌ {REVIEW / 'sessions.json'} پیدا نشد")
+            return
+        sigs = {}          # (ref, decision, code, reason[:60]) → [session,...]
+        for m in man:
+            for fn in m.get("files", []):
+                fp = REVIEW / fn
+                if not fp.exists():
+                    continue
+                raw = fp.read_text(encoding="utf-8")
+                if fn.endswith((".dsl", ".txt")):
+                    rows = parse_dsl(raw)
+                else:
+                    dd = json.loads(raw)
+                    rows = dd.get("decisions", dd) if isinstance(dd, dict) else dd
+                for r in rows:
+                    ref = r.get("cluster") or r.get("title") or r.get("id")
+                    k = (str(ref), r.get("decision"), r.get("reason_code"),
+                         (r.get("reason") or "")[:60])
+                    sigs.setdefault(k, []).append(m["session"])
+        rows = _load("decisions.jsonl")
+        hit = 0
+        for r in rows:
+            if r.get("session"):
+                hit += 1
+                continue
+            k = (str(r["ref"]), r["decision"], r.get("reason_code"), (r.get("reason") or "")[:60])
+            pool = sigs.get(k)
+            if pool:
+                r["session"] = pool.pop(0)
+                hit += 1
+        bak = REVIEW / "decisions.jsonl.bak"
+        if not bak.exists():
+            bak.write_text((REVIEW / "decisions.jsonl").read_text(encoding="utf-8"), encoding="utf-8")
+        with open(REVIEW / "decisions.jsonl", "w", encoding="utf-8") as f:
+            for r in rows:
+                f.write(json.dumps(r, ensure_ascii=False) + "\n")
+        print(f"✅ برچسب نشست روی {hit:,} از {len(rows):,} رکورد نشست "
+              f"(پشتیبان: {bak.name})")
+
+    rows = [r for r in _load("decisions.jsonl") if r.get("scope") != "audit"]
+    man = {m["session"]: m for m in _sessions_manifest()}
+    order = [m["session"] for m in _sessions_manifest()] + sorted(
+        {r["session"] for r in rows if r.get("session")} - {m["session"] for m in _sessions_manifest()})
+    lines = ["# جدول تجمعی بازبینی آگهی‌ها", "",
+             "ستون «آگهی» تعداد آگهی‌های تحت تأثیر همان نشست است؛ اگر آگهی در نشست",
+             "بعدی بازطبقه شده باشد در هر دو نشست شمرده می‌شود (وضعیت نهایی پایین آمده).", "",
+             "| نشست | شرح | آگهی | تأیید | حذف | کنار | رکورد |",
+             "|---|---|---:|---:|---:|---:|---:|"]
+    tot = Counter()
+    for s_id in order:
+        rr = [r for r in rows if r.get("session") == s_id]
+        aff = sum(r["n_affected"] for r in rr)
+        c = Counter()
+        for r in rr:
+            c[r["decision"]] += r["n_affected"]
+        tot.update(c)
+        tot["n"] += aff
+        tot["rec"] += len(rr)
+        label = man.get(s_id, {}).get("label", "—")
+        lines.append(f"| {s_id} | {label} | {aff:,} | {c['verify'] + c['set-category']:,} | "
+                     f"{c['junk']:,} | {c['uncertain']:,} | {len(rr):,} |")
+    unl = [r for r in rows if not r.get("session")]
+    if unl:
+        aff = sum(r["n_affected"] for r in unl)
+        lines.append(f"| ؟ | بدون برچسب نشست | {aff:,} | — | — | — | {len(unl):,} |")
+    lines.append(f"| **جمع** | | **{tot['n']:,}** | **{tot['verify'] + tot['set-category']:,}** | "
+                 f"**{tot['junk']:,}** | **{tot['uncertain']:,}** | **{tot['rec']:,}** |")
+    # ── وضعیت نهایی: آخرین رأی برای هر آگهی
+    queue = _load("queue.jsonl")
+    last = {}
+    for r in _load("decisions.jsonl"):
+        if r.get("scope") == "audit":
+            continue
+        for i in r.get("affected_ids") or []:
+            last[i] = r
+    fin = Counter()
+    for i in last:
+        fin[{"verify": "clean", "set-category": "clean",
+             "junk": "junk", "uncertain": "excluded"}[last[i]["decision"]]] += 1
+    lines += ["", "## وضعیت نهایی داده (آخرین رأی برای هر آگهی)", "",
+              f"- کل آگهی‌ها: **{len(queue):,}**",
+              f"- تمیز: **{fin['clean']:,}** · حذف‌شده: **{fin['junk']:,}** · "
+              f"کنارگذاشته: **{fin['excluded']:,}**",
+              f"- بررسی‌نشده: **{len(queue) - len(last):,}** "
+              f"({(len(queue) - len(last)) / len(queue) * 100:.1f}٪ باقی)",
+              f"- پوشش بازبینی: **{len(last) / len(queue) * 100:.1f}٪**",
+              f"- بسته‌های ۱۵۰ تایی باقی‌مانده: **{(len(queue) - len(last) + 149) // 150}**",
+              "", "### دسته‌ی کالاهای تأییدشده", "",
+              "| دسته | تعداد |", "|---|---:|"]
+    for c, n in Counter(last[i].get("category") for i in last
+                        if last[i]["decision"] in ("verify", "set-category")).most_common():
+        lines.append(f"| {c} | {n:,} |")
+    lines += ["", "### کد دلیل کالاهای حذف‌شده", "", "| کد | تعداد |", "|---|---:|"]
+    for c, n in Counter(last[i].get("reason_code") for i in last
+                        if last[i]["decision"] == "junk").most_common():
+        lines.append(f"| {c} | {n:,} |")
+    txt = "\n".join(lines)
+    (REVIEW / "SESSIONS.md").write_text(txt + "\n", encoding="utf-8")
+    print(txt)
+
+
 def cmd_prefilter(args):
     """مرحله‌ی ۰: حذف مکانیکی پیش از بازبینی دستی."""
     queue = _load("queue.jsonl")
@@ -718,6 +829,7 @@ def cmd_apply(args):
             "review_mode": d.get("review_mode") or ("cluster" if scope == "cluster" else "per_listing"),
             "members_read": d.get("members_read"),
             "decided_by": d.get("by") or "agent-arena",
+            "session": getattr(args, "session", None),
             "note": (d.get("note") or "")[:200],
             "n_affected": len(ids), "affected_ids": ids,
             "prev": [{"id": x, "status": queue_by_id[x]["status"],
@@ -826,6 +938,9 @@ def main():
     n.add_argument("--max-per-cluster", type=int, default=25,
                    help="حداکثر آگهی که از هر خوشه چاپ می‌شود")
     n.set_defaults(fn=cmd_next)
+    ss = sub.add_parser("sessions")
+    ss.add_argument("--backfill", action="store_true")
+    ss.set_defaults(fn=cmd_sessions)
     pf = sub.add_parser("prefilter")
     pf.add_argument("--out", default=str(REVIEW / "decisions_stage0.json"))
     pf.set_defaults(fn=cmd_prefilter)
@@ -842,6 +957,7 @@ def main():
     sc.add_argument("--dump", action="store_true")
     sc.set_defaults(fn=cmd_scan)
     a = sub.add_parser("apply")
+    a.add_argument("--session", default=None, help="برچسب نشست، مثلاً S08")
     a.add_argument("--file", required=True)
     a.set_defaults(fn=cmd_apply)
     au = sub.add_parser("audit")
