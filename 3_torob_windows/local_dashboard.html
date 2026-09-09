@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مرکز خزش و هوش آماری کاتالوگ ترب (Torob Deep Intelligence)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Vazirmatn', system-ui, -apple-system, sans-serif;
+      background-color: #030712;
+      color: #f3f4f6;
+    }
+    .glass-card {
+      background: rgba(17, 24, 39, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(55, 65, 81, 0.5);
+    }
+  </style>
+</head>
+<body class="p-4 md:p-8 min-h-screen flex flex-col justify-between selection:bg-amber-500 selection:text-slate-950">
+
+  <div class="max-w-7xl mx-auto w-full space-y-6">
+    <!-- Header -->
+    <header class="glass-card rounded-3xl p-6 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 shadow-2xl">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-500 to-rose-500 flex items-center justify-center text-slate-950 shadow-lg shadow-amber-500/20 font-black text-2xl">
+          🛍️
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="text-lg font-black text-white">مرکز خزش و هوش آماری کاتالوگ ترب (Torob Intelligence v10)</h1>
+            <span class="px-2.5 py-0.5 text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded-full">
+              ۶۰ شاخه تخصصی بازار دیجیتال
+            </span>
+          </div>
+          <p class="text-xs text-slate-400 mt-0.5">پایش آماری کاتالوگ، کف قیمت‌ها، تراکم فروشگاه‌ها و نوسانات لحظه‌ای ترب</p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-2">
+        <a href="/api/local/export-csv" download class="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition flex items-center gap-1 shadow-md shadow-emerald-600/20">
+          <span>📥 دانلود اکسل کاتالوگ (CSV)</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Controls & Categories Selector -->
+    <div class="glass-card rounded-2xl p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div class="flex flex-wrap items-center gap-3 w-full sm:w-auto">
+        <div>
+          <label class="text-[10px] text-slate-400 block mb-1 font-bold">شاخه هدف خزش:</label>
+          <select id="selCategory" class="bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500 transition max-w-xs">
+            <option value="all">🔄 تمام ۶۰ شاخه بازار دیجیتال (خزش عمیق و پیوسته ۲۴/۷)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="text-[10px] text-slate-400 block mb-1 font-bold">عمق صفحات در هر شاخه:</label>
+          <select id="selPages" class="bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-500 transition">
+            <option value="5">۵ صفحه (سریع)</option>
+            <option value="15" selected>۱۵ صفحه (عمیق - پیشنهادی)</option>
+            <option value="25">۲۵ صفحه (خیلی عمیق)</option>
+            <option value="50">۵۰ صفحه (جامع کاتالوگ)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+        <button id="btnStart" onclick="startScan()" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-slate-950 font-black text-xs shadow-lg shadow-amber-600/30 transition cursor-pointer flex items-center gap-1.5">
+          <span>▶ شروع خزش عمیق کاتالوگ</span>
+        </button>
+        <button id="btnStop" onclick="stopScan()" class="px-4 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-black text-xs shadow-lg shadow-rose-600/30 transition cursor-pointer flex items-center gap-1.5">
+          <span>⏹ توقف</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Enhanced Statistical KPI Grid (6 Cards) -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+      <div class="glass-card rounded-2xl p-4 text-center space-y-1">
+        <span class="text-[10px] text-slate-400 block font-medium">کل کالاهای کاتالوگ</span>
+        <strong id="statTotal" class="text-lg font-black text-white font-mono">۰</strong>
+      </div>
+
+      <div class="glass-card rounded-2xl p-4 text-center space-y-1 bg-emerald-950/20 border-emerald-500/30">
+        <span class="text-[10px] text-emerald-400 block font-bold">کالاهای جدید این دور</span>
+        <strong id="statNew" class="text-lg font-black text-emerald-400 font-mono">۰</strong>
+      </div>
+
+      <div class="glass-card rounded-2xl p-4 text-center space-y-1 bg-amber-950/20 border-amber-500/30">
+        <span class="text-[10px] text-amber-400 block font-bold">نوسان و تغییرات قیمت</span>
+        <strong id="statChanges" class="text-lg font-black text-amber-400 font-mono">۰</strong>
+      </div>
+
+      <div class="glass-card rounded-2xl p-4 text-center space-y-1">
+        <span class="text-[10px] text-slate-400 block font-medium">میانگین کل قیمت بازار</span>
+        <strong id="statAvgPrice" class="text-xs font-black text-sky-400 font-mono">۰ تومان</strong>
+      </div>
+
+      <div class="glass-card rounded-2xl p-4 text-center space-y-1">
+        <span class="text-[10px] text-slate-400 block font-medium">پرفروشگاه‌ترین کالا</span>
+        <strong id="statMaxShops" class="text-[11px] font-black text-purple-400 truncate block">-</strong>
+      </div>
+
+      <div class="glass-card rounded-2xl p-4 text-center space-y-1">
+        <span class="text-[10px] text-slate-400 block font-medium">وضعیت پایش زنده</span>
+        <strong id="statStatus" class="text-xs font-black text-amber-400 font-mono">آماده به کار</strong>
+      </div>
+    </div>
+
+    <!-- Category Distribution Breakdown Card -->
+    <div id="catBreakdownCard" class="glass-card rounded-2xl p-4 space-y-2 border-slate-800 hidden">
+      <span class="text-xs font-bold text-slate-300 block">توزیع کالاهای ثبت‌شده به تفکیک شاخه‌های دیجیتال:</span>
+      <div id="catBadgesContainer" class="flex flex-wrap gap-2 text-xs"></div>
+    </div>
+
+    <!-- Live Sequential Log Stream Terminal -->
+    <div class="glass-card rounded-2xl p-4 space-y-2 border-slate-800">
+      <div class="flex items-center justify-between text-xs text-slate-400 pb-2 border-b border-slate-800">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+          <span class="font-bold text-white">کنسول زنده خط‌لوله خزش ترب (Live Stream):</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="clearLogs()" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-[10px] text-slate-300 cursor-pointer">پاک کردن لاگ‌ها</button>
+        </div>
+      </div>
+      <div id="logContainer" class="h-48 overflow-y-auto font-mono text-[11px] space-y-1.5 p-3 bg-slate-950/90 rounded-xl select-text" dir="ltr">
+        <div class="text-slate-500 text-center py-16 font-sans text-xs">در انتظار شروع خزش...</div>
+      </div>
+    </div>
+
+    <!-- Torob Catalog Table -->
+    <div class="glass-card rounded-3xl p-6 border-slate-800 space-y-4">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <div>
+          <h2 class="text-base font-black text-white">کاتالوگ جامع کالاهای ترب (Products Ledger)</h2>
+          <p class="text-xs text-slate-400">فهرست به‌روز کف قیمت‌ها، تنوع فروشگاه‌ها و لینک مستقیم به ترب</p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2">
+          <input
+            type="text"
+            id="txtSearch"
+            oninput="loadProducts(1)"
+            placeholder="جستجو در نام کالا..."
+            class="bg-slate-900 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-white focus:outline-none focus:border-amber-500"
+          />
+
+          <select id="filterCat" onchange="loadProducts(1)" class="bg-slate-900 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-white focus:outline-none max-w-xs">
+            <option value="all">همه شاخه‌ها</option>
+          </select>
+
+          <select id="sortBy" onchange="loadProducts(1)" class="bg-slate-900 border border-slate-700 rounded-xl px-3 py-1.5 text-xs text-white focus:outline-none">
+            <option value="newest">🕒 جدیدترین‌های کشف‌شده</option>
+            <option value="price_asc">💰 ارزان‌ترین قیمت</option>
+            <option value="price_desc">💎 گران‌ترین قیمت</option>
+            <option value="shops_desc">🏪 بیشترین فروشنده</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-right text-xs">
+          <thead>
+            <tr class="border-b border-slate-800 text-slate-400 font-bold">
+              <th class="pb-3 text-right">کالا و مشخصات در ترب</th>
+              <th class="pb-3 text-center">شاخه بازار</th>
+              <th class="pb-3 text-right">کف قیمت بازار آزاد (تومان)</th>
+              <th class="pb-3 text-center">تعداد فروشگاه‌ها</th>
+              <th class="pb-3 text-center">زمان ثبت</th>
+              <th class="pb-3 text-center">لینک مستقیم</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody" class="divide-y divide-slate-800/60">
+            <tr>
+              <td colspan="6" class="py-16 text-center text-slate-500">
+                هنوز داده‌ای استخراج نشده است. روی دکمه «شروع خزش عمیق کاتالوگ» کلیک کنید.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pagination -->
+      <div id="paginationBar" class="flex items-center justify-between pt-4 border-t border-slate-800 text-xs text-slate-400 hidden">
+        <span id="pageInfo">صفحه ۱</span>
+        <div class="flex items-center gap-2">
+          <button id="btnPrev" onclick="changePage(-1)" class="px-3 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 disabled:opacity-40 transition cursor-pointer">قبلی</button>
+          <button id="btnNext" onclick="changePage(1)" class="px-3 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 disabled:opacity-40 transition cursor-pointer">بعدی</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center text-xs text-slate-500 py-6">
+    سامانه هوش و مانیتورینگ بازار دیجیتال • پایش عمیق کاتالوگ ترب
+  </footer>
+
+  <script>
+    const formatToman = (num) => Number(num || 0).toLocaleString('fa-IR') + ' تومان';
+
+    let currentPage = 1;
+    let totalPages = 1;
+    let lastLogId = 0;
+    let logs = [];
+    let categoriesLoaded = false;
+
+    async function fetchStatus() {
+      try {
+        const res = await fetch('/api/local/status');
+        if (!res.ok) return;
+        const data = await res.json();
+        
+        const totalElem = document.getElementById('statTotal');
+        const newElem = document.getElementById('statNew');
+        const changesElem = document.getElementById('statChanges');
+        const avgElem = document.getElementById('statAvgPrice');
+        const maxShopsElem = document.getElementById('statMaxShops');
+        const statusElem = document.getElementById('statStatus');
+
+        if (totalElem) totalElem.textContent = Number(data.total_products || 0).toLocaleString('fa-IR');
+        if (newElem) newElem.textContent = Number(data.telemetry?.new_products_found || 0).toLocaleString('fa-IR');
+        if (changesElem) changesElem.textContent = Number(data.telemetry?.price_changes || 0).toLocaleString('fa-IR');
+        if (avgElem) avgElem.textContent = formatToman(data.avg_price || 0);
+        if (maxShopsElem && data.max_shops_item?.title) {
+          maxShopsElem.textContent = `${data.max_shops_item.num_shops} فروشگاه (${data.max_shops_item.title.slice(0, 18)}...)`;
+        }
+        if (statusElem) {
+          statusElem.textContent = data.telemetry?.status === 'running' 
+            ? `🟢 فعال: ${data.telemetry?.active_category || '...'}` 
+            : 'آماده به کار';
+        }
+
+        // Category breakdown badges
+        if (data.category_counts && Object.keys(data.category_counts).length > 0) {
+          const breakdownCard = document.getElementById('catBreakdownCard');
+          const badgesCont = document.getElementById('catBadgesContainer');
+          if (breakdownCard && badgesCont) {
+            breakdownCard.classList.remove('hidden');
+            badgesCont.innerHTML = Object.entries(data.category_counts).map(([name, count]) => `
+              <span class="px-2.5 py-1 rounded-xl bg-slate-900 border border-slate-800 text-slate-300">
+                ${name}: <strong class="text-amber-400 font-mono">${count}</strong>
+              </span>
+            `).join('');
+          }
+        }
+
+        // Populate Category Dropdowns once
+        if (!categoriesLoaded && data.categories && data.categories.length > 0) {
+          const sel = document.getElementById('selCategory');
+          const filter = document.getElementById('filterCat');
+          data.categories.forEach(c => {
+            const opt1 = document.createElement('option');
+            opt1.value = c.key;
+            opt1.textContent = c.name;
+            sel.appendChild(opt1);
+
+            const opt2 = document.createElement('option');
+            opt2.value = c.key;
+            opt2.textContent = c.name;
+            filter.appendChild(opt2);
+          });
+          categoriesLoaded = true;
+        }
+      } catch (e) {}
+    }
+
+    async function fetchLogs() {
+      try {
+        const res = await fetch(`/api/local/logs-stream?after_id=${lastLogId}`);
+        if (!res.ok) return;
+        const data = await res.json();
+        if (data.new_logs && Array.isArray(data.new_logs) && data.new_logs.length > 0) {
+          logs = [...logs.slice(-250), ...data.new_logs];
+          lastLogId = data.latest_id || lastLogId;
+          renderLogs();
+        }
+      } catch (e) {}
+    }
+
+    function renderLogs() {
+      const container = document.getElementById('logContainer');
+      if (!container || logs.length === 0) return;
+
+      container.innerHTML = logs.map(l => {
+        const msg = String(l.message || l || '');
+        const time = String(l.time || '');
+        const isError = msg.includes('❌') || msg.includes('خطا');
+        const isNew = msg.includes('جدید') || msg.includes('دریافت') || msg.includes('کالا');
+        const isCoffee = msg.includes('☕') || msg.includes('استراحت');
+        const isBranch = msg.includes('📁') || msg.includes('ورود');
+        const color = isError ? 'text-rose-400 font-bold' : isBranch ? 'text-amber-300 font-bold' : isNew ? 'text-emerald-300' : isCoffee ? 'text-sky-300' : 'text-slate-300';
+        return `<div class="${color}">${time ? `[${time}] ` : ''}${msg}</div>`;
+      }).join('');
+      container.scrollTop = container.scrollHeight;
+    }
+
+    function clearLogs() {
+      logs = [];
+      const container = document.getElementById('logContainer');
+      if (container) {
+        container.innerHTML = '<div class="text-slate-500 text-center py-16 font-sans text-xs">صفحه لاگ پاکسازی شد.</div>';
+      }
+    }
+
+    async function loadProducts(page = 1) {
+      currentPage = page;
+      const searchElem = document.getElementById('txtSearch');
+      const catElem = document.getElementById('filterCat');
+      const sortElem = document.getElementById('sortBy');
+
+      const search = searchElem ? searchElem.value.trim() : '';
+      const cat = catElem ? catElem.value : 'all';
+      const sort = sortElem ? sortElem.value : 'newest';
+
+      try {
+        const res = await fetch(`/api/local/torob-products?search=${encodeURIComponent(search)}&category=${cat}&sort_by=${sort}&page=${currentPage}&page_size=20`);
+        if (!res.ok) return;
+        const data = await res.json();
+
+        totalPages = data.total_pages || 1;
+        const tbody = document.getElementById('tableBody');
+        const pagBar = document.getElementById('paginationBar');
+
+        if (!tbody) return;
+
+        if (!data.items || data.items.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="6" class="py-16 text-center text-slate-500">کالایی یافت نشد.</td></tr>`;
+          if (pagBar) pagBar.classList.add('hidden');
+          return;
+        }
+
+        tbody.innerHTML = data.items.map(item => `
+          <tr class="hover:bg-slate-800/40 transition">
+            <td class="py-3.5 pr-1">
+              <div class="flex items-center gap-3">
+                ${item.image_url ? `<img src="${item.image_url}" class="w-10 h-10 rounded-xl object-contain bg-white/5 p-1 border border-slate-800 shrink-0">` : ''}
+                <a href="${item.url}" target="_blank" class="font-bold text-white hover:text-amber-400 transition block max-w-md truncate" title="${item.title}">
+                  ${item.title}
+                </a>
+              </div>
+            </td>
+            <td class="py-3.5 text-center">
+              <span class="px-2 py-0.5 rounded-lg bg-slate-800 text-slate-300 text-[10px] font-bold border border-slate-700">
+                ${item.category_name || 'کالای دیجیتال'}
+              </span>
+            </td>
+            <td class="py-3.5">
+              <span class="font-mono font-bold text-amber-300 text-sm block">${formatToman(item.price)}</span>
+            </td>
+            <td class="py-3.5 text-center">
+              <span class="font-mono font-bold text-slate-200 text-xs">${item.num_shops} فروشگاه</span>
+            </td>
+            <td class="py-3.5 text-center text-slate-400 text-[10px]">
+              ${item.last_seen_at || '-'}
+            </td>
+            <td class="py-3.5 text-center">
+              <a href="${item.url}" target="_blank" class="px-3 py-1 rounded-lg bg-amber-600/20 hover:bg-amber-600 text-amber-300 hover:text-white border border-amber-500/30 text-[10px] font-bold transition">
+                مشاهده در ترب
+              </a>
+            </td>
+          </tr>
+        `).join('');
+
+        if (pagBar) {
+          pagBar.classList.remove('hidden');
+          const pageInfo = document.getElementById('pageInfo');
+          const btnPrev = document.getElementById('btnPrev');
+          const btnNext = document.getElementById('btnNext');
+          if (pageInfo) pageInfo.textContent = `صفحه ${currentPage} از ${totalPages} (مجموع ${data.total} کالا)`;
+          if (btnPrev) btnPrev.disabled = currentPage <= 1;
+          if (btnNext) btnNext.disabled = currentPage >= totalPages;
+        }
+
+      } catch (e) {}
+    }
+
+    function changePage(delta) {
+      const target = currentPage + delta;
+      if (target >= 1 && target <= totalPages) {
+        loadProducts(target);
+      }
+    }
+
+    async function startScan() {
+      const cat = document.getElementById('selCategory')?.value || 'all';
+      const pages = document.getElementById('selPages')?.value || 15;
+      await fetch(`/api/local/start?category=${cat}&pages=${pages}`, { method: 'POST' });
+      fetchLogs();
+      fetchStatus();
+    }
+
+    async function stopScan() {
+      await fetch('/api/local/stop', { method: 'POST' });
+      fetchLogs();
+      fetchStatus();
+    }
+
+    setInterval(fetchLogs, 1400);
+    setInterval(fetchStatus, 2500);
+    setInterval(() => loadProducts(currentPage), 5000);
+
+    fetchStatus();
+    loadProducts(1);
+    fetchLogs();
+  </script>
+</body>
+</html>
