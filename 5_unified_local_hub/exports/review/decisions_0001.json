@@ -1,0 +1,331 @@
+{
+ "packet": "0001",
+ "decisions": [
+  {
+   "cluster": "C0001",
+   "decision": "verify",
+   "category": "desktop-pc",
+   "note": "۱۰۵ عنوان همه «کامپیوتر دسکتاپ …» با CPU/RAM/SSD مشخص (دیجی‌کالا) — سیستم کامل"
+  },
+  {
+   "cluster": "C0002",
+   "decision": "verify",
+   "category": "desktop-pc",
+   "note": "مینی‌PC/NUC/Mac Mini/thin client = کامپیوتر کامل، طبق پلی‌بوک desktop-pc"
+  },
+  {
+   "cluster": "C0003",
+   "decision": "junk",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال"
+  },
+  {
+   "cluster": "C0004",
+   "decision": "verify",
+   "category": "desktop-pc",
+   "note": "All-in-One (AIO) = کامپیوتر کامل با نمایشگر یکپارچه، نه مانیتور"
+  },
+  {
+   "cluster": "C0005",
+   "decision": "junk",
+   "reason": "آگهی «خرید و فروش/معاوضه» — کالای مشخصی برای قیمت‌گذاری نیست"
+  },
+  {
+   "id": 3031,
+   "decision": "verify",
+   "category": "watch"
+  },
+  {
+   "id": 5462,
+   "decision": "verify",
+   "category": "watch"
+  },
+  {
+   "id": 9012,
+   "decision": "verify",
+   "category": "watch"
+  },
+  {
+   "id": 1618213,
+   "decision": "verify",
+   "category": "watch",
+   "note": "طرح/کپی — ولی سخت‌افزار واقعی ساعت هوشمند"
+  },
+  {
+   "id": 1619644,
+   "decision": "verify",
+   "category": "watch",
+   "note": "طرح اپل (KW62) — کپی ولی ساعت واقعی"
+  },
+  {
+   "id": 1619647,
+   "decision": "verify",
+   "category": "watch",
+   "note": "طرح اپل (TX11)"
+  },
+  {
+   "id": 1619653,
+   "decision": "verify",
+   "category": "watch",
+   "note": "طرح اپل (KW23)"
+  },
+  {
+   "id": 1619659,
+   "decision": "verify",
+   "category": "watch",
+   "note": "طرح اپل (KW51)"
+  },
+  {
+   "id": 1620701,
+   "decision": "verify",
+   "category": "watch",
+   "note": "طرح اپل (KW83max)"
+  },
+  {
+   "id": 1661580,
+   "decision": "verify",
+   "category": "watch"
+  },
+  {
+   "id": 1661583,
+   "decision": "verify",
+   "category": "watch",
+   "note": "طرح اپل"
+  },
+  {
+   "id": 1806590,
+   "decision": "verify",
+   "category": "watch"
+  },
+  {
+   "id": 1618201,
+   "decision": "junk",
+   "reason": "باندل ساعت+ایرباد — قیمت به یک کالا قابل انتساب نیست"
+  },
+  {
+   "id": 1618217,
+   "decision": "junk",
+   "reason": "قیمت غیرواقعی برای اپل‌واچ (۱٫۴۵ میلیون)"
+  },
+  {
+   "id": 1619559,
+   "decision": "junk",
+   "reason": "قیمت غیرواقعی برای اپل‌واچ (۷۳۰ هزار)"
+  },
+  {
+   "id": 1619560,
+   "decision": "junk",
+   "reason": "عنوان مبهم — فقط «ساعت هوشمند»"
+  },
+  {
+   "id": 1619650,
+   "decision": "junk",
+   "reason": "قیمت غیرواقعی برای اپل‌واچ + عنوان تبلیغاتی"
+  },
+  {
+   "id": 1619868,
+   "decision": "junk",
+   "reason": "قیمت غیرواقعی برای اپل‌واچ (فروش اقساطی)"
+  },
+  {
+   "id": 1619872,
+   "decision": "junk",
+   "reason": "باندل ساعت+ایرباد"
+  },
+  {
+   "id": 1621857,
+   "decision": "junk",
+   "reason": "قیمت غیرواقعی (۱۰ هزار تومان) + باندل"
+  },
+  {
+   "id": 4503,
+   "decision": "verify",
+   "category": "gpu"
+  },
+  {
+   "id": 5877,
+   "decision": "verify",
+   "category": "gpu"
+  },
+  {
+   "id": 6735,
+   "decision": "verify",
+   "category": "gpu"
+  },
+  {
+   "id": 6806,
+   "decision": "verify",
+   "category": "gpu"
+  },
+  {
+   "id": 37737,
+   "decision": "verify",
+   "category": "gpu"
+  },
+  {
+   "id": 37741,
+   "decision": "verify",
+   "category": "gpu"
+  },
+  {
+   "id": 37744,
+   "decision": "verify",
+   "category": "gpu"
+  },
+  {
+   "id": 38521,
+   "decision": "verify",
+   "category": "gpu"
+  },
+  {
+   "id": 38522,
+   "decision": "verify",
+   "category": "gpu"
+  },
+  {
+   "id": 38906,
+   "decision": "verify",
+   "category": "gpu"
+  },
+  {
+   "id": 39173,
+   "decision": "verify",
+   "category": "gpu"
+  },
+  {
+   "id": 39601,
+   "decision": "verify",
+   "category": "gpu"
+  },
+  {
+   "id": 39707,
+   "decision": "verify",
+   "category": "gpu"
+  },
+  {
+   "id": 39766,
+   "decision": "verify",
+   "category": "gpu"
+  },
+  {
+   "id": 226509,
+   "decision": "verify",
+   "category": "gpu"
+  },
+  {
+   "id": 226510,
+   "decision": "verify",
+   "category": "gpu"
+  },
+  {
+   "id": 226514,
+   "decision": "verify",
+   "category": "gpu"
+  },
+  {
+   "id": 1216180,
+   "decision": "verify",
+   "category": "gpu"
+  },
+  {
+   "id": 1620857,
+   "decision": "junk",
+   "reason": "قیمت غیرواقعی (RX3080 با ۱,۰۰۰ تومان)"
+  },
+  {
+   "id": 1817877,
+   "decision": "junk",
+   "reason": "قطعه‌ی معیوب/سوخته/اوراقی"
+  },
+  {
+   "id": 1582365,
+   "decision": "verify",
+   "category": "mobile"
+  },
+  {
+   "id": 1620649,
+   "decision": "verify",
+   "category": "mobile"
+  },
+  {
+   "id": 1706841,
+   "decision": "verify",
+   "category": "mobile",
+   "note": "سونی‌اریکسون Z600 — قدیمی ولی مدل مشخص"
+  },
+  {
+   "id": 1617595,
+   "decision": "junk",
+   "reason": "قیمت غیرواقعی (۷,۰۰۰ تومان)"
+  },
+  {
+   "id": 1618329,
+   "decision": "junk",
+   "reason": "عنوان مبهم — بدون مدل"
+  },
+  {
+   "id": 1618351,
+   "decision": "junk",
+   "reason": "نیاز به تعمیر / معیوب"
+  },
+  {
+   "id": 1619670,
+   "decision": "junk",
+   "reason": "عنوان مبهم — «گوشی قدیمی» بدون مدل"
+  },
+  {
+   "id": 1620708,
+   "decision": "junk",
+   "reason": "عنوان مبهم — «گوشی قدیمی» بدون مدل"
+  },
+  {
+   "id": 1621317,
+   "decision": "junk",
+   "reason": "کلکسیونی/مبهم — بدون مدل"
+  },
+  {
+   "id": 1639990,
+   "decision": "junk",
+   "reason": "آگهی فروش اقساطی — کالای مشخص نیست"
+  },
+  {
+   "id": 1660709,
+   "decision": "junk",
+   "reason": "معیوب"
+  },
+  {
+   "id": 1683098,
+   "decision": "junk",
+   "reason": "تعمیری / معیوب"
+  },
+  {
+   "id": 1705946,
+   "decision": "junk",
+   "reason": "عنوان مبهم — بدون مدل"
+  },
+  {
+   "id": 1705947,
+   "decision": "junk",
+   "reason": "تعمیری / معیوب"
+  },
+  {
+   "id": 1706731,
+   "decision": "junk",
+   "reason": "عنوان مبهم — «کلیدی تاشو» بدون مدل"
+  },
+  {
+   "id": 1707035,
+   "decision": "junk",
+   "reason": "اوراقی / جهت قطعات"
+  },
+  {
+   "id": 1805056,
+   "decision": "junk",
+   "reason": "کلکسیونی/مبهم — بدون مدل"
+  },
+  {
+   "id": 1807712,
+   "decision": "junk",
+   "reason": "معیوب"
+  }
+ ]
+}

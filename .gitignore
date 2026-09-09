@@ -31,6 +31,10 @@ market_backup_*.db
 # کارت مستندات دیتاست را نگه می‌داریم (دور ریخته نمی‌شود):
 !5_unified_local_hub/exports/DATASET_CARD.md
 # بسته‌ی export_training_bundle.py (exports/training_bundle/) عمداً ignore نمی‌شود
+# صف بازبینی: queue.jsonl بازتولیدشدنی و بزرگ است، ولی دفترکل تصمیم‌ها (decisions.jsonl)
+# و خوشه‌ها باید در گیت بمانند تا بازبینی قابل ازسرگیری و حسابرسی باشد
+5_unified_local_hub/exports/review/queue.jsonl
+5_unified_local_hub/exports/review/audit_pending.json
 
 # ============================================================================
 # 🐍 پایتون
