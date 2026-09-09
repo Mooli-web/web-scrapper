@@ -1,0 +1,1861 @@
+{
+ "packet": "reason-code-backfill",
+ "decisions": [
+  {
+   "id": 1660395,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1660401,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1683110,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1683143,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1683153,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1706976,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707439,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707476,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707530,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707541,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707560,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707569,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707586,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707605,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707646,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707662,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707674,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707678,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707749,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707753,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707765,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707789,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707793,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707808,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707830,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707853,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707899,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707918,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707936,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707938,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707949,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707951,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707969,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707977,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1708010,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1708049,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1708090,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1708321,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1708338,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1806535,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1806558,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1806776,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1806792,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1806795,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1806900,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1806917,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1807313,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "تمبر و فیلیتلی — خارج از حوزه‌ی کالای دیجیتال",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1616917,
+   "decision": "junk",
+   "reason_code": "TRADE_REQUEST",
+   "reason": "آگهی «خرید و فروش/معاوضه» — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1617731,
+   "decision": "junk",
+   "reason_code": "TRADE_REQUEST",
+   "reason": "آگهی «خرید و فروش/معاوضه» — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1617884,
+   "decision": "junk",
+   "reason_code": "TRADE_REQUEST",
+   "reason": "آگهی «خرید و فروش/معاوضه» — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1618028,
+   "decision": "junk",
+   "reason_code": "TRADE_REQUEST",
+   "reason": "آگهی «خرید و فروش/معاوضه» — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1618271,
+   "decision": "junk",
+   "reason_code": "TRADE_REQUEST",
+   "reason": "آگهی «خرید و فروش/معاوضه» — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1618645,
+   "decision": "junk",
+   "reason_code": "TRADE_REQUEST",
+   "reason": "آگهی «خرید و فروش/معاوضه» — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1618681,
+   "decision": "junk",
+   "reason_code": "TRADE_REQUEST",
+   "reason": "آگهی «خرید و فروش/معاوضه» — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1618878,
+   "decision": "junk",
+   "reason_code": "TRADE_REQUEST",
+   "reason": "آگهی «خرید و فروش/معاوضه» — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1619090,
+   "decision": "junk",
+   "reason_code": "TRADE_REQUEST",
+   "reason": "آگهی «خرید و فروش/معاوضه» — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1619388,
+   "decision": "junk",
+   "reason_code": "TRADE_REQUEST",
+   "reason": "آگهی «خرید و فروش/معاوضه» — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1619448,
+   "decision": "junk",
+   "reason_code": "TRADE_REQUEST",
+   "reason": "آگهی «خرید و فروش/معاوضه» — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1619736,
+   "decision": "junk",
+   "reason_code": "TRADE_REQUEST",
+   "reason": "آگهی «خرید و فروش/معاوضه» — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1619817,
+   "decision": "junk",
+   "reason_code": "TRADE_REQUEST",
+   "reason": "آگهی «خرید و فروش/معاوضه» — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1620049,
+   "decision": "junk",
+   "reason_code": "TRADE_REQUEST",
+   "reason": "آگهی «خرید و فروش/معاوضه» — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1620235,
+   "decision": "junk",
+   "reason_code": "TRADE_REQUEST",
+   "reason": "آگهی «خرید و فروش/معاوضه» — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1620276,
+   "decision": "junk",
+   "reason_code": "TRADE_REQUEST",
+   "reason": "آگهی «خرید و فروش/معاوضه» — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1620442,
+   "decision": "junk",
+   "reason_code": "TRADE_REQUEST",
+   "reason": "آگهی «خرید و فروش/معاوضه» — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1620527,
+   "decision": "junk",
+   "reason_code": "TRADE_REQUEST",
+   "reason": "آگهی «خرید و فروش/معاوضه» — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1620612,
+   "decision": "junk",
+   "reason_code": "TRADE_REQUEST",
+   "reason": "آگهی «خرید و فروش/معاوضه» — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1620644,
+   "decision": "junk",
+   "reason_code": "TRADE_REQUEST",
+   "reason": "آگهی «خرید و فروش/معاوضه» — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1620846,
+   "decision": "junk",
+   "reason_code": "TRADE_REQUEST",
+   "reason": "آگهی «خرید و فروش/معاوضه» — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1823190,
+   "decision": "junk",
+   "reason_code": "TRADE_REQUEST",
+   "reason": "آگهی «خرید و فروش/معاوضه» — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1618213,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای طرح/کپی — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1619644,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1619647,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1619653,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1619659,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1620701,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای برند اپل با مدل کپی KW83max — طرح/فیک",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1661583,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1618201,
+   "decision": "junk",
+   "reason_code": "BUNDLE_UNPRICED",
+   "reason": "باندل ساعت+ایرباد — قیمت به یک کالا قابل انتساب نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1618217,
+   "decision": "junk",
+   "reason_code": "PRICE_UNREALISTIC",
+   "reason": "قیمت غیرواقعی برای اپل‌واچ (۱٫۴۵ میلیون)",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1619559,
+   "decision": "junk",
+   "reason_code": "PRICE_UNREALISTIC",
+   "reason": "قیمت غیرواقعی برای اپل‌واچ (۷۳۰ هزار)",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1619560,
+   "decision": "junk",
+   "reason_code": "AMBIGUOUS_NO_MODEL",
+   "reason": "عنوان مبهم — فقط «ساعت هوشمند»",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1619650,
+   "decision": "junk",
+   "reason_code": "PRICE_UNREALISTIC",
+   "reason": "قیمت غیرواقعی برای اپل‌واچ + عنوان تبلیغاتی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1619868,
+   "decision": "junk",
+   "reason_code": "AMBIGUOUS_NO_MODEL",
+   "reason": "قیمت غیرواقعی برای اپل‌واچ (فروش اقساطی)",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1619872,
+   "decision": "junk",
+   "reason_code": "BUNDLE_UNPRICED",
+   "reason": "باندل ساعت+ایرباد",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1621857,
+   "decision": "junk",
+   "reason_code": "BUNDLE_UNPRICED",
+   "reason": "قیمت غیرواقعی (۱۰ هزار تومان) + باندل",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1620857,
+   "decision": "junk",
+   "reason_code": "PRICE_UNREALISTIC",
+   "reason": "قیمت غیرواقعی (RX3080 با ۱,۰۰۰ تومان)",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1817877,
+   "decision": "junk",
+   "reason_code": "PARTS_OR_BROKEN",
+   "reason": "قطعه‌ی معیوب/سوخته/اوراقی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1617595,
+   "decision": "junk",
+   "reason_code": "PRICE_UNREALISTIC",
+   "reason": "قیمت غیرواقعی (۷,۰۰۰ تومان)",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1618329,
+   "decision": "junk",
+   "reason_code": "AMBIGUOUS_NO_MODEL",
+   "reason": "عنوان مبهم — بدون مدل",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1618351,
+   "decision": "junk",
+   "reason_code": "PARTS_OR_BROKEN",
+   "reason": "نیاز به تعمیر / معیوب",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1619670,
+   "decision": "junk",
+   "reason_code": "AMBIGUOUS_NO_MODEL",
+   "reason": "عنوان مبهم — «گوشی قدیمی» بدون مدل",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1620708,
+   "decision": "junk",
+   "reason_code": "AMBIGUOUS_NO_MODEL",
+   "reason": "عنوان مبهم — «گوشی قدیمی» بدون مدل",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1621317,
+   "decision": "junk",
+   "reason_code": "AMBIGUOUS_NO_MODEL",
+   "reason": "کلکسیونی/مبهم — بدون مدل",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1639990,
+   "decision": "junk",
+   "reason_code": "AMBIGUOUS_NO_MODEL",
+   "reason": "آگهی فروش اقساطی — کالای مشخص نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1660709,
+   "decision": "junk",
+   "reason_code": "PARTS_OR_BROKEN",
+   "reason": "معیوب",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1683098,
+   "decision": "junk",
+   "reason_code": "PARTS_OR_BROKEN",
+   "reason": "تعمیری / معیوب",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1705946,
+   "decision": "junk",
+   "reason_code": "AMBIGUOUS_NO_MODEL",
+   "reason": "عنوان مبهم — بدون مدل",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1705947,
+   "decision": "junk",
+   "reason_code": "PARTS_OR_BROKEN",
+   "reason": "تعمیری / معیوب",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1706731,
+   "decision": "junk",
+   "reason_code": "AMBIGUOUS_NO_MODEL",
+   "reason": "عنوان مبهم — «کلیدی تاشو» بدون مدل",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707035,
+   "decision": "junk",
+   "reason_code": "PARTS_OR_BROKEN",
+   "reason": "اوراقی / جهت قطعات",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1805056,
+   "decision": "junk",
+   "reason_code": "AMBIGUOUS_NO_MODEL",
+   "reason": "کلکسیونی/مبهم — بدون مدل",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1807712,
+   "decision": "junk",
+   "reason_code": "PARTS_OR_BROKEN",
+   "reason": "معیوب",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 2984,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 10564,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 10683,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 10826,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 10880,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 10963,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 11089,
+   "decision": "junk",
+   "reason_code": "ACCESSORY",
+   "reason": "لوازم جانبی — نه کالای اصلی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 11234,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 11349,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 11396,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 11456,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 11546,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 11780,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 33747,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 35202,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 36243,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 37339,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 37372,
+   "decision": "junk",
+   "reason_code": "ACCESSORY",
+   "reason": "لوازم جانبی — نه کالای اصلی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 37562,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 37678,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 37679,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 37911,
+   "decision": "junk",
+   "reason_code": "ACCESSORY",
+   "reason": "لوازم جانبی — نه کالای اصلی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 37976,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 38633,
+   "decision": "junk",
+   "reason_code": "ACCESSORY",
+   "reason": "لوازم جانبی — نه کالای اصلی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 38743,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 38751,
+   "decision": "junk",
+   "reason_code": "ACCESSORY",
+   "reason": "لوازم جانبی — نه کالای اصلی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 38767,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 38820,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 39007,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 50022,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 76546,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 240119,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 259194,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 259264,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 259475,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 259476,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 259496,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 299651,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 379344,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای اپل‌واچ روی مدل کپی — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 379349,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 379355,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 379368,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 379381,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 418447,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 418462,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 418475,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 418504,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 457686,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 457722,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 457727,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 528427,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 528456,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 528645,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 601510,
+   "decision": "junk",
+   "reason_code": "ACCESSORY",
+   "reason": "لوازم جانبی — نه کالای اصلی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 749446,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 822800,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 822801,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 895475,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1078350,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1114377,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1114966,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1117528,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1187839,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1225692,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1226986,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1227082,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای اپل‌واچ روی مدل کپی — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1227289,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1227490,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1228728,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1251815,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1251885,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1251888,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1251889,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1347062,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1421104,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1421185,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1421216,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1421233,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1457205,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1457296,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1457321,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1490837,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1490838,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای اپل‌واچ روی مدل کپی — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1490886,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1490896,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1520090,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1591782,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1596943,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1616831,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1617019,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1617663,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1617967,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1618215,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1618218,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1618480,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1618753,
+   "decision": "junk",
+   "reason_code": "ACCESSORY",
+   "reason": "لوازم جانبی — نه کالای اصلی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1619512,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1619561,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1619562,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1619570,
+   "decision": "junk",
+   "reason_code": "ACCESSORY",
+   "reason": "لوازم جانبی — نه کالای اصلی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1619652,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1619854,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1620161,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1621174,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1621340,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1621536,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1621683,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1621693,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1621787,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1621790,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1621805,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1622085,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1639004,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1660687,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "طرح برند دیگر (سیکو) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1661617,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1706386,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1706900,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "طرح برند دیگر (سیکو) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1706902,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "طرح برند دیگر (سیکو) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1706907,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "طرح برند دیگر (سیکو) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1707995,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "reason": "خارج از حوزه (پوشاک)",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1708022,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1759672,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1783504,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "ادعای طرح برند دیگر (اپل/سامسونگ/آیفون/PS5/رولکس) — کالای کپی",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1813534,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1816928,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1824373,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1824611,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1828483,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1829073,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1829084,
+   "decision": "junk",
+   "reason_code": "SERVICE_NOT_PRODUCT",
+   "reason": "خدمات/نصب بازی/کپی‌خور/تعمیرات — کالای مشخصی برای قیمت‌گذاری نیست",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  },
+  {
+   "id": 1829087,
+   "decision": "junk",
+   "reason_code": "COUNTERFEIT_CLAIM",
+   "reason": "کالای کپی/فیک — طبق سیاست حذف می‌شود",
+   "review_mode": "per_listing",
+   "note": "پس‌پرکردن کد دلیل برای تصمیم‌های پیش از افزودن کدها"
+  }
+ ]
+}

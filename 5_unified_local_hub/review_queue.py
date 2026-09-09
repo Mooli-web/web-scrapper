@@ -60,6 +60,13 @@ CATEGORIES = ["mobile", "laptop", "tablet", "console", "gpu", "cpu", "ram", "sto
               "motherboard", "desktop-pc", "monitor", "watch", "headphone", "other"]
 DECISIONS = ("verify", "junk", "set-category", "uncertain")
 
+# کدهای ماشین‌خوان دلیل — برای شمارش، توازن کلاس و آموزش مدلِ دلیل‌ساز
+REASON_CODES = (
+    "PRICE_BELOW_FLOOR", "PRICE_PLACEHOLDER", "TRADE_REQUEST", "PARTS_OR_BROKEN",
+    "COUNTERFEIT_CLAIM", "OWN_BRAND_KEPT", "ACCESSORY", "SERVICE_NOT_PRODUCT",
+    "OUT_OF_SCOPE", "AMBIGUOUS_NO_MODEL", "BUNDLE_UNPRICED", "PRICE_UNREALISTIC",
+)
+
 
 def thash(t):
     return hashlib.sha1((t or "").strip().encode("utf-8")).hexdigest()[:16]
@@ -295,6 +302,84 @@ def cmd_status(args):
 
 
 # ----------------------------------------------------------------------------
+# ── فیلترهای مکانیکی مرحله‌ی ۰ (با تأیید صاحب داده)
+PRICE_FLOOR = 100_000
+TRADE_PAT = re.compile(r"معاوضه|تعویض")
+TRADE_GUARD = re.compile(r"گارانتی\s*تعویض|قابل\s*تعویض|بدون\s*قطعه\s*تعویضی|تعویضی")
+PARTS_PAT = re.compile(r"سوخته|معیوب|اوراقی|اسقاطی|جهت قطعات|برای قطعات|قطعاتی|خراب")
+# کلکسیونی/خارج از حوزه — باید «پیش از» کف قیمت بررسی شود وگرنه کد دلیل
+# این‌ها PRICE_BELOW_FLOOR می‌شود در حالی که ذاتاً خارج از حوزه‌اند (۵۷٪ موارد)
+OOS_PAT = re.compile(r"تمبر|اسکناس|سکه|عقیق|کلکسیون|پهلوی|قاجار|ریالی|تومانی|انگشتر|طلا\b|"
+                     r"جواهر|کفش|کتاب|فرش|عتیقه|نسخه خطی|شمشیر|خنجر|ظروف")
+DEVICE_PAT = re.compile(r"گوشی|موبایل|آیفون|سامسونگ|شیائومی|لپ ?تاپ|تبلت|کنسول|پلی ?استیشن|"
+                        r"xbox|ایکس باکس|ساعت هوشمند|هدفون|ایرپاد|مانیتور|کارت گرافیک|کیس")
+
+
+def is_out_of_scope(title):
+    """کلکسیونی/خارج از حوزه، ولی اگر کالای دیجیتال باشد نه."""
+    return bool(OOS_PAT.search(title)) and not DEVICE_PAT.search(title)
+
+
+def prefilter_hits(todo):
+    """سه فیلتر مکانیکی. خروجی: (id, code, دلیل فارسی با شاهد)."""
+    out = []
+    for x in todo:
+        t, pr = x["title"], x["price"]
+        if is_out_of_scope(t):
+            out.append((x["id"], "OUT_OF_SCOPE",
+                        f"کالای کلکسیونی/غیردیجیتال است («{OOS_PAT.search(t).group(0)}» در عنوان)؛ "
+                        f"در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست."))
+            continue
+        if 0 < pr < PRICE_FLOOR:
+            out.append((x["id"], "PRICE_BELOW_FLOOR",
+                        f"قیمت اعلامی {pr:,} تومان زیر کف {PRICE_FLOOR:,} تومان است؛ هیچ کالای "
+                        f"دیجیتال سالمی در این بازه فروخته نمی‌شود، پس یا قیمت پرکننده است "
+                        f"یا آگهی کالای واقعی نیست."))
+            continue
+        sp = str(pr)
+        if len(sp) >= 3 and len(set(sp)) == 1:
+            out.append((x["id"], "PRICE_PLACEHOLDER",
+                        f"قیمت {pr:,} از تکرار یک رقم ساخته شده ({sp[0]}×{len(sp)}) — "
+                        f"پرکننده است، نه قیمت واقعی."))
+            continue
+        m = TRADE_PAT.search(t)
+        if m and not TRADE_GUARD.search(t):
+            out.append((x["id"], "TRADE_REQUEST",
+                        f"عنوان با «{m.group(0)}» درخواست معاوضه/تعویض می‌دهد، نه فروش با "
+                        f"قیمت مشخص؛ برای آموزش قیمت‌گذاری بی‌معناست."))
+            continue
+        m = PARTS_PAT.search(t)
+        if m:
+            out.append((x["id"], "PARTS_OR_BROKEN",
+                        f"خودِ عنوان کالا را «{m.group(0)}» اعلام کرده؛ کالای سالم و "
+                        f"قابل قیمت‌گذاری نیست."))
+    return out
+
+
+def cmd_prefilter(args):
+    """مرحله‌ی ۰: حذف مکانیکی پیش از بازبینی دستی."""
+    queue = _load("queue.jsonl")
+    if not queue:
+        print("❌ اول build را اجرا کن")
+        return
+    decided = _decided_ids()
+    todo = [x for x in queue if x["id"] not in decided]
+    hits = prefilter_hits(todo)
+    out = [{
+        "id": i, "decision": "junk", "reason_code": c, "reason": r,
+        "review_mode": "rule", "by": "agent-arena",
+        "note": "فیلتر مکانیکی مرحله‌ی ۰ — تأییدشده توسط صاحب داده",
+    } for i, c, r in hits]
+    Path(args.out).write_text(
+        json.dumps({"packet": "stage0-prefilter", "decisions": out},
+                   ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"✅ {len(hits):,} آگهی → {args.out}")
+    for c, n in Counter(c for _, c, _ in hits).most_common():
+        print(f"   {c:<20} {n:>6,}")
+    print(f"\n   باقی برای بازبینی دستی: {len(todo) - len(hits):,} آگهی "
+          f"= {(len(todo) - len(hits) + 149) // 150} بسته‌ی ۱۵۰ تایی")
+
+
 def cmd_flat(args):
     """بسته‌ی تخت: آگهی‌ها یکی‌یکی، بدون خوشه — همان چیزی که صاحب داده خواست.
 
@@ -323,8 +408,7 @@ def cmd_flat(args):
     print("# قالب پاسخ:  <id> v|j|s|u [category] [# دلیل]")
     print(f"# سایت: {chunk[0]['store']}")
     for x in chunk:
-        print(f'{x["id"]} | {x["title"][:70]} | {x["price"]:,} | {x.get("condition") or "-"} '
-              f'| {prior_tag(x)}')
+        print(f'{x["id"]} | {x["title"][:70]} | {x["price"]:,} | {x.get("condition") or "-"}')
 
 
 def cmd_next(args):
@@ -556,8 +640,14 @@ def parse_dsl(text):
         if d not in m:
             raise ValueError(f"خط {ln}: کد نامعتبر «{d}» (v/j/s/u)")
         ref = int(ref) if ref.isdigit() else ref
-        row = {"cluster" if isinstance(ref, str) else "id": ref,
-               "decision": m[d], "category": cat}
+        row = {"cluster" if isinstance(ref, str) else "id": ref, "decision": m[d]}
+        if m[d] in ("junk", "uncertain"):
+            if cat and cat.isupper():
+                row["reason_code"] = cat
+            elif cat:
+                raise ValueError(f"خط {ln}: برای {d} جایگاه سوم باید کد دلیل باشد، نه «{cat}»")
+        elif cat:
+            row["category"] = cat
         if note:
             row["reason" if m[d] in ("junk", "uncertain") else "note"] = note
         out.append(row)
@@ -595,6 +685,10 @@ def cmd_apply(args):
             errs.append((i, f"{ref}: {dec} بدون reason"))
             continue
         cat = d.get("category")
+        code = d.get("reason_code")
+        if dec in ("junk", "uncertain") and code is not None and code not in REASON_CODES:
+            errs.append((i, f"{ref}: کد دلیل ناشناخته «{code}»"))
+            continue
         if dec in ("verify", "set-category") and cat is not None and cat not in CATEGORIES:
             errs.append((i, f"{ref}: دسته‌ی خارج از لیست: {cat}"))
             continue
@@ -619,13 +713,15 @@ def cmd_apply(args):
         ok.append({
             "ts": datetime.now().isoformat(timespec="seconds"),
             "scope": scope, "ref": ref, "decision": dec,
-            "category": cat, "reason": (d.get("reason") or "").strip()[:200],
+            "category": cat, "reason_code": code,
+            "reason": (d.get("reason") or "").strip()[:300],
             "review_mode": d.get("review_mode") or ("cluster" if scope == "cluster" else "per_listing"),
             "members_read": d.get("members_read"),
             "decided_by": d.get("by") or "agent-arena",
             "note": (d.get("note") or "")[:200],
             "n_affected": len(ids), "affected_ids": ids,
             "prev": [{"id": x, "status": queue_by_id[x]["status"],
+                      "prior_tier": queue_by_id[x]["tier"],
                       "reason": queue_by_id[x]["reason"]} for x in ids[:50]],
         })
 
@@ -647,29 +743,34 @@ def cmd_apply(args):
 
 # ----------------------------------------------------------------------------
 def cmd_audit(args):
-    dec = [d for d in _load("decisions.jsonl") if d.get("scope") == "cluster"]
+    """نمونه‌گیری کور از همه‌ی تصمیم‌ها (خوشه‌ای و آگهی‌به‌آگهی).
+
+    عنوان، قیمت و وضعیت نمایش داده می‌شود ولی تصمیم قبلی و برچسب انسانی پنهان
+    می‌ماند، تا بازبین بدون لنگر انداختن قضاوت کند.
+    """
     queue_by_id = {x["id"]: x for x in _load("queue.jsonl")}
-    if not dec:
-        print("❌ هنوز تصمیم خوشه‌ای ثبت نشده")
+    pool = []
+    for d in _load("decisions.jsonl"):
+        if d.get("scope") == "audit":
+            continue
+        for i in d.get("affected_ids") or []:
+            if i in queue_by_id:
+                pool.append((d, queue_by_id[i]))
+    if not pool:
+        print("❌ هنوز تصمیمی ثبت نشده")
         return
     import random
     random.seed(args.seed)
-    picks = []
-    for d in dec:
-        for i in random.sample(d["affected_ids"], min(2, len(d["affected_ids"]))):
-            picks.append((d, queue_by_id.get(i)))
-    random.shuffle(picks)
-    picks = picks[:args.n]
+    picks = random.sample(pool, min(args.n, len(pool)))
     print(f"# AUDIT — {len(picks)} نمونه‌ی کور (بدون دیدن تصمیم قبلی قضاوت کن)")
     print('پاسخ: {"audit":[{"id":123,"decision":"verify","category":"gpu"}, ...]}')
     for d, it in picks:
-        if not it:
-            continue
-        print(f'  id={it["id"]}  {it["title"][:110]}  |  {it["price"]:,}  |  {it["store"]}')
+        print(f'  id={it["id"]}  {it["title"][:104]}  |  {it["price"]:,}  |  '
+              f'{it["store"]}  |  {it.get("condition") or "-"}')
     (REVIEW / "audit_pending.json").write_text(
-        json.dumps([{"id": it["id"], "cluster": d["ref"], "prev_decision": d["decision"],
-                     "prev_category": d.get("category")} for d, it in picks if it],
-                   ensure_ascii=False, indent=2), encoding="utf-8")
+        json.dumps([{"id": it["id"], "ref": d["ref"], "prev_decision": d["decision"],
+                     "prev_category": d.get("category"), "prev_code": d.get("reason_code")}
+                    for d, it in picks], ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"\n(کلید پاسخ در {REVIEW / 'audit_pending.json'} ذخیره شد)")
 
 
@@ -687,16 +788,26 @@ def cmd_audit_apply(args):
             same = (r["decision"] == p["prev_decision"]) and (
                 r.get("category") in (None, p.get("prev_category")))
             agree += 1 if same else 0
+            # کد دلیل فقط یادداشت می‌شود؛ اختلاف کد، ناهمخوانی تصمیم حساب نمی‌شود
+            code_same = (r.get("reason_code") in (None, p.get("prev_code")))
             f.write(json.dumps({"ts": datetime.now().isoformat(timespec="seconds"),
                                 "scope": "audit", "ref": r["id"], "decision": r["decision"],
-                                "category": r.get("category"), "agree": same,
-                                "cluster": p["cluster"], "decided_by": "agent-arena-audit"},
+                                "category": r.get("category"), "reason_code": r.get("reason_code"),
+                                "agree": same, "code_agree": code_same,
+                                "prev_code": p.get("prev_code"),
+                                "source_ref": p.get("ref") or p.get("cluster"),
+                                "decided_by": "agent-arena-audit"},
                                ensure_ascii=False) + "\n")
     print(f"✅ ممیزی: {agree}/{len(rows)} توافق = {agree / max(1, len(rows)) * 100:.1f}٪")
     bad = [r["id"] for r in rows
            if by_id.get(r["id"]) and not (r["decision"] == by_id[r["id"]]["prev_decision"])]
     if bad:
-        print(f"   ⚠️ ناهمخوانی در: {bad[:20]}")
+        print(f"   ⚠️ ناهمخوانی تصمیم در: {bad[:20]}")
+    diff_code = [r["id"] for r in rows
+                 if by_id.get(r["id"]) and r.get("reason_code")
+                 and by_id[r["id"]].get("prev_code") not in (None, r["reason_code"])]
+    if diff_code:
+        print(f"   ↪ همان تصمیم، کد دلیل متفاوت در: {diff_code[:20]}")
 
 
 def main():
@@ -715,6 +826,9 @@ def main():
     n.add_argument("--max-per-cluster", type=int, default=25,
                    help="حداکثر آگهی که از هر خوشه چاپ می‌شود")
     n.set_defaults(fn=cmd_next)
+    pf = sub.add_parser("prefilter")
+    pf.add_argument("--out", default=str(REVIEW / "decisions_stage0.json"))
+    pf.set_defaults(fn=cmd_prefilter)
     f = sub.add_parser("flat")
     f.add_argument("--packet", type=int, default=1)
     f.add_argument("--rows", type=int, default=250)

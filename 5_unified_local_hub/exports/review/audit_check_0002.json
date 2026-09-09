@@ -1,0 +1,14 @@
+{"audit": [
+ {"id": 2199,    "decision": "verify", "category": "watch"},
+ {"id": 1223064, "decision": "verify", "category": "desktop-pc"},
+ {"id": 4687,    "decision": "verify", "category": "laptop"},
+ {"id": 6502,    "decision": "verify", "category": "desktop-pc"},
+ {"id": 219,     "decision": "verify", "category": "desktop-pc"},
+ {"id": 1619512, "decision": "junk", "reason_code": "COUNTERFEIT_CLAIM", "reason": "«سوپر کپی» یعنی کالای تقلبی با ادعای سامسونگ."},
+ {"id": 1756091, "decision": "junk", "reason_code": "OUT_OF_SCOPE", "reason": "اسکناس کلکسیونی عراق؛ کالای دیجیتال نیست."},
+ {"id": 1638442, "decision": "junk", "reason_code": "OUT_OF_SCOPE", "reason": "بلوک تمبر پهلوی؛ خارج از حوزه‌ی قیمت‌گذاری کالای دیجیتال."},
+ {"id": 1114344, "decision": "junk", "reason_code": "PRICE_BELOW_FLOOR", "reason": "قیمت ۱٬۰۰۰ تومان برای PS5 پرکننده است، نه قیمت فروش."},
+ {"id": 1756017, "decision": "junk", "reason_code": "OUT_OF_SCOPE", "reason": "اسکناس کلکسیونی؛ خارج از حوزه."},
+ {"id": 1706555, "decision": "junk", "reason_code": "OUT_OF_SCOPE", "reason": "اسکناس سریالی کلکسیونی؛ خارج از حوزه."},
+ {"id": 1707970, "decision": "junk", "reason_code": "OUT_OF_SCOPE", "reason": "اسکناس ۲۰۰۰ ریالی کلکسیونی؛ خارج از حوزه."}
+]}

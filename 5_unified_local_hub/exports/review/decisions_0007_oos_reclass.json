@@ -1,0 +1,5429 @@
+{
+ "packet": "stage0-reclass",
+ "decisions": [
+  {
+   "id": 31635,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 31857,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 31897,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 32109,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 32135,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تومانی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 32139,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تومانی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 32179,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 32263,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 32264,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 32304,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تومانی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 32444,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 32544,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 33563,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 34093,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 34101,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 34123,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 34197,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 34236,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 34263,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تومانی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 34368,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 34465,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 34489,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 34539,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 34593,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («کتاب» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 34703,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 34725,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 34730,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 34768,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 34783,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 34784,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 34786,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 34938,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 34981,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 35091,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 35417,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 35465,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 35531,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 35534,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 35535,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 35536,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 35552,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 35581,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 35688,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 35719,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 35903,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («کلکسیون» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 35915,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 35923,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 36166,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 36210,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 36364,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 36367,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 36403,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 36425,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 36435,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 36441,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 36442,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 36448,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 36471,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 36485,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 36493,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 36512,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 36532,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 36555,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 36556,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 71749,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 71755,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 71806,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 71830,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 71835,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 72002,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 111718,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 111776,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 191682,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 191688,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 222979,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 223078,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 223089,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 240234,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 280833,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 280867,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 321273,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 361631,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 361717,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 361720,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 361730,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 361831,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 361841,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 361843,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 479184,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 514432,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 514434,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 514435,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 514436,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 514437,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 514467,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («ریالی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 514568,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 550043,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 550070,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 550077,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 587202,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 587290,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 587291,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 917120,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 990404,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1099952,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1099956,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1099972,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1099989,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1135980,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1136004,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1136013,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1136016,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1246872,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1247020,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1284336,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1284338,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1284440,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1284472,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1320443,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1320497,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1332524,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1332531,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1332582,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1369730,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1369758,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1442610,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1442631,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1442721,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1444077,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1505465,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1505467,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1541670,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1577894,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1613369,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1613380,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1613387,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1613436,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638314,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638323,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638341,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638359,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638438,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638439,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638440,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638441,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638442,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638444,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638446,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638447,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638460,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638467,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638506,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638518,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638519,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638521,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638523,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638528,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638538,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («کتاب» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638544,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638551,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638556,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638562,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638563,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («کتاب» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638566,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638569,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638575,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638577,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638595,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638607,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638629,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638692,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638693,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638694,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638695,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638700,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638702,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تومانی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638705,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638710,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638712,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638715,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638732,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638738,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638739,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638744,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تومانی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638753,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638757,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638770,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638771,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638798,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («کتاب» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638803,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تومانی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638815,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638817,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638819,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638820,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638860,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638872,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638894,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638895,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («عقیق» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638899,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638904,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1638911,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660387,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660406,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660427,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660463,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660465,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660486,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660496,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660498,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660499,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660505,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660506,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660513,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660518,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660524,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660533,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660535,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660540,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660547,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660567,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660571,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («کلکسیون» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660575,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660578,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660583,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660603,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660607,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («عقیق» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660608,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660622,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660627,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660640,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660645,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660684,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660794,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660795,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660819,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660834,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660867,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660873,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660879,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660898,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660900,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660912,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660916,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660921,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660922,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660926,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660945,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1660970,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1661055,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («عقیق» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1661060,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1661075,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1683100,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1683114,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1683116,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1683132,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1683135,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1683145,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1683146,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1683147,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1683160,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1683162,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1683172,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1683173,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1683187,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1705797,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1705802,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1705889,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1705891,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1705896,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1705898,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1705899,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1705913,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1705922,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1705928,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1705929,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1705989,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706002,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706019,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706023,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706030,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706044,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706051,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706053,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706054,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706057,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706058,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («ریالی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706074,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706095,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706126,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706138,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706152,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706155,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706156,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706164,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706168,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706171,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706184,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706185,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706186,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706187,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706206,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706207,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706209,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («قاجار» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706213,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706217,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تومانی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706218,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706228,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («قاجار» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706239,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706242,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706246,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706249,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706258,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706259,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706260,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706261,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706263,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706272,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706275,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706279,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706282,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706290,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706301,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706302,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706303,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («عقیق» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706305,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («کتاب» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706310,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706311,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706318,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706320,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706321,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706330,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706331,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706334,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706337,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706338,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706354,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706359,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706362,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706363,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706371,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («کلکسیون» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706372,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706388,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706389,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706392,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706394,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706437,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706438,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706439,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706441,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706444,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706445,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706450,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706451,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706454,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706457,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706460,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706461,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706462,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706464,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706467,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706480,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706487,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706489,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706490,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706491,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706494,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706495,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706500,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706503,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706508,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706514,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706520,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706521,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706523,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706524,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706555,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تومانی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706570,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706594,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706602,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706645,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706649,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706674,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706688,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706691,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706692,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706693,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706694,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706695,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706696,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706697,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706698,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706699,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706700,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706701,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706773,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706774,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706775,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706777,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706778,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706779,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706780,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706781,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706785,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706787,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706789,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706797,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706799,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706804,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706807,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706817,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706819,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706822,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706851,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706857,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706866,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706868,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («ریالی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706889,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706898,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706899,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706903,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706905,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706908,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706910,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706913,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706914,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706915,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706937,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تومانی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706943,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706953,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706956,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706965,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706980,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706989,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1706999,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707018,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707028,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707031,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707047,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707051,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707059,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707163,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707242,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707249,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («عقیق» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707257,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707298,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707301,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707309,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707310,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707329,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («کفش» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707410,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707413,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707415,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707416,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707418,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707419,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707431,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707432,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707441,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707446,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707481,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707482,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707483,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707489,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707491,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707492,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707507,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707514,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707515,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707518,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707525,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707527,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707533,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707536,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707538,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تومانی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707539,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707548,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707554,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707568,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707573,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707575,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («کتاب» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707577,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707582,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707588,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707610,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707612,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707613,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707614,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707617,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707619,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707623,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707625,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707627,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707629,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707637,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707642,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707644,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707645,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707656,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707659,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707661,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707663,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707666,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707667,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707669,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707671,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707675,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707676,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707677,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707695,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707698,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707700,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707715,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تومانی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707721,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707722,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707728,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707731,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707738,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707740,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707741,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («انگشتر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707743,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707748,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707750,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707757,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707758,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707769,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707772,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707775,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707783,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707791,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707792,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707802,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707810,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707811,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («پهلوی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707820,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707822,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707823,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707829,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تومانی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707840,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707841,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707848,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707851,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707861,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707877,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707878,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707883,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707884,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تومانی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707887,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707889,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707894,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707895,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707896,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707902,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707903,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707905,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707907,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707908,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707911,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707914,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707916,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707917,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707920,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707925,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707926,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707927,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707930,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707933,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707934,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707942,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707946,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707947,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707948,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707954,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707956,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707967,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707968,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707970,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1707991,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708006,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708009,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708013,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708021,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708024,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708027,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708035,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708043,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708046,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708047,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708063,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708076,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708083,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708088,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708091,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708098,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708105,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708109,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708110,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708120,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708121,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708129,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708134,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708136,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708141,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708143,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708145,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708146,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708157,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708165,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708170,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708173,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708179,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708209,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («کتاب» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708213,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («ریالی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708222,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («کلکسیون» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708228,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708230,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708243,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («ریالی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708247,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708275,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708278,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708293,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708298,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708311,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708316,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1708319,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1730903,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1730912,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1731047,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1731048,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1731052,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1731055,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1731059,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1731107,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1756017,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1756091,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1756095,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1756104,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1756109,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1756111,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1756113,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1756188,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1756190,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1756200,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1756203,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1756206,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1756212,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1756220,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1756226,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1756227,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («کلکسیون» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1756273,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1805072,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1805080,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1805108,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1805165,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («ریالی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1805326,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1805410,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1805419,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1805444,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1805447,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1805449,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1805452,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («سکه» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1805570,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1805575,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1805589,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1805705,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1806004,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1806096,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تومانی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1806102,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1806170,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تومانی» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1806363,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1806449,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1806467,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1806472,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1806547,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1806634,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1806782,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («اسکناس» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1807056,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1807079,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  },
+  {
+   "id": 1807177,
+   "decision": "junk",
+   "reason_code": "OUT_OF_SCOPE",
+   "review_mode": "rule",
+   "reason": "کالای کلکسیونی/غیردیجیتال است («تمبر» در عنوان)؛ در حوزه‌ی قیمت‌گذاری کالای دیجیتال نیست.",
+   "note": "بازطبقه‌بندی پس از ممیزی: کد قبلی PRICE_BELOW_FLOOR بود"
+  }
+ ]
+}
