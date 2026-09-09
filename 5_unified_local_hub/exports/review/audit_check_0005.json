@@ -1,0 +1,14 @@
+{"audit": [
+ {"id": 1707514, "decision": "junk", "reason_code": "OUT_OF_SCOPE"},
+ {"id": 1218589, "decision": "verify", "category": "desktop-pc"},
+ {"id": 5588,    "decision": "verify", "category": "headphone"},
+ {"id": 1823190, "decision": "junk", "reason_code": "AMBIGUOUS_NO_MODEL"},
+ {"id": 1660622, "decision": "junk", "reason_code": "OUT_OF_SCOPE"},
+ {"id": 1805570, "decision": "junk", "reason_code": "OUT_OF_SCOPE"},
+ {"id": 3429,    "decision": "verify", "category": "desktop-pc"},
+ {"id": 749446,  "decision": "junk", "reason_code": "COUNTERFEIT_CLAIM"},
+ {"id": 1638645, "decision": "junk", "reason_code": "OUT_OF_SCOPE"},
+ {"id": 7806,    "decision": "verify", "category": "laptop"},
+ {"id": 1806093, "decision": "junk", "reason_code": "OUT_OF_SCOPE"},
+ {"id": 1114351, "decision": "junk", "reason_code": "TRADE_REQUEST"}
+]}
