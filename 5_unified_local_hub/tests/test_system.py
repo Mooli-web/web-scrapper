@@ -1001,3 +1001,105 @@ class TestApplyDecisionsToDb:
         cats = dict(c.execute("SELECT canonical_key, category_key FROM canonical_products").fetchall())
         assert cats["k1"] == "laptop" and cats["k4"] == "motherboard"
         assert cats["k2"] is None
+
+
+# ---------------------------------------------------------------------------
+# پیش‌فیلتر OUT_OF_SCOPE — دو گارد (تاکسونومی + برند) و مرز کلمه
+# ---------------------------------------------------------------------------
+class TestOosPrefilter:
+    """این تست‌ها خطاهای مثبت واقعی‌اند که نسخه‌ی اول این ابزار تولید کرد.
+
+    نسخه‌ی اول گاردش یک فهرست ۲۱ واژه‌ای بود و الگوهایش فقط سمت راست مرز
+    کلمه داشتند. نتیجه این بود که «رم کامپیوتر میکرون» سکه حساب شد و
+    «ساعت الگنس» ظرف‌شویی. هر دو گروه زیر میخ می‌شوند.
+    """
+
+    # ---- گاردها: این‌ها درون‌حوزه‌اند و پیش‌فیلتر نباید دستشان بزند ----
+    GUARDED = [
+        # نسخه‌ی اول این‌ها را OOS کرد؛ گارد تاکسونومی حالا ردشان می‌کند
+        ("رم کامپیوتر میکرون مدل DDR3-1600MHz ظرفیت 4 گیگابایت", None),
+        ("صندلی گیمینگ آریا مدل Xbox Series S طوسی", None),
+        ("مادربرد ایسوس مدل TUF GAMING B850-BTF WIFI", None),
+        ("مچ بند هوشمند گوگل مدل Fitbit Air با بند پارچه ای", None),
+        ("اس اس دی اکسترنال روداتو مدل RDT-2TB-SSD ظرفیت دو ترابایت", None),
+        ("حلقه هوشمند اسمارت رینگ مدل Q11C رنگ رزگلد", None),
+        ("کتاب خوان بوکس مدل Note Max", None),
+        ("هدست مخصوص بازی فای فاین مدل H9", None),
+        ("کاور عروسکی گلکسی بادز Live / Live Pro", None),
+        # و این‌ها را گارد برند می‌گیرد (تاکسونومی از واژه‌ی آغازین گول می‌خورد)
+        ("محافظ لنز Samsung Galaxy S23 Ultra / S24 Ultra مدل Xmart", None),
+        ("قاب سیلیکونی عروسکی سامسونگ مدل S24 Ultra طرح خرس بیسکوییتی", None),
+        ("تاچ و ال سی دی موتورولا مدل Moto G54 سایز 6.5 اینچ LCD", None),
+        ("موس (ماوس) سایلنت رپو مدل m100 بلوتوثی سالم اصل", None),
+    ]
+
+    # ---- مرز کلمه: الگو باید واژه‌ی کامل باشد نه تکه‌ی یک واژه‌ی دیگر ----
+    BOUNDARIES = [
+        "موس (ماوس) سایلنت رپو مدل m100",      # «لنت» داخل «سایلنت»
+        "جت فن آکبند شارژی ویولنت مدل F027",   # «لنت» داخل «ویولنت»
+        "ساعت الگنس طرح سه متور رنگ ثابت",     # «لگن» داخل «الگنس»
+        "تاچ و ال سی دی موتورولا Moto G54",    # «سی دی» داخل «ال سی دی» (= LCD)
+        "هدست بلوتوثی مارشال مدل Major V",     # «شال» داخل «مارشال»
+        "شارژر فندکی گوشی",                    # فندک\b عمداً «فندکی» را نمی‌گیرد
+        "ساعت مچی سنتاتیک مدل 8021",           # «سنت» اصلاً در الگوها نیست
+    ]
+
+    MATCHES = [
+        ("انگشتر عقیق یمنی اصل رکاب نقره", "JEWELLERY"),
+        ("اسکناس 500 ریالی شاهی", "NUMISMATIC"),
+        ("1 جفت اسکناس بارگاهی 200 ریالی", "NUMISMATIC"),
+        ("مزایده دوربین عکاسی قدیمی 500 هزار تومن", "CAMERA"),
+        ("سایز 43 اسپرت skechers", "FOOTWEAR"),
+        ("آچار آلن 8 تایی درجه یک", "TOOLS"),
+        ("پیراهن زمستانی مردانه جنس کشی", "CLOTHING"),
+        ("فندک اتمی طلایی رنگ طرح برچسب عقاب", "HOUSEHOLD"),
+        ("چاقو پرتابی 3 تایی زنجانی", "BLADE"),
+        ("15 عدد نوار کاست", "MEDIA"),
+        ("فیگور شترمرغ قدیمی 13 سانتی", "TOY"),
+        ("مزایده 10 جفت گیره مو زیبا", "PERSONAL_CARE"),
+        ("رله دوبل سمند و پژو", "RAW_COMPONENT"),
+        ("اوکتان بنزین مایکل اورجینال", "AUTOMOTIVE"),
+    ]
+
+    def test_guards_protect_in_scope_listings(self):
+        from review_queue import oos_match
+        for title, _ in self.GUARDED:
+            assert oos_match(title) is None, \
+                f"درون‌حوزه باید از پیش‌فیلتر مصون بماند: {title}"
+
+    def test_word_boundaries_are_two_sided(self):
+        """دو سطح: هم سرتاسری، هم مستقیم روی قواعد (بدون گارد).
+
+        سطح دوم لازم است چون خیلی از این عنوان‌ها را گارد تاکسونومی هم
+        می‌گیرد و تست سرتاسری تنهایی نمی‌فهماند که خودِ مرز درست است.
+        """
+        from review_queue import OOS_RULES, oos_match
+        for title in self.BOUNDARIES:
+            assert oos_match(title) is None, \
+                f"سرتاسری: پیش‌فیلتر نباید دست بزند: {title}"
+            leaked = [(n, m.group(0)) for n, rx, _ in OOS_RULES
+                      if (m := rx.search(title))]
+            assert not leaked, f"قاعده تکه‌ی یک واژه‌ی دیگر را گرفته: {leaked} در {title}"
+
+    def test_out_of_scope_titles_match(self):
+        from review_queue import oos_match
+        for title, want in self.MATCHES:
+            got = oos_match(title)
+            assert got is not None, f"باید می‌گرفت: {title}"
+            assert got[0] == want, f"{title}: انتظار {want}، دریافت {got[0]}"
+            assert got[1], "دلیل نباید خالی باشد — این متن داده‌ی آموزشی است"
+
+    def test_jewellery_wins_over_numismatic(self):
+        """ترتیب قواعد معنادار است: «آویز سکه‌ای» یک آویز است نه سکه."""
+        from review_queue import oos_match
+        got = oos_match("آویز منشور کوروش مدل سکه ای طلایی رنگ")
+        assert got and got[0] == "JEWELLERY", got
+
+    def test_every_rule_has_a_distinct_reason(self):
+        from review_queue import OOS_RULES
+        names = [n for n, _r, _w in OOS_RULES]
+        assert len(names) == len(set(names)), "نام قاعده تکراری است"
+        reasons = [w for _n, _r, w in OOS_RULES]
+        assert len(reasons) == len(set(reasons)), \
+            "دو قاعده یک دلیل دارند — داده‌ی آموزشی مبهم می‌شود"
+        assert all(w for w in reasons), "دلیل خالی"

@@ -347,6 +347,176 @@ DEVICE_PAT = re.compile(r"گوشی|موبایل|آیفون|سامسونگ|شیا
                         r"xbox|ایکس باکس|ساعت هوشمند|هدفون|ایرپاد|مانیتور|کارت گرافیک|کیس")
 
 
+# ----------------------------------------------------------------------------
+# پیش‌فیلتر OUT_OF_SCOPE — نشست S32
+#
+# چرا این وجود دارد: در پنج نشست آخر (S27–S31) نرخ حذف از ۸٪ به ۹۸.۷٪ رسید.
+# انتهای صف `(store, tier, -price)` عملاً انبار زیورآلات بدلی و تمبر/سکه‌ی
+# کلکسیونی است. خواندن آگهی‌به‌آگهیِ آن ناحیه دیگر به‌صرفه نیست.
+#
+# سه اصل طراحی که نباید شکسته شوند:
+#
+#  ۱) این ابزار هیچ‌چیز را حذف نمی‌کند. فقط «کاندیدا» تولید می‌کند. حذف واقعی
+#     از همان مسیر `apply --session` می‌گذرد تا دفترکل حسابرسی‌پذیر بماند.
+#
+#  ۲) گارد مقدم بر همه‌ی قواعد، خودِ تاکسونومی است: اگر
+#     `normalize_category(None, title)` عنوان را در یکی از ۱۶ دسته بشناسد،
+#     پیش‌فیلتر روی آن سطر اجرا نمی‌شود و آگهی برای داوری دستی می‌ماند.
+#     نسخه‌ی اول این ابزار یک فهرست ۲۱ واژه‌ای داشت و فاجعه بود: «رم کامپیوتر
+#     میکرون» را به‌خاطر «کرون» داخل «میکرون» سکه حساب کرد، «صندلی گیمینگ» را
+#     به‌خاطر «صندل»، «هدست مارشال» را به‌خاطر «شال»، و «حلقه هوشمند اسمارت
+#     رینگ» را به‌خاطر «رینگ». تاکسونومی ۸٬۵۵۴ تا از ۱۰٬۶۶۸ آگهی بازبینی‌نشده
+#     را می‌شناسد و ۳۳ تست دارد؛ جهت خطا عمداً این‌طرف است — خطای «نگه داشتن»
+#     فقط چند سطر کار دستی اضافه می‌کند، خطای «دور انداختن» داده‌ی سالم را
+#     از بین می‌برد.
+#
+#  ۳) قواعد به ترتیب‌اند و اولین تطبیق برنده است. زیورآلات پیش از سکه/تمبر
+#     می‌آید چون «آویز کوروش مدل سکه‌ای» یک آویز است نه سکه.
+#
+#  ۴) الگوها دوطرفه مرز کلمه دارند (`\b…\b`)، نه فقط سمت راست. همین یک نکته
+#     جلوی «میکرون/صندلی/مارشال/روداتو» را می‌گیرد. استثنا: `فندک\b` عمداً
+#     «شارژر فندکی» را نمی‌گیرد (ی حرفِ واژه است، پس مرزی نیست).
+#
+#  ۵) «سنت» وارد الگوها نشده چون «سنتاتیک» نام یک برند ساعت است؛ «الماس/برلیان»
+#     هم نشده چون «ساعت الماس‌کوب» درون‌حوزه است.
+# ----------------------------------------------------------------------------
+_JEWEL = ("زیورآلات و سنگ قیمتی/نیمه‌قیمتی است؛ کالای دیجیتال نیست و "
+          "قیمتش به عیار/وزن/نگین گره خورده نه به مشخصات فنی")
+_NUMIS = ("سکه/اسکناس/تمبر/مدال کلکسیونی است، نه کالای دیجیتال؛ "
+          "کد درست OUT_OF_SCOPE است نه کف قیمت")
+_SHOE = "کفش/کتونی است؛ کالای دیجیتال نیست"
+_TOOL = "ابزار دستی/برقی است؛ کالای دیجیتال نیست"
+_CAM = "دوربین عکاسی یا تجهیزات نورپردازی عکاسی است؛ در حوزه‌ی این داده نیست"
+_CLOTH = "پوشاک/منسوجات است؛ کالای دیجیتال نیست"
+_HOUSE = "لوازم خانگی/آشپزخانه/دکور است؛ کالای دیجیتال نیست"
+_AUTO = "لوازم یدکی یا صوتی خودرو است؛ کالای دیجیتالِ این داده نیست"
+_BLADE = "چاقو/سلاح سرد است؛ کالای دیجیتال نیست"
+_MEDIA = "محتوای رسانه‌ای (بازی/موسیقی/فیلم/کتاب/لوازم‌التحریر) است؛ سخت‌افزار نیست"
+_COLLECT = ("صراحتاً کلکسیونی/عتیقه/آنتیک اعلام شده؛ قیمتِ کلکسیونی با مشخصات "
+            "فنی همبستگی ندارد و داده‌ی آموزشی قیمت را خراب می‌کند")
+_TOY = "اسباب‌بازی/ماکت/فیگور است؛ کالای دیجیتالِ این داده نیست"
+_CARE = "لوازم آرایشی-بهداشتی است؛ کالای دیجیتال نیست"
+_COMPO = ("قطعه‌ی الکترونیکی خام است و جزو قطعات کامپیوتر نیست؛ "
+          "در دسته‌بندی این داده جایی ندارد")
+
+# (نام، الگو، دلیل) — ترتیب معنادار است؛ اولین تطبیق برنده است.
+# هر تک‌واژه‌ی فارسی `\b` دوطرفه دارد. این تصادفی نیست: نسخه‌ی اول فقط سمت
+# راست مرز داشت و سه خطای مثبت واقعی تولید کرد — «لنت» داخل «سایلنت» و
+# «ویولنت»، «لگن» داخل «الگنس» (یک ساعت مچی!)، و «سی دی» داخل «ال سی دی»
+# (LCD فارسی). مرز دوطرفه این کلاس باگ را کامل می‌بندد.
+OOS_RULES = [
+    ("JEWELLERY", re.compile(
+        r"\bآویز\b|\bانگشتر\b|\bگردنبند\b|\bدستبند\b|\bپابند\b|\bگوشواره\b|"
+        r"\bنگین\b|\bعقیق\b|\bعقبق\b|\bفیروزه\b|\bیاقوت\b|\bزمرد\b|\bلاجورد\b|"
+        r"\bتوپاز\b|\bآمیتیست\b|\bچشم ببر\b|\bکوارتز\b|\bمالاکیت\b|\bزبرجد\b|"
+        r"\bسیترین\b|\bاپال\b|\bگارنت\b|\bآبسیدین\b|\bشجر\b|\bتوپی\b|\bمدالی\b|"
+        r"\bصلیب\b|\bمنم کوروش\b|\bهخامنشی\b|\bرکاب\b|\bباباقوری\b|\bکشکول\b|"
+        r"\bتسبیح\b|\bمهره\b|\bپیرسینگ\b|\bجواهر\b|\bنقره\s?925\b|\bطلا\b|\bیشم\b|"
+        r"\bمروارید\b", re.I), _JEWEL),
+    ("NUMISMATIC", re.compile(
+        r"\bاسکناس\b|\bتمبر\b|\bسکه\b|\bبلوک\b|\bایران\s?چک\b|\bریال\b|\bدینار\b|"
+        r"\bلیره\b|\bوون\b|\bکرون\b|\bفرانک\b|\bپوند\b|\bدلار\b|\bمنات\b|\bگلدن\b|"
+        r"\bبولیوار\b|\bشیلینگ\b|\bهریونیا\b|\bلئو\b|\bصوم\b|\bدونگ\b|\bریل\b|"
+        r"\bبیسه\b|\bقروش\b|\bشاهی\b|\bقران\b|\bدراخما\b|\bپنیا\b|\bپنی\b|"
+        r"\bروپیه\b|\bروبل\b|\bلیر\b|\bصدریالی\b|\bسوپر\s?بانکی\b|\bپانصدی\b|"
+        r"\bهزاری\b|\bتراول\b|\bدنار\b|\bساتانک\b|\bکتالوگ\b|\bمدال\b", re.I), _NUMIS),
+    ("CAMERA", re.compile(
+        r"\bدوربین\b|\bلنز\b|\bفلاش\b|\bاسپیدلایت\b|\bسافت\s?باکس\b|"
+        r"\bسه\s?پایه\b|\bبیوتی\s?دیش\b|\bرفلکتور\b|\bپروژکتور\b", re.I), _CAM),
+    ("FOOTWEAR", re.compile(
+        r"\bکفش\b|\bکتونی\b|\bکتانی\b|\bپوتین\b|\bدمپایی\b|\bصندل\b|"
+        r"\bسایز\s?\d{2}\s+اسپرت\b", re.I), _SHOE),
+    ("TOOLS", re.compile(
+        r"\bآچار\b|\bبکس\b|\bپیچگوشتی\b|\bانبر\b|\bسیم\s?چین\b|\bقیچی\b|\bدریل\b|"
+        r"\bفرز\b|\bمنگنه\b|\bمته\b|\bرابط افزایش طول\b", re.I), _TOOL),
+    ("CLOTHING", re.compile(
+        r"\bپیراهن\b|\bشومیز\b|\bمانتو\b|\bشلوار\b|\bجین\b|\bتی\s?شرت\b|\bلباس\b|"
+        r"\bپوشاک\b|\bشال\b|\bروسری\b|\bکروات\b|\bدستمال گردن\b|\bجوراب\b|"
+        r"\bکاپشن\b|\bبادگیر\b|\bپلوشرت\b|\bکت\b|\bدامن\b|\bمقنعه\b|"
+        r"\bسوتین\b", re.I), _CLOTH),
+    ("HOUSEHOLD", re.compile(
+        r"\bلیوان\b|\bپارچ\b|\bکاسه\b|\bسماور\b|\bقوری\b|\bچای\s?جوش\b|\bقاشق\b|"
+        r"\bچنگال\b|\bکفگیر\b|\bملاقه\b|\bسینی\b|\bمشربه\b|\bآفتابه\b|\bلگن\b|"
+        r"\bگلدان\b|\bمجسمه\b|\bساعت شنی\b|\bفندک\b|\bزیرسیگاری\b|\bمنقل\b|"
+        r"\bشربت\s?خوری\b|\bسرویس استیل\b|\bظروف\b|\bبشقاب\b|\bجارو\b|\bهمزن\b|"
+        r"\bاسپرسوساز\b|\bقهوه\s?ساز\b|\bترازو\b|\bاتو\b|\bسرخ\s?کن\b|"
+        r"\bهواپز\b", re.I), _HOUSE),
+    ("AUTOMOTIVE", re.compile(
+        r"\bلنت\b|\bقالپاق\b|\bگیربکس\b|\bرله\s?(?:دانفوس|کمپرسور)\b|\bکلاچ\b|"
+        r"\bشمع\b|\bاگزوز\b|\bبامپر\b|\bضبط فابریک\b|\bپنل پخش\b|\bسر\s?باتری\b|"
+        r"\bاوکتان\b|\bلاستیک\b", re.I), _AUTO),
+    ("BLADE", re.compile(
+        r"\bچاقو\b|\bخنجر\b|\bقمه\b|\bتپانچه\b|\bکلت\b|\bتفنگ\b", re.I), _BLADE),
+    # «بازی» عمداً نیست: «هدست مخصوص بازی» درون‌حوزه است و عنوان‌های
+    # «بازی پلی استیشن ۴» را تاکسونومی کنسول می‌شناسد و گارد ردشان می‌کند.
+    # «سی دی» هم با lookbehind آمده چون «ال سی دی» (= LCD فارسی) شامل «سی دی» است.
+    ("MEDIA", re.compile(
+        r"(?<!ال )\bسی\s?دی\b|\bکاست\b|\bفیلم\b|\bآلبوم\b|\bآهنگ\b|"
+        r"\bکتاب(?!خوان|\sخوان)\b|\bدفتر\b|\bرساله\b|\bجزوه\b|\bکمک درسی\b|"
+        r"\bشابلون\b", re.I), _MEDIA),
+    ("COLLECTIBLE", re.compile(
+        r"\bکلکسیون\w*\b|\bعتیقه\b|\bآنتیک\b|\bزیرخاکی\b|\bنایاب\b|"
+        r"\bکمیاب\b", re.I), _COLLECT),
+    ("TOY", re.compile(
+        r"\bماکت\b|\bفیگور\b|\bلگو\b|\bعروسک\w*\b|\bپازل\b|\bتخته نرد\b|"
+        r"\bشمشیر\b", re.I), _TOY),
+    ("PERSONAL_CARE", re.compile(
+        r"\bخط\s?زن\b|\bماشین اصلاح\b|\bتیغ اصلاح\b|\bسشوار\b|\bاتو مو\b|"
+        r"\bبند\s?انداز\b|\bمیکروبلیدینگ\b|\bباندمیکرولب\b|\bناخن\b|"
+        r"\bکلیپس مو\b|\bگیره مو\b", re.I), _CARE),
+    ("RAW_COMPONENT", re.compile(
+        r"\bخازن\b|\bترانس\b|\bمقاومت\b|\bرله\b|\bکنتاکتور\b|\bبی\s?متال\b|"
+        r"\bترمیستور\b|\bمیکرو\s?کنترلر\b|\bبرد\s?\d\s?کلید\b|\bآی\s?سی\b|"
+        r"\bدیود\b", re.I), _COMPO),
+]
+
+# گارد دوم: نام برند. تاکسونومی عنوان‌هایی را که با واژه‌ی لوازم جانبی شروع
+# می‌شوند نمی‌گیرد — «محافظ لنز Samsung Galaxy S23 Ultra» و «قاب سیلیکونی
+# عروسکی سامسونگ S24» هر دو لوازم جانبیِ گوشی‌اند، نه دوربین و نه اسباب‌بازی.
+# چون این یک گارد است (جلوی حذف را می‌گیرد)، پهن بودنش فقط چند سطر کار دستی
+# اضافه می‌کند و هیچ داده‌ی سالمی را از بین نمی‌برد.
+BRAND_GUARD = re.compile(
+    r"سامسونگ|samsung|galaxy|گلکسی|آیفون|iphone|\bapple\b|اپل|macbook|مک\s?بوک|"
+    r"شیائومی|xiaomi|redmi|ردمی|poco|پوکو|هوآوی|huawei|honor|آنر|موتورولا|"
+    r"motorola|\bmoto\b|نوکیا|nokia|ریلمی|realme|اوپو|oppo|ویوو|vivo|"
+    r"وان\s?پلاس|oneplus|سونی\s?اریکسون|sony\s?ericsson|ایسوس|asus|لنوو|lenovo|"
+    r"ایسر|acer|اچ\s?پی|\bhp\b|\bdell\b|فوجیتسو|fujitsu|توشیبا|toshiba|"
+    r"ام\s?اس\s?آی|\bmsi\b|گیگابایت|gigabyte|اینتل|intel|\bamd\b|انویدیا|nvidia|"
+    r"\brtx\b|\bgtx\b|جی\s?فورس|مایکروسافت|microsoft|surface|سورفیس|"
+    r"پلی\s?استیشن|playstation|\bps[345]\b|xbox|نینتندو|nintendo|انکر|anker|"
+    r"soundcore|\bjbl\b|\bsony\b|سونی|بوز\b|\bbose\b|سنهایزر|sennheiser|"
+    r"مارشال|marshall|\bqcy\b|هایلو|haylou|کاسیو|casio|سیتیزن|citizen|"
+    r"سیکو|seiko|اورینت|orient|فیتبیت|fitbit|گارمین|garmin|امیزفیت|amazfit|"
+    r"وسترن|seagate|سیگیت|کروشیال|crucial|کینگستون|kingston|سن\s?دیسک|sandisk|"
+    r"تی\s?پی\s?لینک|tp-?link|دی\s?لینک|d-?link|کانن|canon|نیکون|nikon", re.I)
+
+# گارد: هر عنوانی که تاکسونومی در یکی از ۱۶ دسته بشناسد، از پیش‌فیلتر مصون است.
+def _taxonomy_recognises(title):
+    try:
+        from core.taxonomy import normalize_category
+    except ImportError:
+        from taxonomy import normalize_category
+    return normalize_category(None, title) != "other"
+
+
+def oos_match(title):
+    """اولین قاعده‌ی OUT_OF_SCOPE که با عنوان می‌خواند؛ یا None.
+
+    دو گارد بر همه‌ی قواعد مقدم‌اند و هیچ‌کدام چیزی را حذف نمی‌کنند:
+      ۱) تاکسونومی عنوان را در یکی از ۱۶ دسته بشناسد → داوری دستی؛
+      ۲) عنوان نام برند دستگاه درون‌حوزه را ببرد → داوری دستی.
+    """
+    t = strip_invisible(title or "")
+    if _taxonomy_recognises(t):
+        return None
+    if BRAND_GUARD.search(t):
+        return None
+    for name, rx, why in OOS_RULES:
+        if rx.search(t):
+            return name, why
+    return None
+
+
 # کاراکترهای نامرئی/کنترلی که در عنوان‌های خزیده‌شده دیده شده‌اند. دو نوع‌اند:
 #  - نویز بی‌ضرر داده (LRM و soft hyphen در عنوان‌های دیجی‌کالا)
 #  - جاسازی عمدی برای فرار از فیلتر (۴× U+034F داخل «G99 Ultra» در id 1872)
@@ -539,9 +709,114 @@ def cmd_prefilter(args):
           f"= {(len(todo) - len(hits) + 149) // 150} بسته‌ی ۱۵۰ تایی")
 
 
+def cmd_oos_scan(args):
+    """پیش‌فیلتر OUT_OF_SCOPE روی همه‌ی آگهی‌های بازبینی‌نشده.
+
+    این دستور **چیزی حذف نمی‌کند**. خروجی‌اش دو چیز است:
+      ۱) یک فایل کاندیدا با عنوان کامل هر آگهی، برای نمونه‌برداری چشمی؛
+      ۲) با `--emit-dsl` یک فایل DSL که می‌توان بعد از تأیید با `apply`
+         نشاند. تا وقتی `apply` اجرا نشود هیچ رأیی ثبت نشده است.
+    """
+    queue = _load("queue.jsonl")
+    if not queue:
+        print("❌ اول build را اجرا کن")
+        return
+    decided = _decided_ids()
+    todo = [x for x in queue if x["id"] not in decided]
+
+    hits, guarded, branded = [], [], []
+    for it in todo:
+        t = strip_invisible(it["title"] or "")
+        if _taxonomy_recognises(t):
+            guarded.append(it)
+            continue
+        if BRAND_GUARD.search(t):
+            branded.append(it)
+            continue
+        m = oos_match(t)
+        if m:
+            hits.append((it, m[0], m[1]))
+        # else: برای داوری دستی می‌ماند
+
+    only = args.rule
+    all_hits = hits
+    n_all = len(hits)
+    if only:
+        hits = [h for h in hits if h[1] == only]
+        if not hits:
+            print(f"❌ قاعده‌ای به نام {only} تطبیقی نداشت. قواعد: "
+                  + "، ".join(n for n, _r, _w in OOS_RULES))
+            return
+
+    by = defaultdict(list)
+    for it, name, why in hits:
+        by[name].append((it, why))
+
+    print("=" * 74)
+    print("🧹 پیش‌فیلتر OUT_OF_SCOPE — فقط کاندیدا تولید می‌کند، حذف نمی‌کند")
+    print("=" * 74)
+    print(f"\n  آگهی بازبینی‌نشده:        {len(todo):,}")
+    print(f"  گارد ۱ — تاکسونومی شناخت:  {len(guarded):,}  "
+          f"(در یکی از ۱۶ دسته → داوری دستی)")
+    print(f"  گارد ۲ — نام برند داشت:    {len(branded):,}  "
+          f"(لوازم جانبی/قطعه‌ی برنددار → داوری دستی)")
+    print(f"  کاندیدای OUT_OF_SCOPE:     {n_all:,}  "
+          f"({n_all / max(len(todo), 1) * 100:.1f}٪ از باقی‌مانده)")
+    rest = len(todo) - n_all - len(guarded) - len(branded)
+    print(f"  باقی برای داوری دستی:      {rest:,}  "
+          f"= {(rest + 149) // 150} بسته‌ی ۱۵۰ تایی")
+    if only:
+        print(f"  (فیلتر --rule {only}: {len(hits):,} سطر از {n_all:,} کاندیدا)")
+    print()
+
+    print("  قاعده                 تعداد   نمونه‌ها")
+    print("  " + "-" * 70)
+    for name, _rx, _why in OOS_RULES:
+        rows = by.get(name)
+        if not rows:
+            continue
+        print(f"  {name:<20} {len(rows):>6,}   ", end="")
+        for k, (it, _w) in enumerate(rows[:args.sample]):
+            title = (it["title"] or "")[:52]
+            print(f"\n  {'':<20} {'':>6}   • {title}" if k else f"• {title}", end="")
+        print()
+
+    out = Path(args.out)
+    with out.open("w", encoding="utf-8") as fh:
+        fh.write("id\trule\tprice\tstore\ttier\ttitle\n")
+        for it, name, _why in sorted(hits, key=lambda h: (h[1], -(h[0]["price"] or 0))):
+            fh.write("%d\t%s\t%d\t%s\t%s\t%s\n" % (
+                it["id"], name, it["price"] or 0, it.get("store") or "",
+                it.get("tier") or "", (it["title"] or "").replace("\t", " ")))
+    print(f"\n  📄 فهرست کامل کاندیداها (با عنوان): {out}")
+
+    if args.dump_remainder:
+        # «باقی‌مانده» همیشه مستقل از --rule است: آنچه نه کاندیداست نه گارد خورده.
+        skip = ({h[0]["id"] for h in all_hits}
+                | {g["id"] for g in guarded} | {g["id"] for g in branded})
+        kept = [it for it in todo if it["id"] not in skip]
+        rp = Path(args.dump_remainder)
+        with rp.open("w", encoding="utf-8") as fh:
+            fh.write("id\tprice\tstore\ttier\ttitle\n")
+            for it in sorted(kept, key=lambda x: -(x["price"] or 0)):
+                fh.write("%d\t%d\t%s\t%s\t%s\n" % (
+                    it["id"], it["price"] or 0, it.get("store") or "",
+                    it.get("tier") or "", (it["title"] or "").replace("\t", " ")))
+        print(f"  📄 باقی‌مانده‌ی داوری‌نشده: {rp} ({len(kept):,} آگهی)")
+
+    if args.emit_dsl:
+        dp = Path(args.emit_dsl)
+        with dp.open("w", encoding="utf-8") as fh:
+            for it, _name, why in hits:
+                fh.write("%d j OUT_OF_SCOPE # %s\n" % (it["id"], why))
+        print(f"  📄 DSL آماده‌ی نشست (هنوز اعمال نشده): {dp}")
+
+    print("\n  ⚠️  هیچ رأیی ثبت نشد. بعد از نمونه‌برداری چشمی، فایل DSL را با")
+    print("     `apply --session <برچسب> --file <فایل>` بنشان.")
+
+
 def cmd_flat(args):
     """بسته‌ی تخت: آگهی‌ها یکی‌یکی، بدون خوشه — همان چیزی که صاحب داده خواست.
-
     ترتیب پایدار (سایت، بعد دسته‌ی حدسی، بعد قیمت نزولی) تا سیاست‌ها در طول
     بسته یکدست بماند و نشست بعدی دقیقاً از همان‌جا ادامه پیدا کند.
     """
@@ -1001,6 +1276,17 @@ def main():
     pf = sub.add_parser("prefilter")
     pf.add_argument("--out", default=str(REVIEW / "decisions_stage0.json"))
     pf.set_defaults(fn=cmd_prefilter)
+    os_ = sub.add_parser("oos-scan")
+    os_.add_argument("--out", default=str(REVIEW / "oos_candidates.tsv"),
+                     help="فهرست کامل کاندیداها با عنوان، برای نمونه‌برداری چشمی")
+    os_.add_argument("--sample", type=int, default=3,
+                     help="تعداد نمونه‌ی چاپی برای هر قاعده")
+    os_.add_argument("--rule", default=None, help="فقط یک قاعده، مثلاً JEWELLERY")
+    os_.add_argument("--emit-dsl", default=None,
+                     help="DSL آماده‌ی نشست بنویس (اعمال نمی‌شود)")
+    os_.add_argument("--dump-remainder", default=None,
+                     help="آگهی‌هایی را که پیش‌فیلتر نگرفت بنویس")
+    os_.set_defaults(fn=cmd_oos_scan)
     f = sub.add_parser("flat")
     f.add_argument("--packet", type=int, default=1)
     f.add_argument("--rows", type=int, default=250)

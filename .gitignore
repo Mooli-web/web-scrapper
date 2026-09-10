@@ -35,6 +35,8 @@ market_backup_*.db
 # و خوشه‌ها باید در گیت بمانند تا بازبینی قابل ازسرگیری و حسابرسی باشد
 5_unified_local_hub/exports/review/queue.jsonl
 5_unified_local_hub/exports/review/audit_pending.json
+# خروجی --dump-remainder از oos-scan: بازشدنی، بزرگ، و هر بار بازتولیدشدنی
+5_unified_local_hub/exports/review/oos_remainder.tsv
 
 # ============================================================================
 # 🐍 پایتون
