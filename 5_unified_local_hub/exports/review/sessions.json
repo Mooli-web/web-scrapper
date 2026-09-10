@@ -143,5 +143,13 @@
       "decisions_0037_ambiguous_recode.dsl",
       "decisions_0038_flat26.dsl"
     ]
+  },
+  {
+    "session": "S19",
+    "label": "بسته‌های تخت ۲۷ و ۲۸ — ۳۰۰ آگهی دیوار",
+    "files": [
+      "decisions_0039_flat27.dsl",
+      "decisions_0040_flat28.dsl"
+    ]
   }
 ]
