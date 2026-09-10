@@ -216,5 +216,13 @@
       "decisions_0056_flat43.dsl",
       "decisions_0057_flat44.dsl"
     ]
+  },
+  {
+    "session": "S28",
+    "label": "بسته‌های تخت ۴۵ و ۴۶ — انتهای صف قیمت (عمدتاً خارج از حوزه)",
+    "files": [
+      "decisions_0058_flat45.dsl",
+      "decisions_0059_flat46.dsl"
+    ]
   }
 ]
