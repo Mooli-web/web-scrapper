@@ -240,5 +240,14 @@
       "decisions_0062_flat49.dsl",
       "decisions_0063_flat50.dsl"
     ]
+  },
+  {
+    "session": "S31",
+    "label": "بسته‌های تخت ۵۱ و ۵۲ — زیورآلات بدلی و تمبر (۹۸.۷٪ خارج از حوزه)",
+    "files": [
+      "decisions_0065_flat51.dsl",
+      "decisions_0066_flat52.dsl",
+      "decisions_0067_recode_1706812.dsl"
+    ]
   }
 ]
