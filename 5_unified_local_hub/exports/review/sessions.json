@@ -134,5 +134,14 @@
       "decisions_0034_flat23.dsl",
       "decisions_0035_flat24.dsl"
     ]
+  },
+  {
+    "session": "S18",
+    "label": "بسته‌های تخت ۲۵ و ۲۶ + روشن‌سازی قاعده‌ی AMBIGUOUS_NO_MODEL",
+    "files": [
+      "decisions_0036_flat25.dsl",
+      "decisions_0037_ambiguous_recode.dsl",
+      "decisions_0038_flat26.dsl"
+    ]
   }
 ]
