@@ -183,5 +183,14 @@
       "decisions_0047_flat35.dsl",
       "decisions_0048_flat36.dsl"
     ]
+  },
+  {
+    "session": "S24",
+    "label": "بسته‌های تخت ۳۷ و ۳۸ + رفع ابهام MacBook Neo",
+    "files": [
+      "decisions_0049_flat37.dsl",
+      "decisions_0050_flat38.dsl",
+      "decisions_0051_recode_a18.dsl"
+    ]
   }
 ]
