@@ -30,33 +30,34 @@
 | S23 | بسته‌های تخت ۳۵ و ۳۶ — ۳۰۰ آگهی دیوار | 300 | 261 | 39 | 0 | 300 |
 | S24 | بسته‌های تخت ۳۷ و ۳۸ + رفع ابهام MacBook Neo | 310 | 258 | 52 | 0 | 310 |
 | S25 | بسته‌های تخت ۳۹ و ۴۰ — ۳۰۰ آگهی دیوار | 300 | 141 | 159 | 0 | 300 |
-| **جمع** | | **8,861** | **5,948** | **2,901** | **12** | **8,569** |
+| S26 | بسته‌های تخت ۴۱ و ۴۲ — ۳۰۰ آگهی دیوار | 300 | 164 | 136 | 0 | 300 |
+| **جمع** | | **9,161** | **6,112** | **3,037** | **12** | **8,869** |
 
 ## وضعیت نهایی داده (آخرین رأی برای هر آگهی)
 
 - کل آگهی‌ها: **20,345**
-- تمیز: **5,937** · حذف‌شده: **1,940** · کنارگذاشته: **0**
-- بررسی‌نشده: **12,468** (61.3٪ باقی)
-- پوشش بازبینی: **38.7٪**
-- بسته‌های ۱۵۰ تایی باقی‌مانده: **84**
+- تمیز: **6,101** · حذف‌شده: **2,076** · کنارگذاشته: **0**
+- بررسی‌نشده: **12,168** (59.8٪ باقی)
+- پوشش بازبینی: **40.2٪**
+- بسته‌های ۱۵۰ تایی باقی‌مانده: **82**
 
 ### دسته‌ی کالاهای تأییدشده
 
 | دسته | تعداد |
 |---|---:|
-| laptop | 1,661 |
-| mobile | 1,530 |
-| headphone | 686 |
-| watch | 676 |
+| laptop | 1,682 |
+| mobile | 1,572 |
+| headphone | 695 |
+| watch | 682 |
 | storage | 292 |
-| desktop-pc | 265 |
-| gpu | 174 |
-| accessories | 162 |
-| tablet | 145 |
-| pc-parts | 142 |
+| desktop-pc | 281 |
+| gpu | 179 |
+| tablet | 168 |
+| accessories | 165 |
+| pc-parts | 144 |
 | ram | 82 |
-| cpu | 48 |
-| motherboard | 31 |
+| cpu | 71 |
+| motherboard | 45 |
 | console | 29 |
 | other | 11 |
 | monitor | 3 |
@@ -65,15 +66,15 @@
 
 | کد | تعداد |
 |---|---:|
-| OUT_OF_SCOPE | 752 |
+| OUT_OF_SCOPE | 756 |
 | PRICE_BELOW_FLOOR | 506 |
-| AMBIGUOUS_DEALER_BANNER | 171 |
-| SERVICE_NOT_PRODUCT | 133 |
-| COUNTERFEIT_CLAIM | 119 |
+| AMBIGUOUS_DEALER_BANNER | 264 |
+| SERVICE_NOT_PRODUCT | 144 |
+| COUNTERFEIT_CLAIM | 123 |
 | TRADE_REQUEST | 96 |
-| AMBIGUOUS_NO_MODEL | 69 |
-| PARTS_OR_BROKEN | 54 |
-| PRICE_UNREALISTIC | 21 |
+| AMBIGUOUS_NO_MODEL | 85 |
+| PARTS_OR_BROKEN | 58 |
+| PRICE_UNREALISTIC | 25 |
 | ACCESSORY | 8 |
 | PRICE_PLACEHOLDER | 8 |
 | BUNDLE_UNPRICED | 3 |
