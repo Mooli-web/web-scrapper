@@ -232,5 +232,13 @@
       "decisions_0060_flat47.dsl",
       "decisions_0061_flat48.dsl"
     ]
+  },
+  {
+    "session": "S30",
+    "label": "بسته‌های تخت ۴۹ و ۵۰ — بلوک بزرگ اسکناس/تمبر کلکسیونی",
+    "files": [
+      "decisions_0062_flat49.dsl",
+      "decisions_0063_flat50.dsl"
+    ]
   }
 ]

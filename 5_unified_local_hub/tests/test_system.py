@@ -100,6 +100,9 @@ class TestRefineReason:
         "«لپتاپ وارداتی اقتصادی با ضمانت»؛ نوع + صفت تبلیغاتی، بدون برند و مدل",
         "عنوان مبهم — «گوشی قدیمی» بدون مدل",
         "کلکسیونی/مبهم — بدون مدل",
+        # S30 — بسته‌ی ۵۰: کالای بی‌مدلِ واقعی که یک‌بار به‌خاطر واژه‌ی «بدون تعیین»
+        # اشتباهاً بنر حساب شد و اصلاح شد.
+        "عنوان «۱۰ عدد کنترل» است و دستگاه مقصد معلوم نیست؛ نه مدل مشخص است",
     ]
 
     def test_dealer_banner_split(self):
@@ -113,6 +116,19 @@ class TestRefineReason:
         for why in self.MODELLESS:
             assert refine_reason({"reason_code": "AMBIGUOUS_NO_MODEL", "reason": why}) \
                 == "AMBIGUOUS_NO_MODEL", why
+
+    def test_negation_still_triggers_and_is_documented(self):
+        """الگو نفی را نمی‌فهمد؛ این تست تله را مستند می‌کند تا دوباره تکرار نشود.
+
+        نوشتن «این بنر فروشنده نیست» در دلیلِ یک کالای بی‌مدل، خودش آن را به
+        AMBIGUOUS_DEALER_BANNER می‌برد. اگر روزی الگو نفی‌فهم شد این تست باید
+        وارونه شود — ولی تا آن وقت، قاعده این است که در دلیلِ ردیف‌های بی‌مدل
+        هیچ واژه‌ی محرکی به‌کار نرود.
+        """
+        from review_queue import refine_reason
+        trap = "کالای بی‌مدل است نه بنر فروشنده، و با یک فیلد مدل قابل نجات است"
+        assert refine_reason({"reason_code": "AMBIGUOUS_NO_MODEL", "reason": trap}) \
+            == "AMBIGUOUS_DEALER_BANNER"
 
     def test_other_codes_untouched(self):
         from review_queue import refine_reason
