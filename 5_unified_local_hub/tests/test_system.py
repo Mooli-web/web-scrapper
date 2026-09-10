@@ -79,6 +79,55 @@ class TestInvisibleChars:
 
 
 # ---------------------------------------------------------------------------
+# تفکیک AMBIGUOUS_NO_MODEL برای وزن‌دهی آموزش
+# ---------------------------------------------------------------------------
+class TestRefineReason:
+    """بنر فروشگاه و کالای بی‌مدل دو کلاس رفتاری جدا هستند و نباید ادغام بمانند."""
+
+    BANNERS = [
+        # بنرهای واقعی از بسته‌های ۳۳ و ۳۴
+        "بنر پخش خرید و فروش کنسول با چهار مدل (PS4/PS5/Xbox/PS3)",
+        "«نمایشگاه انواع مک بوک پرو ایر»؛ بنر نمایشگاهی بدون مدل",
+        "«فروش تخصصی انواع macbook»؛ منوی فروشگاه بدون مدل",
+        "«PS4 PS5 XBOX»؛ فقط سه نام پلتفرم، بدون مدل و بدون دستگاه",
+        # قالب قدیمی‌تر دفترکل (S03/S06) که بعد از اجرای اولِ تفکیک جا ماند
+        "خرید و فروش موبایل — آگهی کلی خرید/فروش بدون کالای مشخص",
+        "اعلام فعالیت فروشنده/خریدار یا عنوان بدون هیچ برند و مدلی",
+    ]
+    MODELLESS = [
+        "فقط «سامسونگ»؛ برند شرکتی بدون نوع کالا و بدون مدل",
+        "فقط «لپ تاپ»؛ نوع کالا بدون هیچ برند و مدلی",
+        "«لپتاپ وارداتی اقتصادی با ضمانت»؛ نوع + صفت تبلیغاتی، بدون برند و مدل",
+        "عنوان مبهم — «گوشی قدیمی» بدون مدل",
+        "کلکسیونی/مبهم — بدون مدل",
+    ]
+
+    def test_dealer_banner_split(self):
+        from review_queue import refine_reason
+        for why in self.BANNERS:
+            assert refine_reason({"reason_code": "AMBIGUOUS_NO_MODEL", "reason": why}) \
+                == "AMBIGUOUS_DEALER_BANNER", why
+
+    def test_modelless_keeps_code(self):
+        from review_queue import refine_reason
+        for why in self.MODELLESS:
+            assert refine_reason({"reason_code": "AMBIGUOUS_NO_MODEL", "reason": why}) \
+                == "AMBIGUOUS_NO_MODEL", why
+
+    def test_other_codes_untouched(self):
+        from review_queue import refine_reason
+        # تفکیک فقط روی AMBIGUOUS_NO_MODEL اثر می‌گذارد؛ بقیه عیناً برمی‌گردند
+        for code in ("COUNTERFEIT_CLAIM", "OUT_OF_SCOPE", None):
+            assert refine_reason({"reason_code": code, "reason": "انواع بنر پخش"}) == code
+
+    def test_reason_field_is_not_required(self):
+        from review_queue import refine_reason
+        # رکوردهای قدیمی بدون reason نباید بشکنند
+        assert refine_reason({"reason_code": "AMBIGUOUS_NO_MODEL"}) == "AMBIGUOUS_NO_MODEL"
+        assert refine_reason({}) is None
+
+
+# ---------------------------------------------------------------------------
 # فیلتر خزنده (هویتی)
 # ---------------------------------------------------------------------------
 class TestCrawlerJunkFilter:

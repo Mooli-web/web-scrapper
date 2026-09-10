@@ -64,12 +64,15 @@
 |---|---:|
 | OUT_OF_SCOPE | 743 |
 | PRICE_BELOW_FLOOR | 506 |
-| AMBIGUOUS_NO_MODEL | 126 |
+| AMBIGUOUS_DEALER_BANNER | 112 |
 | COUNTERFEIT_CLAIM | 105 |
 | TRADE_REQUEST | 96 |
 | PARTS_OR_BROKEN | 46 |
 | SERVICE_NOT_PRODUCT | 33 |
 | PRICE_UNREALISTIC | 16 |
+| AMBIGUOUS_NO_MODEL | 14 |
 | ACCESSORY | 8 |
 | PRICE_PLACEHOLDER | 8 |
 | BUNDLE_UNPRICED | 3 |
+
+_`AMBIGUOUS_NO_MODEL` هنگام گزارش به دو کد تفکیک می‌شود: `AMBIGUOUS_DEALER_BANNER` (بنر فروشگاه — غیرقابل نجات) و خود کد (کالای بی‌مدل — با یک فیلد مدل قابل نجات). دفترکل دست‌نخورده است._

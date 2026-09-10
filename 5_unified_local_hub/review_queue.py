@@ -68,6 +68,30 @@ REASON_CODES = (
     "OUT_OF_SCOPE", "AMBIGUOUS_NO_MODEL", "BUNDLE_UNPRICED", "PRICE_UNREALISTIC",
 )
 
+# ⚠️ AMBIGUOUS_NO_MODEL عملاً دو چیز کاملاً متفاوت را قاطی می‌کند:
+#   ۱) بنر فروشگاه («پخش خرید و فروش PS4 PS5 XBOX» / «انواع مک بوک نقد و اقساط»)
+#      — این‌ها هیچ‌وقت قابل نجات نیستند و باید از داده بیرون بروند.
+#   ۲) کالای بی‌مدل («فقط سامسونگ» / «لپ تاپ») — با یک فیلد مدل قابل نجات‌اند.
+# برای آموزش، این دو کلاسِ رفتاریِ جدا دارند و ادغامشان مدل را گمراه می‌کند.
+# تفکیک از متن دلیل مشتق می‌شود تا دفترکل (decisions.jsonl) دست‌نخورده بماند و
+# کدهای قدیمی هم بدون بازنویسی تاریخ تفکیک شوند.
+_BANNER_PAT = re.compile(
+    r"بنر|پخش|مرکز|نمایشگاه|فروشگاه|انواع|فروش تخصصی|فهرست|منو|چند پلتفرم|سه مدل|"
+    r"چهار مدل|سه پلتفرم|سه برند|بدون تعیین|چهار برند|چهار نام|سه نام|"
+    r"خرید\s*و\s*فروش|آگهی کلی|اعلام فعالیت|فروشنده/خریدار", re.I)
+
+
+def refine_reason(rec):
+    """کد دلیل را برای گزارش و وزن‌دهی آموزش دقیق‌تر می‌کند؛ دفترکل را تغییر نمی‌دهد.
+
+    تنها AMBIGUOUS_NO_MODEL را به دو کد تفکیک می‌کند؛ بقیه دست‌نخورده برمی‌گردند.
+    """
+    code = rec.get("reason_code")
+    if code != "AMBIGUOUS_NO_MODEL":
+        return code
+    blob = f"{rec.get('reason') or ''} {rec.get('note') or ''}"
+    return "AMBIGUOUS_DEALER_BANNER" if _BANNER_PAT.search(blob) else code
+
 
 def thash(t):
     return hashlib.sha1((t or "").strip().encode("utf-8")).hexdigest()[:16]
@@ -475,9 +499,12 @@ def cmd_sessions(args):
                         if last[i]["decision"] in ("verify", "set-category")).most_common():
         lines.append(f"| {c} | {n:,} |")
     lines += ["", "### کد دلیل کالاهای حذف‌شده", "", "| کد | تعداد |", "|---|---:|"]
-    for c, n in Counter(last[i].get("reason_code") for i in last
+    for c, n in Counter(refine_reason(last[i]) for i in last
                         if last[i]["decision"] == "junk").most_common():
         lines.append(f"| {c} | {n:,} |")
+    lines += ["", "_`AMBIGUOUS_NO_MODEL` هنگام گزارش به دو کد تفکیک می‌شود: "
+              "`AMBIGUOUS_DEALER_BANNER` (بنر فروشگاه — غیرقابل نجات) و خود کد "
+              "(کالای بی‌مدل — با یک فیلد مدل قابل نجات). دفترکل دست‌نخورده است._"]
     txt = "\n".join(lines)
     (REVIEW / "SESSIONS.md").write_text(txt + "\n", encoding="utf-8")
     print(txt)
@@ -646,6 +673,11 @@ def cmd_report(args):
         print(f"    {t:<13} {len(rows):>7,}   (برچسب قبلی‌شان: {v:,} تأیید · {len(rows) - v:,} رد)")
     print(f"\n  تصمیم‌های این ایجنت: {sum(mine.values()):,} آگهی "
           f"(clean {mine['clean']:,} · junk {mine['junk']:,} · excluded {mine['excluded']:,})")
+    junk = [d for x in queue if (d := decided.get(x["id"])) and d["decision"] == "junk"]
+    if junk:
+        print("  کد دلیل حذف‌شده‌ها (AMBIGUOUS تفکیک‌شده):")
+        for c, n in Counter(refine_reason(d) for d in junk).most_common():
+            print(f"    {str(c):<26} {n:>6,}")
     dec = [d for d in _load("decisions.jsonl") if d.get("scope") != "audit"]
     print(f"  رکوردهای دفترکل: {len(dec):,}")
     modes = Counter(d.get("review_mode") or ("cluster" if d.get("scope") == "cluster" else "per_listing")
