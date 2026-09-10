@@ -192,5 +192,13 @@
       "decisions_0050_flat38.dsl",
       "decisions_0051_recode_a18.dsl"
     ]
+  },
+  {
+    "session": "S25",
+    "label": "بسته‌های تخت ۳۹ و ۴۰ — ۳۰۰ آگهی دیوار",
+    "files": [
+      "decisions_0052_flat39.dsl",
+      "decisions_0053_flat40.dsl"
+    ]
   }
 ]
