@@ -57,7 +57,8 @@ BUNDLE = HUB / "exports" / "training_bundle"
 REVIEW = HUB / "exports" / "review"
 
 CATEGORIES = ["mobile", "laptop", "tablet", "console", "gpu", "cpu", "ram", "storage",
-              "motherboard", "desktop-pc", "monitor", "watch", "headphone", "pc-parts", "other"]
+              "motherboard", "desktop-pc", "monitor", "watch", "headphone", "pc-parts",
+              "accessories", "other"]
 DECISIONS = ("verify", "junk", "set-category", "uncertain")
 
 # کدهای ماشین‌خوان دلیل — برای شمارش، توازن کلاس و آموزش مدلِ دلیل‌ساز
