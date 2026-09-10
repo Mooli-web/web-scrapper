@@ -126,5 +126,13 @@
       "decisions_0032_flat22.dsl",
       "decisions_0033_a2859_recode.dsl"
     ]
+  },
+  {
+    "session": "S17",
+    "label": "دسته‌ی جدید لوازم جانبی + بسته‌های تخت ۲۳ و ۲۴",
+    "files": [
+      "decisions_0034_flat23.dsl",
+      "decisions_0035_flat24.dsl"
+    ]
   }
 ]
