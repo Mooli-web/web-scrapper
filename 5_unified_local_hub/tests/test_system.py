@@ -1103,3 +1103,85 @@ class TestOosPrefilter:
         assert len(reasons) == len(set(reasons)), \
             "دو قاعده یک دلیل دارند — داده‌ی آموزشی مبهم می‌شود"
         assert all(w for w in reasons), "دلیل خالی"
+
+
+# ---------------------------------------------------------------------------
+# رابط برچسب‌زنی انسانی — قرارداد API و نوشته‌شدن روی دیسک
+# ---------------------------------------------------------------------------
+class TestLabelUI:
+    """مسیر کلیدی: هر برچسب باید فوراً روی دیسک بنشیند و برگشت‌پذیر باشد."""
+
+    def _setup(self, tmp_path):
+        import label_ui
+        label_ui.STATE["queue"] = {
+            1: {"id": 1, "title": "گوشی موبایل اپل iPhone 15", "price": 50000000,
+                "store": "torob", "tier": "L0_human", "status": "VERIFIED"},
+            2: {"id": 2, "title": "اسکناس 500 ریالی شاهی", "price": 200000,
+                "store": "esam", "tier": "L3_queue", "status": ""},
+        }
+        label_ui.STATE["order"] = [1, 2]
+        label_ui.STATE["labeled"] = {}
+        label_ui.STATE["pos"] = 0
+        label_ui.STATE["dsl_path"] = tmp_path / "d.dsl"
+        label_ui.STATE["session"] = "TEST"
+        return label_ui
+
+    def test_verify_writes_dsl_to_disk(self, tmp_path):
+        from fastapi.testclient import TestClient
+        lu = self._setup(tmp_path)
+        c = TestClient(lu.app)
+        r = c.post("/api/label", json={"id": 1, "verdict": "verify",
+                                       "category": "mobile", "note": "مدل مشخص"})
+        assert r.status_code == 200, r.text
+        line = (tmp_path / "d.dsl").read_text(encoding="utf-8").strip()
+        assert line == "1 s mobile # مدل مشخص", line
+        # سطر باید با همان پارسری بخواند که apply استفاده می‌کند
+        import review_queue as rq
+        assert rq.parse_dsl(line)[0] == {"id": 1, "decision": "set-category",
+                                         "category": "mobile", "note": "مدل مشخص"}
+
+    def test_junk_requires_a_known_reason_code(self, tmp_path):
+        from fastapi.testclient import TestClient
+        lu = self._setup(tmp_path)
+        c = TestClient(lu.app)
+        assert c.post("/api/label", json={"id": 2, "verdict": "junk",
+                                          "reason_code": "MADE_UP"}).status_code == 400
+        r = c.post("/api/label", json={"id": 2, "verdict": "junk",
+                                       "reason_code": "OUT_OF_SCOPE"})
+        assert r.status_code == 200, r.text
+        assert "2 j OUT_OF_SCOPE" in (tmp_path / "d.dsl").read_text(encoding="utf-8")
+
+    def test_bad_category_and_duplicate_are_rejected(self, tmp_path):
+        from fastapi.testclient import TestClient
+        lu = self._setup(tmp_path)
+        c = TestClient(lu.app)
+        assert c.post("/api/label", json={"id": 1, "verdict": "verify",
+                                          "category": "nope"}).status_code == 400
+        assert c.post("/api/label", json={"id": 99, "verdict": "verify",
+                                          "category": "mobile"}).status_code == 404
+        c.post("/api/label", json={"id": 1, "verdict": "verify", "category": "mobile"})
+        assert c.post("/api/label", json={"id": 1, "verdict": "verify",
+                                          "category": "mobile"}).status_code == 409
+
+    def test_undo_removes_the_line_from_disk(self, tmp_path):
+        from fastapi.testclient import TestClient
+        lu = self._setup(tmp_path)
+        c = TestClient(lu.app)
+        c.post("/api/label", json={"id": 1, "verdict": "verify", "category": "mobile"})
+        c.post("/api/label", json={"id": 2, "verdict": "junk",
+                                  "reason_code": "OUT_OF_SCOPE"})
+        assert c.post("/api/undo").json()["removed"].startswith("2 j ")
+        body = (tmp_path / "d.dsl").read_text(encoding="utf-8")
+        assert "2 j " not in body and "1 s mobile" in body
+
+    def test_item_carries_the_taxonomy_suggestion(self, tmp_path):
+        from fastapi.testclient import TestClient
+        lu = self._setup(tmp_path)
+        c = TestClient(lu.app)
+        it = c.get("/api/item").json()["item"]
+        assert it["id"] == 1
+        assert it["suggest"] == "mobile", "پیشنهاد باید از تاکسونومی بیاید"
+        assert it["oos_hint"] is None
+        c.post("/api/label", json={"id": 1, "verdict": "verify", "category": "mobile"})
+        it2 = c.get("/api/item").json()["item"]
+        assert it2["id"] == 2 and it2["oos_hint"] == "NUMISMATIC", it2
