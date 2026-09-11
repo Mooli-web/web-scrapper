@@ -263,5 +263,12 @@
   "files": [
    "decisions_0068_monitors.dsl"
   ]
+ },
+ {
+  "session": "S36",
+  "label": "بسته‌ی مرزی other/accessories/watch — ۳۷۸ برچسب دستی",
+  "files": [
+   "decisions_ui_S36.dsl"
+  ]
  }
 ]
