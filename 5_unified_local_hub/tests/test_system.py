@@ -1185,3 +1185,222 @@ class TestLabelUI:
         c.post("/api/label", json={"id": 1, "verdict": "verify", "category": "mobile"})
         it2 = c.get("/api/item").json()["item"]
         assert it2["id"] == 2 and it2["oos_hint"] == "NUMISMATIC", it2
+
+
+# ---------------------------------------------------------------------------
+# پاک‌کردن برچسب‌های غیرایجنت — همان چیزی که صف دستی را تمیز می‌کند
+# ---------------------------------------------------------------------------
+class TestStripForeignLabels:
+    """برچسب در پنج جا می‌نشیند؛ جا انداختن یکی یعنی صف «تمیزِ» آلوده."""
+
+    ROWS = [
+        # (id, is_verified, quality_status, rejection_reason, conf)
+        (1, 1, "VERIFIED",       "✋ تایید دستی",        90.0),   # انسان
+        (2, 0, "AI_REJECTED",    "🤖 کرم سیلیکون",      99.0),   # AI
+        (3, 1, "VERIFIED",       "🤖 گوشی است",         95.0),   # AI تایید
+        (4, 0, "ACCESSORY_OR_JUNK", "",                 0.0),    # data_cleaner، بی‌پیشوند
+        (5, 0, "PENDING",        "",                    0.0),    # بی‌تصمیم
+        (6, 1, "VERIFIED",       "[OUT_OF_SCOPE] x",   100.0),   # ایجنت (روی دفترکل نیست)
+        (7, 1, "VERIFIED",       "",                    0.0),    # ایجنت طبق دفترکل
+        (8, 0, "CONFIRMED_JUNK", "[TRADE_REQUEST] y",  0.0),    # ایجنت طبق دفترکل
+    ]
+    AGENT_IDS = {7, 8}
+
+    def _seed(self, clean_db):
+        from database.db_manager import db
+        for i, (lid, v, st, rs, cf) in enumerate(self.ROWS):
+            db.execute("INSERT INTO canonical_products (canonical_key, title_fa) "
+                       "VALUES (?, ?)", (f"k{lid}", f"t{lid}"))
+            db.execute(
+                "INSERT INTO store_listings (id, canonical_key, store_key, item_id,"
+                " title_fa, price_toman, is_verified, quality_status,"
+                " rejection_reason, confidence_score) VALUES (?,?,?,?,?,?,?,?,?,?)",
+                (lid, f"k{lid}", "divar", str(lid), f"t{lid}", 100000 * (i + 1),
+                 v, st, rs, cf))
+        db.execute("UPDATE canonical_products SET category_std='mobile', "
+                   "category_source='ai' WHERE canonical_key='k2'")
+        db.execute("UPDATE canonical_products SET category_std='laptop', "
+                   "category_source='manual' WHERE canonical_key='k1'")
+        db.execute("UPDATE canonical_products SET category_std='watch', "
+                   "category_source='rule' WHERE canonical_key='k7'")
+        db.execute("INSERT INTO ai_review_cache (title_hash, title, is_device) "
+                   "VALUES ('h1','t1',0),('h2','t2',1)")
+        return db
+
+    def test_dry_run_writes_nothing(self, clean_db):
+        import sqlite3
+        import strip_foreign_labels as sfl
+        db = self._seed(clean_db)
+        before = db.fetchall("SELECT id, is_verified, quality_status, "
+                             "rejection_reason, confidence_score "
+                             "FROM store_listings ORDER BY id")
+        a = sfl.audit(db.get_connection(), self.AGENT_IDS)
+        plan = sfl.strip(db.get_connection(), self.AGENT_IDS, apply=False, purge_history=False)
+        assert plan["listings"] == 5, plan   # 1,2,3,4 + 6 (ایجنت‌نما ولی بی‌دفترکل)
+        after = db.fetchall("SELECT id, is_verified, quality_status, "
+                            "rejection_reason, confidence_score "
+                            "FROM store_listings ORDER BY id")
+        assert before == after, "پیش‌نمایش نباید چیزی بنویسد"
+        assert a["ai_cache_rows"] == 2
+
+    def test_human_ai_and_unprefixed_are_cleared(self, clean_db):
+        import strip_foreign_labels as sfl
+        db = self._seed(clean_db)
+        sfl.strip(db.get_connection(), self.AGENT_IDS, apply=True, purge_history=False)
+        got = {r["id"]: (r["is_verified"], r["quality_status"],
+                         r["rejection_reason"], r["confidence_score"])
+               for r in db.fetchall("SELECT * FROM store_listings")}
+        for lid in (1, 2, 3, 4):
+            assert got[lid] == (0, "PENDING", "", 0.0), f"id {lid}: {got[lid]}"
+        # id 6 برچسب ایجنت‌نما دارد ولی در دفترکل نیست → پاک می‌شود
+        assert got[6] == (0, "PENDING", "", 0.0), got[6]
+        # id 7 و 8 در دفترکل‌اند → دست‌نخورده
+        assert got[7] == (1, "VERIFIED", "", 0.0), got[7]
+        assert got[8] == (0, "CONFIRMED_JUNK", "[TRADE_REQUEST] y", 0.0), got[8]
+        # id 5 از قبل خالی بود
+        assert got[5] == (0, "PENDING", "", 0.0)
+
+    def test_all_five_label_places_are_hit(self, clean_db):
+        import strip_foreign_labels as sfl
+        db = self._seed(clean_db)
+        sfl.strip(db.get_connection(), self.AGENT_IDS, apply=True, purge_history=False)
+        # ۵) دسته‌های ai/manual پاک، rule دست‌نخورده
+        src = {r["canonical_key"]: r["category_source"] for r in db.fetchall(
+            "SELECT canonical_key, category_source FROM canonical_products")}
+        assert src["k1"] == "" and src["k2"] == "", src
+        assert src["k7"] == "rule", "دسته‌ی قاعده‌ای برچسب انسانی/AI نیست"
+        # ۶) کش AI
+        assert db.fetchone("SELECT COUNT(*) AS c FROM ai_review_cache")["c"] == 0
+        # هیچ ردیفی حذف نشده
+        assert db.fetchone("SELECT COUNT(*) AS c FROM store_listings")["c"] == 8
+        assert db.fetchone("SELECT COUNT(*) AS c FROM canonical_products")["c"] == 8
+
+    def test_idempotent(self, clean_db):
+        import strip_foreign_labels as sfl
+        db = self._seed(clean_db)
+        sfl.strip(db.get_connection(), self.AGENT_IDS, apply=True, purge_history=False)
+        first = [(r["id"], r["is_verified"], r["quality_status"])
+                 for r in db.fetchall("SELECT * FROM store_listings ORDER BY id")]
+        again = sfl.strip(db.get_connection(), self.AGENT_IDS, apply=True, purge_history=False)
+        assert again["listings"] == 0, "اجرای دوم نباید چیزی برای پاک‌کردن ببیند"
+        sfl.strip(db.get_connection(), self.AGENT_IDS, apply=True, purge_history=False)
+        second = [(r["id"], r["is_verified"], r["quality_status"])
+                  for r in db.fetchall("SELECT * FROM store_listings ORDER BY id")]
+        assert first == second
+
+    def test_history_is_kept_unless_asked(self, clean_db):
+        import strip_foreign_labels as sfl
+        db = self._seed(clean_db)
+        db.execute("INSERT INTO category_history (canonical_key, new_category, changed_by) "
+                   "VALUES ('k1','mobile','human')")
+        sfl.strip(db.get_connection(), self.AGENT_IDS, apply=True, purge_history=False)
+        assert db.fetchone("SELECT COUNT(*) AS c FROM category_history")["c"] == 1
+        sfl.strip(db.get_connection(), self.AGENT_IDS, apply=True, purge_history=True)
+        assert db.fetchone("SELECT COUNT(*) AS c FROM category_history")["c"] == 0
+
+    def test_everything_clears_agent_labels_too(self, clean_db):
+        import strip_foreign_labels as sfl
+        db = self._seed(clean_db)
+        sfl.strip(db.get_connection(), set(), apply=True, purge_history=False)   # keep = خالی
+        n = db.fetchone("SELECT COUNT(*) AS c FROM store_listings WHERE NOT ("
+                        "is_verified=0 AND quality_status='PENDING' "
+                        "AND rejection_reason='' AND confidence_score=0)")["c"]
+        assert n == 0, "ریست کامل باید همه را صفر کند"
+        assert db.fetchone("SELECT COUNT(*) AS c FROM store_listings")["c"] == 8
+
+    def test_main_takes_a_backup_and_reports(self, clean_db, tmp_path, monkeypatch, capsys):
+        import sqlite3
+        import strip_foreign_labels as sfl
+        db = self._seed(clean_db)
+        dbp = tmp_path / "m.db"
+        # همان ردیف‌ها در یک فایل مستقل تا مسیر main() با پشتیبان‌گیری اجرا شود
+        src = sqlite3.connect(db.db_path)
+        dst = sqlite3.connect(dbp)
+        src.backup(dst)
+        dst.close()
+        ledger = tmp_path / "led.jsonl"
+        ledger.write_text(
+            '{"ref":7,"decision":"verify","affected_ids":[7]}\n'
+            '{"ref":8,"decision":"junk","reason_code":"TRADE_REQUEST","affected_ids":[8]}\n',
+            encoding="utf-8")
+        monkeypatch.setattr("sys.argv", ["x", "--db", str(dbp),
+                                         "--ledger", str(ledger), "--apply"])
+        assert sfl.main() == 0
+        out = capsys.readouterr().out
+        assert "نسخه‌ی پشتیبان" in out and "bak-strip-" in out
+        assert list(dbp.parent.glob("*.bak-strip-*")), "پشتیبان ساخته نشد"
+        c = sqlite3.connect(dbp)
+        assert c.execute("SELECT COUNT(*) FROM store_listings").fetchone()[0] == 8
+        assert c.execute("SELECT COUNT(*) FROM ai_review_cache").fetchone()[0] == 0
+        assert c.execute("SELECT quality_status FROM store_listings WHERE id=7").fetchone()[0] == "VERIFIED"
+        assert c.execute("SELECT quality_status FROM store_listings WHERE id=1").fetchone()[0] == "PENDING"
+        c.close()
+
+
+# ---------------------------------------------------------------------------
+# خودآزمایی محیط — همان چیزی که صاحب داده پیش از اعتماد اجرا می‌کند
+# ---------------------------------------------------------------------------
+class TestLabelUISelftest:
+    def test_selftest_passes_and_touches_nothing(self, tmp_path):
+        import label_ui
+        from pathlib import Path
+        import review_queue as rq
+        before = sorted(p.name for p in Path(rq.REVIEW).iterdir())
+        rc = label_ui.selftest()
+        assert rc == 0, "خودآزمون باید بدون خطا پاس شود"
+        after = sorted(p.name for p in Path(rq.REVIEW).iterdir())
+        assert before == after, "خودآزمون نباید فایل پروژه را تغییر دهد"
+
+    def test_labels_survive_a_reload_from_a_custom_dsl_path(self, tmp_path):
+        """باگ نسخه‌ی دوم: --dsl سفارشی شمرده نمی‌شد → برچسب دوباره."""
+        import label_ui
+        dsl = tmp_path / "custom.dsl"
+        dsl.write_text("4242 s laptop # از مسیر سفارشی\n", encoding="utf-8")
+        labeled, bad = label_ui._read_labels([dsl])
+        assert labeled == {4242: "4242 s laptop # از مسیر سفارشی"}, labeled
+        assert bad == 0
+
+    def test_unparsable_lines_are_counted_not_swallowed(self, tmp_path):
+        import label_ui
+        p = tmp_path / "broken.dsl"
+        p.write_text("// توضیح\n\nnot-a-number s mobile\n7 s mobile # سالم\n",
+                     encoding="utf-8")
+        labeled, bad = label_ui._read_labels([p])
+        assert bad == 1, "سطر خراب باید شمرده شود، نه بی‌صدا رد"
+        assert set(labeled) == {7}, labeled
+
+    def test_override_replaces_the_verdict(self, tmp_path):
+        from fastapi.testclient import TestClient
+        import label_ui
+        label_ui.STATE.update({
+            "queue": {1: {"id": 1, "title": "t", "price": 1, "store": "",
+                          "tier": "", "status": ""}},
+            "order": [1], "labeled": {}, "pos": 0,
+            "dsl_path": tmp_path / "d.dsl", "session": "T",
+            "bad_lines": 0, "seen_files": [],
+        })
+        c = TestClient(label_ui.app)
+        c.post("/api/label", json={"id": 1, "verdict": "verify", "category": "mobile"})
+        assert c.post("/api/label", json={"id": 1, "verdict": "junk",
+                                          "reason_code": "OUT_OF_SCOPE"}).status_code == 409
+        r = c.post("/api/label", json={"id": 1, "verdict": "junk",
+                                       "reason_code": "OUT_OF_SCOPE", "override": True})
+        assert r.status_code == 200, r.text
+        latest = label_ui._latest_from_file(tmp_path / "d.dsl")
+        assert latest[1]["decision"] == "junk", latest
+
+    def test_lookup_returns_an_already_labeled_item(self, tmp_path):
+        from fastapi.testclient import TestClient
+        import label_ui
+        label_ui.STATE.update({
+            "queue": {1: {"id": 1, "title": "گوشی اپل", "price": 1, "store": "",
+                          "tier": "", "status": ""}},
+            "order": [1], "labeled": {1: "1 s mobile # قبلی"}, "pos": 0,
+            "dsl_path": tmp_path / "d.dsl", "session": "T",
+            "bad_lines": 0, "seen_files": [],
+        })
+        c = TestClient(label_ui.app)
+        r = c.get("/api/lookup", params={"id": 1})
+        assert r.status_code == 200
+        assert r.json()["item"]["existing"] == "1 s mobile # قبلی"
+        assert c.get("/api/lookup", params={"id": 5}).status_code == 404

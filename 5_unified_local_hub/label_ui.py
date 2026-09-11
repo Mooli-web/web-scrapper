@@ -56,8 +56,39 @@ STATE = {
 # ---------------------------------------------------------------------------
 # داده
 # ---------------------------------------------------------------------------
+def _read_labels(paths) -> tuple[dict[int, str], int]:
+    """برچسب‌های قبلی را از فایل‌های DSL می‌خواند. (labeled, تعداد سطر خراب)
+
+    جدا از load() است تا خودآزمون بتواند همان کد را بی‌آنکه به وضعیت
+    پروژه وابسته باشد بیازماید.
+    """
+    labeled: dict[int, str] = {}
+    bad = 0
+    seen: set[Path] = set()
+    for p in paths:
+        p = Path(p)
+        if p in seen or not p.exists():
+            continue
+        seen.add(p)
+        for line in p.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line or line.startswith("//"):
+                continue
+            try:
+                labeled[int(line.split()[0])] = line
+            except (ValueError, IndexError):
+                bad += 1     # بی‌صدا رد نمی‌کنیم؛ در گزارش می‌آید
+    return labeled, bad
+
+
 def load(order: str, session: str, dsl_path: Path) -> None:
-    """صف را می‌سازد، رأی‌های قبلی را برمی‌دارد، و فایل DSL را ادامه می‌دهد."""
+    """صف را می‌سازد، رأی‌های قبلی را برمی‌دارد، و فایل DSL را ادامه می‌دهد.
+
+    ⚠️ رأی‌های قبلی از **همه‌ی** فایل‌های decisions_ui_*.dsl **به‌علاوه‌ی**
+    خودِ dsl_path خوانده می‌شوند. نسخه‌ی اول فقط فایل جاری را می‌خواند و
+    برچسب‌های نشست‌های دیگر را نمی‌دید؛ نسخه‌ی دوم هم فقط glob می‌زد و اگر
+    --dsl مسیر دیگری بود برچسب‌هایش نامرئی می‌ماند. هر دو یعنی برچسب دوباره.
+    """
     if not (HUB / "exports" / "review" / "queue.jsonl").exists():
         raise SystemExit("❌ اول `python review_queue.py build` را اجرا کن")
 
@@ -65,17 +96,11 @@ def load(order: str, session: str, dsl_path: Path) -> None:
     decided = rq._decided_ids()
     todo = [x for x in queue if x["id"] not in decided]
 
-    # رأی‌هایی که در نشست‌های قبلیِ همین ابزار زده شده‌اند ولی هنوز apply نشده‌اند
-    labeled: dict[int, str] = {}
-    if dsl_path.exists():
-        for line in dsl_path.read_text(encoding="utf-8").splitlines():
-            line = line.strip()
-            if not line or line.startswith("//"):
-                continue
-            try:
-                labeled[int(line.split()[0])] = line
-            except (ValueError, IndexError):
-                continue
+    sources = sorted((HUB / "exports" / "review").glob("decisions_ui_*.dsl"))
+    sources.append(dsl_path)                 # --dsl سفارشی هم شمرده شود
+    labeled, bad_lines = _read_labels(sources)
+    STATE["bad_lines"] = bad_lines
+    STATE["seen_files"] = sorted({p.name for p in sources if Path(p).exists()})
 
     if order == "risk":
         # وقت انسان جایی خرج شود که شک بیشتر است: برچسب قبلیِ «رد» اول.
@@ -150,6 +175,18 @@ class Label(BaseModel):
     category: str = ""
     reason_code: str = ""
     note: str = ""
+    override: bool = False  # رأی قبلی را با رأی تازه جایگزین کن
+
+
+@app.get("/api/lookup")
+def api_lookup(id: int):
+    """یک آگهی مشخص را برمی‌گرداند، حتی اگر قبلاً برچسب خورده باشد."""
+    row = STATE["queue"].get(id)
+    if row is None:
+        raise HTTPException(404, "این آگهی در صف بازبینی‌نشده نیست")
+    item = _shape(row)
+    item["existing"] = STATE["labeled"].get(id, "")
+    return {"item": item}
 
 
 @app.get("/api/item")
@@ -166,8 +203,8 @@ def api_label(body: Label):
     row = STATE["queue"].get(body.id)
     if row is None:
         raise HTTPException(404, "این آگهی در صف بازبینی‌نشده نیست")
-    if body.id in STATE["labeled"]:
-        raise HTTPException(409, "قبلاً در این نشست برچسب خورده")
+    if body.id in STATE["labeled"] and not body.override:
+        raise HTTPException(409, "قبلاً برچسب خورده؛ برای جایگزینی override=true بفرست")
 
     note = (body.note or "").replace("#", "").replace("\n", " ").strip()
     if body.verdict == "verify":
@@ -383,17 +420,176 @@ next();
 """
 
 
+# ---------------------------------------------------------------------------
+# آزمون درستیِ خودِ محیط
+# ---------------------------------------------------------------------------
+def selftest() -> int:
+    """محیط را روی یک صف مصنوعی در دایرکتوری موقت می‌آزماید.
+
+    این تابع برای این است که صاحب داده پیش از گذاشتن ۱۰ هزار برچسب، با یک
+    فرمان ببیند محیط درست کار می‌کند. هیچ فایلی از پروژه را لمس نمی‌کند.
+    """
+    import shutil
+    import tempfile
+    from fastapi.testclient import TestClient
+
+    results: list[tuple[str, bool, str]] = []
+
+    def check(name, cond, detail=""):
+        results.append((name, bool(cond), detail))
+
+    tmp = Path(tempfile.mkdtemp(prefix="labelui_selftest_"))
+    try:
+        dsl = tmp / "decisions_ui_SELFTEST.dsl"
+        STATE["queue"] = {
+            1: {"id": 1, "title": "گوشی موبایل اپل iPhone 15", "price": 50000000,
+                "store": "torob", "tier": "L0_human", "status": "VERIFIED"},
+            2: {"id": 2, "title": "اسکناس 500 ریالی شاهی", "price": 200000,
+                "store": "esam", "tier": "L3_queue", "status": "REJECTED"},
+            3: {"id": 3, "title": "لپ تاپ ایسوس ROG", "price": 80000000,
+                "store": "divar", "tier": "L1_inherit", "status": ""},
+        }
+        STATE["order"] = [1, 2, 3]
+        STATE["labeled"] = {}
+        STATE["pos"] = 0
+        STATE["dsl_path"] = dsl
+        STATE["session"] = "SELFTEST"
+        STATE["bad_lines"] = 0
+        STATE["seen_files"] = []
+        c = TestClient(app)
+
+        # ۱) هر برچسب فوراً روی دیسک می‌نشیند
+        r = c.post("/api/label", json={"id": 1, "verdict": "verify",
+                                       "category": "mobile", "note": "خودآزمون"})
+        on_disk = dsl.read_text(encoding="utf-8")
+        check("برچسب بلافاصله روی دیسک می‌نشیند",
+              r.status_code == 200 and "1 s mobile # خودآزمون" in on_disk,
+              f"status={r.status_code}")
+
+        # ۲) سطرِ نوشته‌شده با پارسر واقعی review_queue خوانده می‌شود
+        parsed = rq.parse_dsl(on_disk)
+        check("پارسر review_queue سطر را می‌پذیرد",
+              len(parsed) == 1 and parsed[0]["id"] == 1
+              and parsed[0]["category"] == "mobile", str(parsed))
+
+        # ۳) ورودی نامعتبر رد می‌شود و چیزی روی دیسک نمی‌نشیند
+        before = dsl.read_text(encoding="utf-8")
+        bad = [c.post("/api/label", json=b) for b in (
+            {"id": 3, "verdict": "verify", "category": "not-a-cat"},
+            {"id": 3, "verdict": "junk", "reason_code": "MADE_UP"},
+            {"id": 3, "verdict": "maybe", "category": "mobile"},
+        )]
+        check("دسته/کد/verdict نامعتبر رد می‌شود",
+              all(x.status_code == 400 for x in bad),
+              str([x.status_code for x in bad]))
+        check("ورودی ردشده چیزی روی دیسک نمی‌نویسد",
+              dsl.read_text(encoding="utf-8") == before)
+
+        # ۴) آگهی بیرون از صف قابل برچسب‌زنی نیست
+        check("آگهی بیرون از صف → 404",
+              c.post("/api/label", json={"id": 999999, "verdict": "verify",
+                                         "category": "mobile"}).status_code == 404)
+
+        # ۵) برچسب تکراری بدون override رد می‌شود
+        check("برچسب تکراری → 409",
+              c.post("/api/label", json={"id": 1, "verdict": "verify",
+                                         "category": "mobile"}).status_code == 409)
+
+        # ۶) override رأی را جایگزین می‌کند و «آخرین رأی» می‌برد
+        c.post("/api/label", json={"id": 1, "verdict": "junk",
+                                   "reason_code": "OUT_OF_SCOPE",
+                                   "note": "اصلاحیه", "override": True})
+        dec = _latest_from_file(dsl)
+        check("override: آخرین رأی می‌برد",
+              dec.get(1, {}).get("decision") == "junk", str(dec.get(1)))
+
+        # ۷) undo سطر را واقعاً از دیسک برمی‌دارد
+        c.post("/api/label", json={"id": 2, "verdict": "junk",
+                                   "reason_code": "OUT_OF_SCOPE"})
+        u = c.post("/api/undo").json()
+        check("undo سطر را از دیسک برمی‌دارد",
+              u["ok"] and u["removed"].startswith("2 j ")
+              and "2 j " not in dsl.read_text(encoding="utf-8"))
+
+        # ۸) شمارنده‌ها با فایل می‌خوانند
+        st = c.get("/api/stats").json()
+        check("شمارنده‌ها با دیسک می‌خوانند",
+              st["labeled"] == len(STATE["labeled"]) == len(_latest_from_file(dsl)),
+              str(st))
+
+        # ۹) شبیه‌سازی قطعی/بازشدن: خواندن دوباره هیچ برچسبی را گم نمی‌کند
+        kept = set(STATE["labeled"])
+        reread, bad = _read_labels([dsl])
+        check("پس از بازشدن، برچسب‌ها گم نمی‌شوند",
+              kept <= set(reread) and bad == 0,
+              f"گم‌شده: {kept - set(reread)}، سطر خراب: {bad}")
+
+        # ۱۰) --dsl سفارشی هم شمرده می‌شود (باگ نسخه‌ی دوم: فقط glob می‌زد)
+        custom = tmp / "custom_path.dsl"
+        custom.write_text("777 s laptop # از مسیر سفارشی\n", encoding="utf-8")
+        merged, _ = _read_labels(list(Path(rq.REVIEW).glob("decisions_ui_*.dsl"))
+                                 + [custom])
+        check("برچسب‌های مسیر --dsl سفارسی هم شمرده می‌شوند",
+              777 in merged, f"کلیدها: {sorted(merged)[:6]}")
+
+        # ۱۱) فایل فقط به آن اضافه می‌شود؛ سطرهای قبلی عوض نمی‌شوند
+        head = on_disk.splitlines()[0]
+        check("فایل append-only است (سطرهای قبلی دست‌نخورده)",
+              dsl.read_text(encoding="utf-8").splitlines()[0] == head
+              or head.startswith("//"))
+
+        # ۱۲) خودآزمون هیچ فایلی در پروژه نساخته
+        stray = [p.name for p in Path(rq.REVIEW).glob("*SELFTEST*")]
+        check("خودآزمون فایل پروژه را تغییر نداد", not stray, str(stray))
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+    print("=" * 62)
+    print("🔬 خودآزمایی محیط برچسب‌زنی")
+    print("=" * 62)
+    npass = 0
+    for name, ok, detail in results:
+        npass += ok
+        mark = "✅" if ok else "❌"
+        print(f"  {mark} {name}")
+        if not ok and detail:
+            print(f"      ↳ {detail[:110]}")
+    print("-" * 62)
+    print(f"  {npass}/{len(results)} بررسی پاس شد")
+    if npass == len(results):
+        print("  ✅ محیط برای برچسب‌زنی قابل اتکا است.")
+        return 0
+    print("  ⛔ محیط ایراد دارد. تا رفع آن برچسب نزن.")
+    return 1
+
+
+def _latest_from_file(path: Path) -> dict[int, dict]:
+    """آخرین رأی هر id از روی فایل DSL — همان قاعده‌ای که apply به‌کار می‌برد."""
+    out: dict[int, dict] = {}
+    for row in rq.parse_dsl(path.read_text(encoding="utf-8")):
+        if "id" in row:
+            out[row["id"]] = row
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--session", required=True, help="برچسب نشست، مثلاً S33")
+    ap.add_argument("--session", help="برچسب نشست، مثلاً S33")
     ap.add_argument("--host", default="0.0.0.0")
     ap.add_argument("--port", type=int, default=8077)
     ap.add_argument("--order", choices=["queue", "risk"], default="queue",
                     help="risk: آن‌هایی که برچسب قبلی‌شان «رد» بوده اول")
     ap.add_argument("--dsl", default=None,
                     help="مسیر فایل DSL (پیش‌فرض exports/review/decisions_ui_<برچسب>.dsl)")
+    ap.add_argument("--selftest", action="store_true",
+                    help="درستی محیط را بیازما و بیرون برو (چیزی را تغییر نمی‌دهد)")
     args = ap.parse_args()
+
+    if args.selftest:
+        raise SystemExit(selftest())
+    if not args.session:
+        ap.error("--session لازم است (یا --selftest)")
 
     dsl = Path(args.dsl) if args.dsl else (
         rq.REVIEW / f"decisions_ui_{args.session}.dsl")
@@ -407,6 +603,11 @@ def main():
     print(f"🏷️  برچسب‌زنی انسانی — نشست {args.session}")
     print(f"   صف بازبینی‌نشده: {len(STATE['order']):,} | "
           f"از قبل برچسب‌خورده: {len(STATE['labeled']):,} | باقی: {todo:,}")
+    if STATE.get("bad_lines"):
+        print(f"   ⚠️  {STATE['bad_lines']} سطر ناخوانا در فایل‌های DSL رد شد")
+    if len(STATE.get("seen_files", [])) > 1:
+        print(f"   📂 رأی‌ها از {len(STATE['seen_files'])} فایل خوانده شد: "
+              f"{', '.join(STATE['seen_files'])}")
     print(f"   فایل DSL: {dsl}")
     print(f"   بعد از پایان:  python review_queue.py apply --session {args.session} "
           f"--file {dsl.name}")
