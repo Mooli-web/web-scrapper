@@ -283,59 +283,101 @@ PAGE = r"""<!doctype html>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>برچسب‌زنی — نشست __SESSION__</title>
 <style>
-:root{--bg:#0f1115;--card:#181c24;--line:#2a3040;--fg:#e8ecf4;--mut:#8b95a8;
---ok:#2ecc71;--bad:#ff5d5d;--acc:#4c8dff}
+:root{--bg:#0b0e13;--card:#151a22;--card2:#1b212c;--line:#28303e;--fg:#eef2f8;
+--mut:#939db0;--dim:#6b7688;--ok:#25c46f;--okd:#0f2b1d;--bad:#f4574d;--badd:#33130f;
+--amber:#e8b64c;--okbg:rgba(37,196,111,.08);--badbg:rgba(244,87,77,.07);
+--rad:14px;--r:9px}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);
-font:15px/1.7 Vazirmatn,Tahoma,system-ui,sans-serif}
-.wrap{max-width:860px;margin:0 auto;padding:20px}
-.bar{display:flex;gap:14px;align-items:center;flex-wrap:wrap;
-padding:10px 14px;background:var(--card);border:1px solid var(--line);
-border-radius:10px;margin-bottom:16px;font-size:13px;color:var(--mut)}
-.bar b{color:var(--fg)}
-.prog{flex:1;min-width:140px;height:6px;background:#232936;border-radius:3px;overflow:hidden}
-.prog i{display:block;height:100%;background:var(--acc);width:0}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
-h1{font-size:22px;margin:0 0 10px;line-height:1.5;word-break:break-word}
-.meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
-.tag{background:#232936;border:1px solid var(--line);border-radius:8px;
-padding:4px 10px;font-size:13px;color:var(--mut)}
-.tag b{color:var(--fg)}
-.hint{background:#2a2416;border:1px solid #5a4a1e;color:#e8c86a;
-border-radius:8px;padding:8px 12px;font-size:13px;margin-bottom:14px}
-.lbl{font-size:12px;color:var(--mut);margin:14px 0 6px}
+html{color-scheme:dark}
+body{margin:0;background:radial-gradient(1200px 500px at 85% -10%,#131b2b 0%,var(--bg) 60%);
+color:var(--fg);font:15px/1.75 Vazirmatn,Tahoma,system-ui,sans-serif;min-height:100vh}
+.wrap{max-width:900px;margin:0 auto;padding:22px 16px 40px}
+/* ---------- نوار بالا ---------- */
+.bar{position:sticky;top:10px;z-index:5;display:flex;align-items:center;gap:14px;
+flex-wrap:wrap;background:rgba(21,26,34,.92);backdrop-filter:blur(8px);
+border:1px solid var(--line);border-radius:var(--rad);padding:10px 16px;margin-bottom:16px;
+font-size:13px;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.sess{font-weight:700;color:var(--fg);background:var(--card2);border:1px solid var(--line);
+border-radius:8px;padding:3px 10px}
+.prog{position:relative;flex:1;min-width:150px;height:8px;background:#232b38;border-radius:4px;overflow:hidden}
+.prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ok),#7ee2a8);
+border-radius:4px;transition:width .35s ease}
+.count{display:flex;align-items:baseline;gap:5px;color:var(--dim)}
+.count b{font-size:15px;color:var(--fg)}
+.count.ok b{color:var(--ok)}.count.bad b{color:var(--bad)}
+/* ---------- کارت ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);
+padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tag{background:var(--card2);border:1px solid var(--line);border-radius:7px;
+padding:3px 10px;font-size:12px;color:var(--mut)}
+.tag b{color:var(--fg);font-weight:600}
+.tag.price b{color:var(--amber)}
+h1{font-size:23px;font-weight:700;margin:0 0 14px;line-height:1.55;word-break:break-word}
+.hint{display:flex;gap:8px;align-items:flex-start;background:rgba(232,182,76,.10);
+border:1px solid rgba(232,182,76,.35);color:var(--amber);border-radius:var(--r);
+padding:9px 13px;font-size:13px;margin-bottom:14px;line-height:1.7}
+.suggest{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--mut);
+background:var(--okbg);border:1px dashed rgba(37,196,111,.4);border-radius:var(--r);
+padding:8px 13px;margin-bottom:18px}
+.suggest b{color:var(--ok)}
+.suggest kbd{background:var(--card2);border:1px solid var(--line);border-radius:4px;
+padding:0 6px;font-size:11px}
+/* ---------- دو پنل تصمیم ---------- */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:760px){.cols{grid-template-columns:1fr}}
+.panel{border:1px solid var(--line);border-radius:12px;padding:14px 14px 16px;background:var(--card2)}
+.panel.ok{background:var(--okbg);border-color:rgba(37,196,111,.30)}
+.panel.bad{background:var(--badbg);border-color:rgba(244,87,77,.30)}
+.panel h3{display:flex;align-items:center;gap:7px;margin:0 0 11px;font-size:13px;font-weight:700}
+.panel.ok h3{color:var(--ok)}.panel.bad h3{color:var(--bad)}
+.panel h3 .sub{font-weight:400;color:var(--dim);font-size:11px}
 .chips{display:flex;gap:6px;flex-wrap:wrap}
-.chip{background:#232936;border:1px solid var(--line);color:var(--mut);
-border-radius:8px;padding:6px 11px;cursor:pointer;font-size:13px;font-family:inherit}
-.chip:hover{border-color:var(--acc);color:var(--fg)}
-.chip.on{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
-.chip kbd{opacity:.55;font-size:10px;margin-inline-start:5px}
-.acts{display:flex;gap:12px;margin-top:22px}
-.btn{flex:1;border:0;border-radius:12px;padding:16px;font-size:17px;font-weight:700;
-cursor:pointer;font-family:inherit;color:#fff}
-.btn small{display:block;font-size:11px;font-weight:400;opacity:.75;margin-top:2px}
-.v{background:var(--ok)}.j{background:var(--bad)}
-.v:hover{filter:brightness(1.1)}.j:hover{filter:brightness(1.1)}
-.ghost{background:#232936;border:1px solid var(--line);color:var(--mut);flex:0 0 auto}
-input[type=text]{width:100%;background:#0f1319;border:1px solid var(--line);
-color:var(--fg);border-radius:8px;padding:9px 12px;font-family:inherit;font-size:14px}
+.chip{background:#1e2531;border:1px solid var(--line);color:var(--mut);border-radius:8px;
+padding:7px 12px;cursor:pointer;font-size:12.5px;font-family:inherit;transition:.12s;
+display:inline-flex;align-items:center;gap:5px}
+.chip:hover{border-color:#3a4352;color:var(--fg);transform:translateY(-1px)}
+.chip kbd{opacity:.5;font-size:10px}
+.chip.star{box-shadow:inset 0 0 0 1px rgba(37,196,111,.45)}
+.chip.on-ok{background:var(--ok);border-color:var(--ok);color:var(--okd);font-weight:700}
+.chip.on-bad{background:var(--bad);border-color:var(--bad);color:#fff;font-weight:700}
+.chip.on-ok kbd,.chip.on-bad kbd{opacity:.65}
+/* ---------- یادداشت و دکمه‌ها ---------- */
+.lbl{display:block;font-size:12px;color:var(--mut);margin:18px 0 7px}
+input[type=text]{width:100%;background:#0f141c;border:1px solid var(--line);color:var(--fg);
+border-radius:var(--r);padding:10px 13px;font-family:inherit;font-size:14px}
+input[type=text]:focus{outline:none;border-color:#3d84ff;box-shadow:0 0 0 3px rgba(61,132,255,.15)}
+.acts{display:flex;gap:10px;margin-top:20px}
+.btn{flex:1;border:0;border-radius:12px;padding:14px 16px;font-size:16px;font-weight:700;
+cursor:pointer;font-family:inherit;color:#fff;transition:.12s;display:flex;flex-direction:column;
+align-items:center;gap:2px}
+.btn:active{transform:scale(.98)}
+.btn .pick{font-size:12px;font-weight:500;opacity:.9}
+.btn small{font-size:10px;font-weight:400;opacity:.7}
+.btn.v{background:linear-gradient(180deg,#2fd67c,#1cab5f);box-shadow:0 6px 16px rgba(37,196,111,.25)}
+.btn.j{background:linear-gradient(180deg,#ff6a5f,#e04238);box-shadow:0 6px 16px rgba(244,87,77,.25)}
+.btn.v:hover,.btn.j:hover{filter:brightness(1.07)}
+.btn.ghost{flex:0 0 auto;background:var(--card2);border:1px solid var(--line);color:var(--mut)}
+.btn.ghost:hover{color:var(--fg);border-color:#3a4352}
 .done{text-align:center;padding:60px 20px}
-.keys{margin-top:16px;font-size:12px;color:var(--mut);line-height:2}
-.keys kbd{background:#232936;border:1px solid var(--line);border-radius:4px;
-padding:1px 6px;margin:0 2px}
+.done code{background:var(--card2);border:1px solid var(--line);border-radius:6px;
+padding:3px 8px;font-size:13px;direction:ltr;display:inline-block}
+.keys{margin-top:14px;text-align:center;font-size:12px;color:var(--dim);line-height:2.1}
+.keys kbd{background:var(--card2);border:1px solid var(--line);border-radius:5px;
+padding:1px 7px;margin:0 2px;color:var(--mut)}
 </style></head><body><div class="wrap">
 <div class="bar">
-  <span>نشست <b>__SESSION__</b></span>
-  <span>برچسب‌خورده <b id="done">0</b> / <b id="total">0</b></span>
-  <span style="color:var(--ok)">تأیید <b id="nV">0</b></span>
-  <span style="color:var(--bad)">حذف <b id="nJ">0</b></span>
+  <span class="sess">نشست __SESSION__</span>
   <div class="prog"><i id="prog"></i></div>
+  <span class="count"><b id="done">0</b><span>/</span><b id="total">0</b> برچسب</span>
+  <span class="count ok"><b id="nV">0</b> تأیید</span>
+  <span class="count bad"><b id="nJ">0</b> حذف</span>
 </div>
 <div id="root"></div>
 <div class="keys">
-  <kbd>V</kbd> تأیید با دسته‌ی انتخابی &nbsp; <kbd>J</kbd> حذف با دلیل انتخابی
-  &nbsp; <kbd>1</kbd>…<kbd>9</kbd><kbd>0</kbd><kbd>Q</kbd>… انتخاب دسته
-  &nbsp; <kbd>N</kbd> رد کردن &nbsp; <kbd>Z</kbd> برگرداندن آخری
+  <kbd>V</kbd> تأیید با دسته‌ی انتخابی · <kbd>J</kbd> حذف با دلیل انتخابی ·
+  <kbd>1</kbd>…<kbd>9</kbd><kbd>0</kbd><kbd>Q</kbd>… انتخاب دسته ·
+  <kbd>N</kbd> رد کردن · <kbd>Z</kbd> برگرداندن آخری
 </div>
 </div>
 <script>
@@ -363,27 +405,33 @@ function render(){
   const c=cur;
   $('root').innerHTML=`<div class="card">
     <div class="meta">
-      <span class="tag">id <b>${c.id}</b></span>
-      <span class="tag">قیمت <b>${(c.price||0).toLocaleString('fa-IR')}</b> تومان</span>
+      <span class="tag">ID <b>${c.id}</b></span>
+      <span class="tag price"><b>${(c.price||0).toLocaleString('fa-IR')}</b> تومان</span>
       <span class="tag">فروشگاه <b>${c.store||'—'}</b></span>
       <span class="tag">لایه <b>${c.tier||'—'}</b></span>
-      <span class="tag">پیشنهاد تاکسونومی <b>${c.suggest_label}</b></span>
     </div>
-    <h1>${esc(c.title)||'<i style="color:var(--mut)">(بدون عنوان)</i>'}</h1>
-    ${c.oos_hint?`<div class="hint">⚠️ پیش‌فیلتر این را ${c.oos_hint} می‌داند — اگر موافقی <kbd>J</kbd> با دلیل OUT_OF_SCOPE.</div>`:''}
-    <div class="lbl">دسته (برای تأیید)</div>
-    <div class="chips">${CATS.map((k,i)=>
-      `<button class="chip ${k===cat?'on':''}" data-cat="${k}">${k}<kbd>${KEYS[i]||''}</kbd></button>`).join('')}</div>
-    <div class="lbl">دلیل (برای حذف)</div>
-    <div class="chips">${REASONS.map(k=>
-      `<button class="chip ${k===reason?'on':''}" data-rsn="${k}">${k}</button>`).join('')}</div>
-    <div class="lbl">یادداشت اختیاری (داده‌ی آموزشی)</div>
+    <h1>${esc(c.title)||'<span style="color:var(--dim)">(بدون عنوان)</span>'}</h1>
+    ${c.oos_hint?`<div class="hint">⚠️ <span>پیش‌فیلتر این را <b>${c.oos_hint}</b> می‌داند — اگر موافقی با کلید <b>J</b> و دلیل <b>OUT_OF_SCOPE</b> حذفش کن.</span></div>`:''}
+    <div class="suggest">💡 پیشنهاد تاکسونومی: <b>${c.suggest_label}</b> — کلید <kbd>V</kbd> همین دسته را می‌نشاند</div>
+    <div class="cols">
+      <section class="panel ok">
+        <h3>✅ تأیید <span class="sub">دسته را انتخاب کن</span></h3>
+        <div class="chips">${CATS.map((k,i)=>
+          `<button class="chip ${k===cat?'on-ok':''} ${k===c.suggest?'star':''}" data-cat="${k}">${k}<kbd>${KEYS[i]||''}</kbd></button>`).join('')}</div>
+      </section>
+      <section class="panel bad">
+        <h3>🗑 حذف <span class="sub">دلیل را انتخاب کن</span></h3>
+        <div class="chips">${REASONS.map(k=>
+          `<button class="chip ${k===reason?'on-bad':''}" data-rsn="${k}">${k}</button>`).join('')}</div>
+      </section>
+    </div>
+    <label class="lbl" for="note">یادداشت اختیاری (داده‌ی آموزشی)</label>
     <input type="text" id="note" placeholder="چرا؟ یک جمله که بعداً برای آموزش مدل به درد بخورد" value="${esc(note)}">
     <div class="acts">
-      <button class="btn v" id="bv">تأیید → ${cat}<small>V</small></button>
-      <button class="btn j" id="bj">حذف ← ${reason}<small>J</small></button>
-      <button class="btn ghost" id="bn">رد کردن<small>N</small></button>
-      <button class="btn ghost" id="bz">↶<small>Z</small></button>
+      <button class="btn v" id="bv"><span>تأیید</span><span class="pick">→ ${cat}</span><small>V</small></button>
+      <button class="btn j" id="bj"><span>حذف</span><span class="pick">← ${reason}</span><small>J</small></button>
+      <button class="btn ghost" id="bn"><span>رد کردن</span><small>N</small></button>
+      <button class="btn ghost" id="bz"><span>↶</span><small>Z</small></button>
     </div></div>`;
   document.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{cat=b.dataset.cat;render();});
   document.querySelectorAll('[data-rsn]').forEach(b=>b.onclick=()=>{reason=b.dataset.rsn;render();});
