@@ -84,21 +84,24 @@ def audit(conn: sqlite3.Connection, agent_ids: set[int]) -> dict:
         "SELECT COALESCE(NULLIF(quality_status,''),'(خالی)'), COUNT(*) "
         "FROM store_listings GROUP BY 1 ORDER BY 2 DESC").fetchall())
 
-    # منبع برچسب، از روی قرارداد پیشوندها
+    # منبع برچسب. ترتیب مهم است: اول دفترکل (ملاک واقعی)، بعد پیشوندها.
+    # نسخه‌ی اول فقط از روی پیشوند حدس می‌زد و ردیفی را که در دفترکل بود
+    # ولی پیشوند نداشت «منبع نامعلوم» نشان می‌داد — گزارشی که با قاعده‌ی
+    # خودِ ابزار نمی‌خواند.
     src = Counter()
-    for reason, status, n in conn.execute(
-            "SELECT COALESCE(rejection_reason,''), COALESCE(quality_status,''), "
-            "COUNT(*) FROM store_listings GROUP BY 1,2"):
-        if reason.startswith("✋"):
-            src["انسانی (✋)"] += n
+    for lid, reason, status in conn.execute(
+            "SELECT id, COALESCE(rejection_reason,''), COALESCE(quality_status,'') "
+            "FROM store_listings"):
+        if lid in agent_ids:
+            src["ایجنت (طبق دفترکل — می‌ماند)"] += 1
+        elif reason.startswith("✋"):
+            src["انسانی (✋ — پاک می‌شود)"] += 1
         elif reason.startswith("🤖") or status in AI_STATUSES:
-            src["AI (🤖)"] += n
-        elif reason.startswith("["):
-            src["ایجنت ([کد])"] += n
+            src["AI (🤖 — پاک می‌شود)"] += 1
         elif status in ("PENDING", ""):
-            src["بی‌تصمیم (PENDING)"] += n
+            src["بی‌تصمیم (چیزی برای پاک‌کردن نیست)"] += 1
         else:
-            src["منبع نامعلوم"] += n
+            src["منبع نامعلوم (پاک می‌شود)"] += 1
     out["by_source"] = dict(src)
 
     out["agent_ids_in_ledger"] = len(agent_ids)
