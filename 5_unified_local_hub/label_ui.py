@@ -81,13 +81,17 @@ def _read_labels(paths) -> tuple[dict[int, str], int]:
     return labeled, bad
 
 
-def load(order: str, session: str, dsl_path: Path) -> None:
+def load(order: str, session: str, dsl_path: Path, only=None) -> None:
     """صف را می‌سازد، رأی‌های قبلی را برمی‌دارد، و فایل DSL را ادامه می‌دهد.
 
     ⚠️ رأی‌های قبلی از **همه‌ی** فایل‌های decisions_ui_*.dsl **به‌علاوه‌ی**
     خودِ dsl_path خوانده می‌شوند. نسخه‌ی اول فقط فایل جاری را می‌خواند و
     برچسب‌های نشست‌های دیگر را نمی‌دید؛ نسخه‌ی دوم هم فقط glob می‌زد و اگر
     --dsl مسیر دیگری بود برچسب‌هایش نامرئی می‌ماند. هر دو یعنی برچسب دوباره.
+
+    `only` (مجموعه‌ای از دسته‌ها) اگر داده شود، صف را به آگهی‌هایی محدود
+    می‌کند که تاکسونومی آن‌ها را در آن دسته می‌شناسد — برای بسته‌های مرزی
+    مثل other/accessories که می‌خواهیم هدفمند برچسب بخورند.
     """
     if not (HUB / "exports" / "review" / "queue.jsonl").exists():
         raise SystemExit("❌ اول `python review_queue.py build` را اجرا کن")
@@ -95,6 +99,9 @@ def load(order: str, session: str, dsl_path: Path) -> None:
     queue = rq._load("queue.jsonl")
     decided = rq._decided_ids()
     todo = [x for x in queue if x["id"] not in decided]
+    if only:
+        todo = [x for x in todo
+                if normalize_category(None, rq.strip_invisible(x.get("title") or "")) in only]
 
     sources = sorted((HUB / "exports" / "review").glob("decisions_ui_*.dsl"))
     sources.append(dsl_path)                 # --dsl سفارشی هم شمرده شود
@@ -634,6 +641,8 @@ def main():
                     help="risk: آن‌هایی که برچسب قبلی‌شان «رد» بوده اول")
     ap.add_argument("--dsl", default=None,
                     help="مسیر فایل DSL (پیش‌فرض exports/review/decisions_ui_<برچسب>.dsl)")
+    ap.add_argument("--only", default=None,
+                    help="فقط این دسته‌های تاکسونومی، جدا با کاما؛ مثلاً other,accessories,watch")
     ap.add_argument("--selftest", action="store_true",
                     help="درستی محیط را بیازما و بیرون برو (چیزی را تغییر نمی‌دهد)")
     args = ap.parse_args()
@@ -643,9 +652,16 @@ def main():
     if not args.session:
         ap.error("--session لازم است (یا --selftest)")
 
+    only = None
+    if args.only:
+        only = {c.strip() for c in args.only.split(",") if c.strip()}
+        bad = only - set(CATEGORIES)
+        if bad:
+            ap.error(f"دسته‌ی نامعتبر در --only: {', '.join(sorted(bad))}")
+
     dsl = Path(args.dsl) if args.dsl else (
         rq.REVIEW / f"decisions_ui_{args.session}.dsl")
-    load(args.order, args.session, dsl)
+    load(args.order, args.session, dsl, only)
 
     import json as _json
     globals()["PAGE"] = PAGE.replace("__CATS__", _json.dumps(CATEGORIES)) \
@@ -653,6 +669,8 @@ def main():
 
     todo = len(STATE["order"]) - len(STATE["labeled"])
     print(f"🏷️  برچسب‌زنی انسانی — نشست {args.session}")
+    if only:
+        print(f"   🎯 فیلتر دسته: {', '.join(sorted(only))}")
     print(f"   صف بازبینی‌نشده: {len(STATE['order']):,} | "
           f"از قبل برچسب‌خورده: {len(STATE['labeled']):,} | باقی: {todo:,}")
     if STATE.get("bad_lines"):
