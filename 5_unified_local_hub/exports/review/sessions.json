@@ -1,253 +1,267 @@
 [
-  {
-    "session": "S01",
-    "label": "بسته‌ی خوشه‌ای ۱ — خوشه‌های C0001 تا C0008",
-    "files": [
-      "decisions_0001.json"
-    ]
-  },
-  {
-    "session": "S02",
-    "label": "سیاست حذف کالای طرح/فیک + اصلاح بسته‌ی ۱",
-    "files": [
-      "decisions_0002.json"
-    ]
-  },
-  {
-    "session": "S03",
-    "label": "پویش کامل ۱۸۴ کاندیدای فیک، آگهی‌به‌آگهی",
-    "files": [
-      "decisions_0003.json"
-    ]
-  },
-  {
-    "session": "S04",
-    "label": "صف روی همه‌ی آگهی‌ها + بسته‌ی تخت ۱",
-    "files": [
-      "decisions_0004.dsl"
-    ]
-  },
-  {
-    "session": "S05",
-    "label": "توافق روی روش کار (بدون تصمیم)",
-    "files": []
-  },
-  {
-    "session": "S06",
-    "label": "مرحله‌ی ۰: فیلترهای مکانیکی + بسته‌ی تخت ۲ + بازطبقه‌ی خارج‌ازحوزه",
-    "files": [
-      "decisions_0005_stage0.json",
-      "decisions_0006_flat02.dsl",
-      "decisions_0007_oos_reclass.json",
-      "decisions_0008_backfill_codes.json"
-    ]
-  },
-  {
-    "session": "S07",
-    "label": "بسته‌های تخت ۳ و ۴ — ۳۰۰ آگهی دیجی‌کالا",
-    "files": [
-      "decisions_0009_flat03.dsl",
-      "decisions_0010_flat04.dsl"
-    ]
-  },
-  {
-    "session": "S08",
-    "label": "بسته‌های تخت ۵ و ۶ — ۳۰۰ آگهی دیجی‌کالا",
-    "files": [
-      "decisions_0011_flat05.dsl",
-      "decisions_0012_flat06.dsl"
-    ]
-  },
-  {
-    "session": "S09",
-    "label": "بسته‌های تخت ۷ و ۸ — ۳۰۰ آگهی دیجی‌کالا",
-    "files": [
-      "decisions_0013_flat07.dsl",
-      "decisions_0014_flat08.dsl"
-    ]
-  },
-  {
-    "session": "S10",
-    "label": "بسته‌های تخت ۹ و ۱۰ — ۳۰۰ آگهی دیجی‌کالا",
-    "files": [
-      "decisions_0015_flat09.dsl",
-      "decisions_0016_flat10.dsl"
-    ]
-  },
-  {
-    "session": "S11",
-    "label": "دسته‌ی جدید قطعات کامپیوتر + بسته‌های تخت ۱۱ و ۱۲",
-    "files": [
-      "decisions_0017_taxonomy_pcparts.dsl",
-      "decisions_0018_flat11.dsl",
-      "decisions_0019_flat12.dsl",
-      "decisions_0020_oos_recode.dsl"
-    ]
-  },
-  {
-    "session": "S12",
-    "label": "بسته‌های تخت ۱۳ و ۱۴ — ۳۰۰ آگهی دیجی‌کالا",
-    "files": [
-      "decisions_0021_flat13.dsl",
-      "decisions_0022_flat14.dsl"
-    ]
-  },
-  {
-    "session": "S13",
-    "label": "بسته‌های تخت ۱۵ و ۱۶ + ممیزی کور ۳",
-    "files": [
-      "decisions_0023_flat15.dsl",
-      "decisions_0024_flat16.dsl",
-      "decisions_0025_rule_align.dsl",
-      "decisions_0026_trade_recode.dsl"
-    ]
-  },
-  {
-    "session": "S14",
-    "label": "بسته‌های تخت ۱۷ و ۱۸ + ابزار نشاندن دفترکل روی دیتابیس",
-    "files": [
-      "decisions_0027_flat17.dsl",
-      "decisions_0028_flat18.dsl"
-    ]
-  },
-  {
-    "session": "S15",
-    "label": "بسته‌های تخت ۱۹ و ۲۰ — ۳۰۰ آگهی دیجی‌کالا",
-    "files": [
-      "decisions_0029_flat19.dsl",
-      "decisions_0030_flat20.dsl"
-    ]
-  },
-  {
-    "session": "S16",
-    "label": "بسته‌های تخت ۲۱ و ۲۲ + اصلاح کد مدل اپل + ممیزی کور ۴",
-    "files": [
-      "decisions_0031_flat21.dsl",
-      "decisions_0032_flat22.dsl",
-      "decisions_0033_a2859_recode.dsl"
-    ]
-  },
-  {
-    "session": "S17",
-    "label": "دسته‌ی جدید لوازم جانبی + بسته‌های تخت ۲۳ و ۲۴",
-    "files": [
-      "decisions_0034_flat23.dsl",
-      "decisions_0035_flat24.dsl"
-    ]
-  },
-  {
-    "session": "S18",
-    "label": "بسته‌های تخت ۲۵ و ۲۶ + روشن‌سازی قاعده‌ی AMBIGUOUS_NO_MODEL",
-    "files": [
-      "decisions_0036_flat25.dsl",
-      "decisions_0037_ambiguous_recode.dsl",
-      "decisions_0038_flat26.dsl"
-    ]
-  },
-  {
-    "session": "S19",
-    "label": "بسته‌های تخت ۲۷ و ۲۸ — ۳۰۰ آگهی دیوار",
-    "files": [
-      "decisions_0039_flat27.dsl",
-      "decisions_0040_flat28.dsl"
-    ]
-  },
-  {
-    "session": "S20",
-    "label": "بسته‌های تخت ۲۹ و ۳۰ — ۳۰۰ آگهی دیوار",
-    "files": [
-      "decisions_0041_flat29.dsl",
-      "decisions_0042_flat30.dsl"
-    ]
-  },
-  {
-    "session": "S21",
-    "label": "بسته‌های تخت ۳۱ و ۳۲ — ۳۰۰ آگهی دیوار",
-    "files": [
-      "decisions_0043_flat31.dsl",
-      "decisions_0044_flat32.dsl"
-    ]
-  },
-  {
-    "session": "S22",
-    "label": "بسته‌های تخت ۳۳ و ۳۴ — ۳۰۰ آگهی دیوار",
-    "files": [
-      "decisions_0045_flat33.dsl",
-      "decisions_0046_flat34.dsl"
-    ]
-  },
-  {
-    "session": "S23",
-    "label": "بسته‌های تخت ۳۵ و ۳۶ — ۳۰۰ آگهی دیوار",
-    "files": [
-      "decisions_0047_flat35.dsl",
-      "decisions_0048_flat36.dsl"
-    ]
-  },
-  {
-    "session": "S24",
-    "label": "بسته‌های تخت ۳۷ و ۳۸ + رفع ابهام MacBook Neo",
-    "files": [
-      "decisions_0049_flat37.dsl",
-      "decisions_0050_flat38.dsl",
-      "decisions_0051_recode_a18.dsl"
-    ]
-  },
-  {
-    "session": "S25",
-    "label": "بسته‌های تخت ۳۹ و ۴۰ — ۳۰۰ آگهی دیوار",
-    "files": [
-      "decisions_0052_flat39.dsl",
-      "decisions_0053_flat40.dsl"
-    ]
-  },
-  {
-    "session": "S26",
-    "label": "بسته‌های تخت ۴۱ و ۴۲ — ۳۰۰ آگهی دیوار",
-    "files": [
-      "decisions_0054_flat41.dsl",
-      "decisions_0055_flat42.dsl"
-    ]
-  },
-  {
-    "session": "S27",
-    "label": "بسته‌های تخت ۴۳ و ۴۴ — ۳۰۰ آگهی دست‌دوم",
-    "files": [
-      "decisions_0056_flat43.dsl",
-      "decisions_0057_flat44.dsl"
-    ]
-  },
-  {
-    "session": "S28",
-    "label": "بسته‌های تخت ۴۵ و ۴۶ — انتهای صف قیمت (عمدتاً خارج از حوزه)",
-    "files": [
-      "decisions_0058_flat45.dsl",
-      "decisions_0059_flat46.dsl"
-    ]
-  },
-  {
-    "session": "S29",
-    "label": "بسته‌های تخت ۴۷ و ۴۸ — ۳۰۰ آگهی esam (ساعت/زیورآلات/اسکناس)",
-    "files": [
-      "decisions_0060_flat47.dsl",
-      "decisions_0061_flat48.dsl"
-    ]
-  },
-  {
-    "session": "S30",
-    "label": "بسته‌های تخت ۴۹ و ۵۰ — بلوک بزرگ اسکناس/تمبر کلکسیونی",
-    "files": [
-      "decisions_0062_flat49.dsl",
-      "decisions_0063_flat50.dsl"
-    ]
-  },
-  {
-    "session": "S31",
-    "label": "بسته‌های تخت ۵۱ و ۵۲ — زیورآلات بدلی و تمبر (۹۸.۷٪ خارج از حوزه)",
-    "files": [
-      "decisions_0065_flat51.dsl",
-      "decisions_0066_flat52.dsl",
-      "decisions_0067_recode_1706812.dsl"
-    ]
-  }
+ {
+  "session": "S01",
+  "label": "بسته‌ی خوشه‌ای ۱ — خوشه‌های C0001 تا C0008",
+  "files": [
+   "decisions_0001.json"
+  ]
+ },
+ {
+  "session": "S02",
+  "label": "سیاست حذف کالای طرح/فیک + اصلاح بسته‌ی ۱",
+  "files": [
+   "decisions_0002.json"
+  ]
+ },
+ {
+  "session": "S03",
+  "label": "پویش کامل ۱۸۴ کاندیدای فیک، آگهی‌به‌آگهی",
+  "files": [
+   "decisions_0003.json"
+  ]
+ },
+ {
+  "session": "S04",
+  "label": "صف روی همه‌ی آگهی‌ها + بسته‌ی تخت ۱",
+  "files": [
+   "decisions_0004.dsl"
+  ]
+ },
+ {
+  "session": "S05",
+  "label": "توافق روی روش کار (بدون تصمیم)",
+  "files": []
+ },
+ {
+  "session": "S06",
+  "label": "مرحله‌ی ۰: فیلترهای مکانیکی + بسته‌ی تخت ۲ + بازطبقه‌ی خارج‌ازحوزه",
+  "files": [
+   "decisions_0005_stage0.json",
+   "decisions_0006_flat02.dsl",
+   "decisions_0007_oos_reclass.json",
+   "decisions_0008_backfill_codes.json"
+  ]
+ },
+ {
+  "session": "S07",
+  "label": "بسته‌های تخت ۳ و ۴ — ۳۰۰ آگهی دیجی‌کالا",
+  "files": [
+   "decisions_0009_flat03.dsl",
+   "decisions_0010_flat04.dsl"
+  ]
+ },
+ {
+  "session": "S08",
+  "label": "بسته‌های تخت ۵ و ۶ — ۳۰۰ آگهی دیجی‌کالا",
+  "files": [
+   "decisions_0011_flat05.dsl",
+   "decisions_0012_flat06.dsl"
+  ]
+ },
+ {
+  "session": "S09",
+  "label": "بسته‌های تخت ۷ و ۸ — ۳۰۰ آگهی دیجی‌کالا",
+  "files": [
+   "decisions_0013_flat07.dsl",
+   "decisions_0014_flat08.dsl"
+  ]
+ },
+ {
+  "session": "S10",
+  "label": "بسته‌های تخت ۹ و ۱۰ — ۳۰۰ آگهی دیجی‌کالا",
+  "files": [
+   "decisions_0015_flat09.dsl",
+   "decisions_0016_flat10.dsl"
+  ]
+ },
+ {
+  "session": "S11",
+  "label": "دسته‌ی جدید قطعات کامپیوتر + بسته‌های تخت ۱۱ و ۱۲",
+  "files": [
+   "decisions_0017_taxonomy_pcparts.dsl",
+   "decisions_0018_flat11.dsl",
+   "decisions_0019_flat12.dsl",
+   "decisions_0020_oos_recode.dsl"
+  ]
+ },
+ {
+  "session": "S12",
+  "label": "بسته‌های تخت ۱۳ و ۱۴ — ۳۰۰ آگهی دیجی‌کالا",
+  "files": [
+   "decisions_0021_flat13.dsl",
+   "decisions_0022_flat14.dsl"
+  ]
+ },
+ {
+  "session": "S13",
+  "label": "بسته‌های تخت ۱۵ و ۱۶ + ممیزی کور ۳",
+  "files": [
+   "decisions_0023_flat15.dsl",
+   "decisions_0024_flat16.dsl",
+   "decisions_0025_rule_align.dsl",
+   "decisions_0026_trade_recode.dsl"
+  ]
+ },
+ {
+  "session": "S14",
+  "label": "بسته‌های تخت ۱۷ و ۱۸ + ابزار نشاندن دفترکل روی دیتابیس",
+  "files": [
+   "decisions_0027_flat17.dsl",
+   "decisions_0028_flat18.dsl"
+  ]
+ },
+ {
+  "session": "S15",
+  "label": "بسته‌های تخت ۱۹ و ۲۰ — ۳۰۰ آگهی دیجی‌کالا",
+  "files": [
+   "decisions_0029_flat19.dsl",
+   "decisions_0030_flat20.dsl"
+  ]
+ },
+ {
+  "session": "S16",
+  "label": "بسته‌های تخت ۲۱ و ۲۲ + اصلاح کد مدل اپل + ممیزی کور ۴",
+  "files": [
+   "decisions_0031_flat21.dsl",
+   "decisions_0032_flat22.dsl",
+   "decisions_0033_a2859_recode.dsl"
+  ]
+ },
+ {
+  "session": "S17",
+  "label": "دسته‌ی جدید لوازم جانبی + بسته‌های تخت ۲۳ و ۲۴",
+  "files": [
+   "decisions_0034_flat23.dsl",
+   "decisions_0035_flat24.dsl"
+  ]
+ },
+ {
+  "session": "S18",
+  "label": "بسته‌های تخت ۲۵ و ۲۶ + روشن‌سازی قاعده‌ی AMBIGUOUS_NO_MODEL",
+  "files": [
+   "decisions_0036_flat25.dsl",
+   "decisions_0037_ambiguous_recode.dsl",
+   "decisions_0038_flat26.dsl"
+  ]
+ },
+ {
+  "session": "S19",
+  "label": "بسته‌های تخت ۲۷ و ۲۸ — ۳۰۰ آگهی دیوار",
+  "files": [
+   "decisions_0039_flat27.dsl",
+   "decisions_0040_flat28.dsl"
+  ]
+ },
+ {
+  "session": "S20",
+  "label": "بسته‌های تخت ۲۹ و ۳۰ — ۳۰۰ آگهی دیوار",
+  "files": [
+   "decisions_0041_flat29.dsl",
+   "decisions_0042_flat30.dsl"
+  ]
+ },
+ {
+  "session": "S21",
+  "label": "بسته‌های تخت ۳۱ و ۳۲ — ۳۰۰ آگهی دیوار",
+  "files": [
+   "decisions_0043_flat31.dsl",
+   "decisions_0044_flat32.dsl"
+  ]
+ },
+ {
+  "session": "S22",
+  "label": "بسته‌های تخت ۳۳ و ۳۴ — ۳۰۰ آگهی دیوار",
+  "files": [
+   "decisions_0045_flat33.dsl",
+   "decisions_0046_flat34.dsl"
+  ]
+ },
+ {
+  "session": "S23",
+  "label": "بسته‌های تخت ۳۵ و ۳۶ — ۳۰۰ آگهی دیوار",
+  "files": [
+   "decisions_0047_flat35.dsl",
+   "decisions_0048_flat36.dsl"
+  ]
+ },
+ {
+  "session": "S24",
+  "label": "بسته‌های تخت ۳۷ و ۳۸ + رفع ابهام MacBook Neo",
+  "files": [
+   "decisions_0049_flat37.dsl",
+   "decisions_0050_flat38.dsl",
+   "decisions_0051_recode_a18.dsl"
+  ]
+ },
+ {
+  "session": "S25",
+  "label": "بسته‌های تخت ۳۹ و ۴۰ — ۳۰۰ آگهی دیوار",
+  "files": [
+   "decisions_0052_flat39.dsl",
+   "decisions_0053_flat40.dsl"
+  ]
+ },
+ {
+  "session": "S26",
+  "label": "بسته‌های تخت ۴۱ و ۴۲ — ۳۰۰ آگهی دیوار",
+  "files": [
+   "decisions_0054_flat41.dsl",
+   "decisions_0055_flat42.dsl"
+  ]
+ },
+ {
+  "session": "S27",
+  "label": "بسته‌های تخت ۴۳ و ۴۴ — ۳۰۰ آگهی دست‌دوم",
+  "files": [
+   "decisions_0056_flat43.dsl",
+   "decisions_0057_flat44.dsl"
+  ]
+ },
+ {
+  "session": "S28",
+  "label": "بسته‌های تخت ۴۵ و ۴۶ — انتهای صف قیمت (عمدتاً خارج از حوزه)",
+  "files": [
+   "decisions_0058_flat45.dsl",
+   "decisions_0059_flat46.dsl"
+  ]
+ },
+ {
+  "session": "S29",
+  "label": "بسته‌های تخت ۴۷ و ۴۸ — ۳۰۰ آگهی esam (ساعت/زیورآلات/اسکناس)",
+  "files": [
+   "decisions_0060_flat47.dsl",
+   "decisions_0061_flat48.dsl"
+  ]
+ },
+ {
+  "session": "S30",
+  "label": "بسته‌های تخت ۴۹ و ۵۰ — بلوک بزرگ اسکناس/تمبر کلکسیونی",
+  "files": [
+   "decisions_0062_flat49.dsl",
+   "decisions_0063_flat50.dsl"
+  ]
+ },
+ {
+  "session": "S31",
+  "label": "بسته‌های تخت ۵۱ و ۵۲ — زیورآلات بدلی و تمبر (۹۸.۷٪ خارج از حوزه)",
+  "files": [
+   "decisions_0065_flat51.dsl",
+   "decisions_0066_flat52.dsl",
+   "decisions_0067_recode_1706812.dsl"
+  ]
+ },
+ {
+  "session": "S33",
+  "label": "برچسب‌زنی دستی کاربر — ۵٬۷۲۸ آگهی (پرکردن کلاس‌های کوچک)",
+  "files": [
+   "decisions_ui_S33.dsl"
+  ]
+ },
+ {
+  "session": "S35",
+  "label": "برچسب مانیتورها با تاکسونومی — ۱۰۹ آگهی",
+  "files": [
+   "decisions_0068_monitors.dsl"
+  ]
+ }
 ]
