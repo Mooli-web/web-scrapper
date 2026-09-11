@@ -377,6 +377,7 @@ padding:1px 7px;margin:0 2px;color:var(--mut)}
 <div class="keys">
   <kbd>V</kbd> تأیید با دسته‌ی انتخابی · <kbd>J</kbd> حذف با دلیل انتخابی ·
   <kbd>1</kbd>…<kbd>9</kbd><kbd>0</kbd><kbd>Q</kbd>… انتخاب دسته ·
+  <kbd>A</kbd><kbd>B</kbd><kbd>C</kbd>… انتخاب دلیل (حرفِ کنار هر چیپ) ·
   <kbd>N</kbd> رد کردن · <kbd>Z</kbd> برگرداندن آخری
 </div>
 </div>
@@ -384,6 +385,7 @@ padding:1px 7px;margin:0 2px;color:var(--mut)}
 const CATS=__CATS__, REASONS=__REASONS__;
 let cur=null, cat="", reason=REASONS[0], note="", busy=false;
 const KEYS="1234567890QWERTYUIOP".split("");
+const RKEYS="ABCDFGHKLMSX".split("");
 const $=id=>document.getElementById(id);
 
 async function stats(){const r=await fetch('/api/stats').then(r=>r.json());
@@ -422,7 +424,7 @@ function render(){
       <section class="panel bad">
         <h3>🗑 حذف <span class="sub">دلیل را انتخاب کن</span></h3>
         <div class="chips">${REASONS.map(k=>
-          `<button class="chip ${k===reason?'on-bad':''}" data-rsn="${k}">${k}</button>`).join('')}</div>
+          `<button class="chip ${k===reason?'on-bad':''}" data-rsn="${k}">${k}<kbd>${RKEYS[REASONS.indexOf(k)]||''}</kbd></button>`).join('')}</div>
       </section>
     </div>
     <label class="lbl" for="note">یادداشت اختیاری (داده‌ی آموزشی)</label>
@@ -461,7 +463,9 @@ document.addEventListener('keydown',e=>{
   const k=e.key.toUpperCase();
   if(k==='V') send('verify'); else if(k==='J') send('junk');
   else if(k==='N') skip(); else if(k==='Z') undo();
-  else{ const i=KEYS.indexOf(k); if(i>=0&&i<CATS.length){cat=CATS[i];render();} }
+  else{ const i=KEYS.indexOf(k);
+    if(i>=0&&i<CATS.length){cat=CATS[i];render();}
+    else{ const r=RKEYS.indexOf(k); if(r>=0&&r<REASONS.length){reason=REASONS[r];render();} } }
 });
 next();
 </script></body></html>
