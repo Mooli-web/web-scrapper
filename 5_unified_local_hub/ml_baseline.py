@@ -15,7 +15,7 @@
 تقسیم بر canonical_key (نه ردیف) تا تکرار یک کالا در چند فروشگاه نشت نکند.
 """
 from __future__ import annotations
-import json, re, sys
+import json, re, sys, unicodedata
 from pathlib import Path
 import numpy as np
 from collections import defaultdict
@@ -30,6 +30,24 @@ HUB = Path(__file__).resolve().parent
 sys.path.insert(0, str(HUB))
 from review_queue import strip_invisible  # noqa: E402
 
+# ── نرمال‌سازی متن فارسی ──────────────────────────────────────
+_DIGITS = str.maketrans("۰۱۲۳۴۵۶۷۸۹٠١٢٣٤٥٦٧٨٩", "01234567890123456789")
+_LETTERS = str.maketrans({"ي": "ی", "ى": "ی", "ك": "ک", "ک": "ک",
+                          "ة": "ه", "أ": "ا", "إ": "ا", "آ": "ا"})
+_PUNCT = re.compile(r"[^\w\s]+", re.UNICODE)
+_WS = re.compile(r"\s+")
+
+
+def normalize_text(t):
+    """یکسان‌سازی متن: نامرئی‌ها، ارقام، حروف عربی/فارسی، نیم‌فاصله، نشانه‌گذاری."""
+    t = strip_invisible(t or "")
+    t = "".join(c for c in t if not (unicodedata.category(c) == "Mn"
+                                     or c == "\u0640"))  # اعراب و تَطویل
+    t = t.replace("\u200c", " ")  # نیم‌فاصله → فاصله
+    t = t.translate(_DIGITS).translate(_LETTERS)
+    t = _PUNCT.sub(" ", t)
+    return _WS.sub(" ", t).strip().lower()
+
 ML = HUB / "exports" / "ml"
 SEED = 42
 REP_DIG = re.compile(r"^(\d)\1{5,}$")
@@ -42,7 +60,7 @@ def load(name):
 
 
 def clean(t):
-    return strip_invisible(t or "").lower()
+    return normalize_text(t)
 
 
 def numeric(rows):
