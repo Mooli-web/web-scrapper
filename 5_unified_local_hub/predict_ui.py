@@ -171,9 +171,34 @@ def api_stats():
     }
 
 
+@app.get("/api/browse")
+def api_browse(category: str = "", status: str = "", limit: int = 200):
+    """مرور کالاها با دسته و درصد اطمینان؛ فیلتر بر دسته و وضعیت."""
+    items = STATE["all"]
+    if category:
+        items = [it for it in items if it["category"] == category]
+    if status == "keep":
+        items = [it for it in items if it["keep"]]
+    elif status == "delete":
+        items = [it for it in items if not it["keep"] and it["wanted"]]
+    elif status == "unwanted":
+        items = [it for it in items if not it["wanted"]]
+    items = sorted(items, key=lambda x: -x["category_conf"])
+    return {"total": len(items), "items": [
+        {"id": it["id"], "title": it["title"], "price": it["price"],
+         "category": it["category"], "conf": round(it["category_conf"], 3),
+         "keep": it["keep"], "wanted": it["wanted"]}
+        for it in items[:limit]]}
+
+
 @app.get("/", response_class=HTMLResponse)
 def index():
     return PAGE.replace("__SESSION__", STATE["session"])
+
+
+@app.get("/browse", response_class=HTMLResponse)
+def browse():
+    return BROWSE_PAGE.replace("__CATS__", json.dumps(CATEGORIES))
 
 
 PAGE = r"""<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8">
@@ -236,7 +261,8 @@ kbd{background:var(--card2);border:1px solid var(--line);border-radius:5px;paddi
 .done{text-align:center;padding:50px 20px}
 </style></head><body><div class="wrap">
 <div class="head"><h1>🧹 داشبورد پالایش</h1><span class="pill">نشست __SESSION__</span>
-<span class="pill">صف بررسی: <b id="qsize">—</b></span><span class="pill" id="prog">—</span></div>
+<span class="pill">صف بررسی: <b id="qsize">—</b></span><span class="pill" id="prog">—</span>
+<a href="/browse" style="margin-right:auto;color:var(--blue);text-decoration:none;font-size:13px">📦 مرور کالاها ←</a></div>
 <div class="stats" id="stats"></div>
 <div class="panel"><h3>توزیع دسته‌های پیش‌بینی‌شده (کل داده)</h3><div id="cats"></div></div>
 <div id="root"></div>
@@ -294,6 +320,67 @@ document.addEventListener('keydown',e=>{if(e.target.tagName==='INPUT')return;con
  else{const i=KEYS.indexOf(k);if(i>=0&&i<CATS.length){cat=CATS[i];render();}
   else{const r=RKEYS.indexOf(k);if(r>=0&&r<REASONS.length){reason=REASONS[r];render();}}}});
 next();
+</script></body></html>"""
+
+
+BROWSE_PAGE = r"""<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>مرور کالاها</title>
+<style>
+:root{--bg:#0a0d12;--card:#141922;--card2:#1b2230;--line:#26303f;--fg:#eef2f8;--mut:#8b96a8;
+--ok:#25c46f;--bad:#f4574d;--amber:#e8b64c;--blue:#4c8dff;--rad:14px}
+*{box-sizing:border-box}html{color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.7 Vazirmatn,Tahoma,system-ui,sans-serif}
+.wrap{max-width:1000px;margin:0 auto;padding:22px 18px 50px}
+.head{display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.head h1{font-size:19px;margin:0;font-weight:800}
+a.back{color:var(--blue);text-decoration:none;font-size:13px}
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.fchip{background:var(--card2);border:1px solid var(--line);color:var(--mut);border-radius:20px;
+padding:5px 13px;cursor:pointer;font-size:12.5px}
+.fchip:hover{color:var(--fg)}.fchip.on{background:var(--blue);color:#fff;border-color:var(--blue);font-weight:700}
+.cnt{color:var(--mut);font-size:13px;margin-bottom:10px}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:var(--rad);overflow:hidden}
+th,td{padding:9px 12px;text-align:right;border-bottom:1px solid var(--line);font-size:13px}
+th{background:var(--card2);color:var(--mut);font-weight:700;font-size:12px}
+tr:last-child td{border-bottom:0}
+td.t{max-width:420px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.conf{font-weight:800}.conf.hi{color:var(--ok)}.conf.mid{color:var(--amber)}.conf.lo{color:var(--bad)}
+.badge{border-radius:6px;padding:2px 8px;font-size:11px}
+.badge.k{background:rgba(37,196,111,.15);color:var(--ok)}
+.badge.d{background:rgba(244,87,77,.15);color:var(--bad)}
+.badge.u{background:rgba(232,182,76,.15);color:var(--amber)}
+.cat{color:var(--blue);font-weight:600}
+</style></head><body><div class="wrap">
+<div class="head"><h1>📦 مرور کالاها</h1><a class="back" href="/">← بازگشت به داشبورد</a></div>
+<div class="filters" id="cats"></div>
+<div class="filters" id="stats"></div>
+<div class="cnt" id="cnt"></div>
+<table><thead><tr><th>کالا</th><th>دسته</th><th>اطمینان</th><th>وضعیت</th></tr></thead>
+<tbody id="rows"></tbody></table>
+</div>
+<script>
+const CATS=__CATS__;const fa=n=>Number(n).toLocaleString('fa-IR');
+let cat="",status="";
+function confCls(c){return c>=0.8?'hi':c>=0.5?'mid':'lo'}
+function renderFilters(){
+ document.getElementById('cats').innerHTML=['',...CATS].map(c=>
+  `<span class="fchip ${c===cat?'on':''}" data-c="${c}">${c||'همه'}</span>`).join('');
+ document.getElementById('stats').innerHTML=[['','همه'],['keep','نگه‌داشتنی'],['delete','حذف‌شدنی'],['unwanted','نامطلوب']].map(s=>
+  `<span class="fchip ${s[0]===status?'on':''}" data-s="${s[0]}">${s[1]}</span>`).join('');
+ document.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{cat=b.dataset.c;renderFilters();load()});
+ document.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>{status=b.dataset.s;renderFilters();load()});}
+async function load(){const q=new URLSearchParams({category:cat,status:status,limit:300});
+ const r=await fetch('/api/browse?'+q).then(r=>r.json());
+ document.getElementById('cnt').textContent=`${fa(r.total)} کالا (نمایش ${fa(r.items.length)})`;
+ document.getElementById('rows').innerHTML=r.items.map(it=>{
+  const badge=!it.wanted?'<span class="badge u">نامطلوب</span>':it.keep?'<span class="badge k">نگه</span>':'<span class="badge d">حذف</span>';
+  return `<tr><td class="t" title="${esc(it.title)}">${esc(it.title)||'—'}</td>
+   <td class="cat">${it.category}</td>
+   <td class="conf ${confCls(it.conf)}">${Math.round(it.conf*100)}٪</td>
+   <td>${badge}</td></tr>`}).join('');}
+const esc=s=>String(s||'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+renderFilters();load();
 </script></body></html>"""
 
 
