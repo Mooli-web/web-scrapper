@@ -1,20 +1,18 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""UI بازبینی پیش‌بینی‌های مدل — دسته + درصد اطمینان + اصلاح دستی.
+"""داشبورد بازبینی پیش‌بینی مدل — آمار کلی + دسته + اطمینان + اصلاح.
 
-مدل را روی آگهی‌ها اجرا می‌کند، دسته و **درصد اطمینان** را کنار هر کدام
-نشان می‌دهد، و از کم‌اطمینان‌ترین شروع می‌کند (جایی که احتمال خطای مدل
-بیشتر است). با یک کلید دسته‌ی درست را می‌نشانی؛ اصلاحات در DSL نوشته و با
-`apply --session` در دفترکل می‌نشیند (هم داده را درست می‌کند هم خوراک
-آموزش مجدد می‌شود).
+مدل را روی آگهی‌ها اجرا می‌کند، آمار کلی را نشان می‌دهد، و از
+کم‌اطمینان‌ترین شروع می‌کند. اصلاحات در DSL نوشته و با `apply --session`
+در دفترکل می‌نشیند.
 
 اجرا:
-    python predict_ui.py                 # پورت ۸۰۷۸
-    python predict_ui.py --source db     # از market.db (زنده) به‌عنوان منبع
-اگر مدل‌ها نباشند، اول ml_train_final.py اجرا و ساخته می‌شوند.
+    python predict_ui.py                 # پورت ۸۰۷۸، از باندل
+    python predict_ui.py --source db     # از market.db (زنده)
 """
 from __future__ import annotations
 import argparse, json, sys
+from collections import Counter
 from pathlib import Path
 
 HUB = Path(__file__).resolve().parent
@@ -41,25 +39,20 @@ def _ensure_models():
 
 
 def load_items(source: str):
-    """آگهی‌ها را از bundle یا market.db می‌خواند و پیش‌بینی مدل را رویشان می‌گذارد."""
     rows = []
     if source == "db":
         from database.db_manager import LocalDatabaseManager
         db = LocalDatabaseManager()
         with db.get_connection() as c:
-            cur = c.execute("SELECT id, title_fa, price_toman FROM store_listings")
-            for r in cur.fetchall():
+            for r in c.execute("SELECT id, title_fa, price_toman FROM store_listings"):
                 rows.append({"id": r[0], "title": r[1] or "", "price": r[2] or 0})
     else:
         for l in (HUB / "exports/training_bundle/listings.jsonl").read_text(encoding="utf-8").splitlines():
             r = json.loads(l)
             rows.append({"id": r["id"], "title": r.get("title_fa") or "",
                          "price": r.get("price_toman") or 0})
-    items = []
-    for r in rows:
-        pr = P.predict(r["title"], r["price"])
-        items.append({**r, **pr})
-    items.sort(key=lambda x: x["category_conf"])   # کم‌اطمینان اول
+    items = [{**r, **P.predict(r["title"], r["price"])} for r in rows]
+    items.sort(key=lambda x: x["category_conf"])
     return items
 
 
@@ -79,7 +72,7 @@ def _append_dsl(line):
         os.fsync(fh.fileno())
 
 
-app = FastAPI(title="بازبینی پیش‌بینی مدل")
+app = FastAPI(title="داشبورد پالایش")
 
 
 class Decide(BaseModel):
@@ -93,8 +86,7 @@ def api_next():
     if it is None:
         return {"done": True, "decided": len(STATE["decided"]), "total": len(STATE["items"])}
     return {"done": False, "item": {**it, "position": STATE["pos"] + 1,
-                                    "total": len(STATE["items"]),
-                                    "done": len(STATE["decided"])}}
+                                    "total": len(STATE["items"]), "done": len(STATE["decided"])}}
 
 
 @app.post("/api/decide")
@@ -119,6 +111,22 @@ def api_skip():
     return {"ok": True}
 
 
+@app.get("/api/stats")
+def api_stats():
+    items = STATE["items"]
+    cats = Counter(it["category"] for it in items)
+    return {
+        "total": len(items),
+        "decided": len(STATE["decided"]),
+        "keep": sum(1 for it in items if it["keep"]),
+        "delete": sum(1 for it in items if not it["keep"]),
+        "high": sum(1 for it in items if it["category_conf"] >= 0.9),
+        "mid": sum(1 for it in items if 0.5 <= it["category_conf"] < 0.9),
+        "low": sum(1 for it in items if it["category_conf"] < 0.5),
+        "cats": dict(cats.most_common()),
+    }
+
+
 @app.get("/", response_class=HTMLResponse)
 def index():
     return PAGE.replace("__SESSION__", STATE["session"])
@@ -126,60 +134,97 @@ def index():
 
 PAGE = r"""<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>بازبینی پیش‌بینی — __SESSION__</title>
+<title>داشبورد پالایش — __SESSION__</title>
 <style>
-:root{--bg:#0b0e13;--card:#151a22;--card2:#1b212c;--line:#28303e;--fg:#eef2f8;--mut:#939db0;
---ok:#25c46f;--bad:#f4574d;--amber:#e8b64c;--rad:14px}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
-font:15px/1.7 Vazirmatn,Tahoma,system-ui,sans-serif}
-.wrap{max-width:860px;margin:0 auto;padding:22px 16px}
-.bar{display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);
-border-radius:var(--rad);padding:10px 16px;margin-bottom:16px;font-size:13px;position:sticky;top:10px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:24px}
-h1{font-size:22px;margin:0 0 14px;line-height:1.6;word-break:break-word}
-.pred{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:var(--card2);
-border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:16px}
-.conf{font-size:26px;font-weight:800}
-.conf.hi{color:var(--ok)}.conf.mid{color:var(--amber)}.conf.lo{color:var(--bad)}
-.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
-.chip{background:#1e2531;border:1px solid var(--line);color:var(--mut);border-radius:8px;
-padding:7px 12px;cursor:pointer;font-size:13px}
-.chip:hover{color:var(--fg)}.chip.star{box-shadow:inset 0 0 0 1px var(--ok)}
-.chip.on{background:var(--ok);color:#04150c;font-weight:700;border-color:var(--ok)}
-.tag{background:var(--card2);border:1px solid var(--line);border-radius:7px;padding:3px 10px;
+:root{--bg:#0a0d12;--card:#141922;--card2:#1b2230;--line:#26303f;--fg:#eef2f8;--mut:#8b96a8;
+--dim:#616d80;--ok:#25c46f;--bad:#f4574d;--amber:#e8b64c;--blue:#4c8dff;--rad:16px}
+*{box-sizing:border-box}html{color-scheme:dark}
+body{margin:0;background:radial-gradient(1000px 500px at 80% -10%,#121c2e 0%,var(--bg) 55%);
+color:var(--fg);font:15px/1.7 Vazirmatn,Tahoma,system-ui,sans-serif}
+.wrap{max-width:920px;margin:0 auto;padding:24px 18px 50px}
+/* سربرگ */
+.head{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.head h1{font-size:20px;margin:0;font-weight:800}
+.pill{background:var(--card2);border:1px solid var(--line);border-radius:20px;padding:4px 14px;
+font-size:12px;color:var(--mut)}
+/* کارت‌های آمار */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px}
+@media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:16px 18px}
+.stat .n{font-size:28px;font-weight:800;line-height:1.2}
+.stat .l{font-size:12px;color:var(--mut);margin-top:2px}
+.stat.ok .n{color:var(--ok)}.stat.bad .n{color:var(--bad)}.stat.amber .n{color:var(--amber)}
+.stat.blue .n{color:var(--blue)}
+/* توزیع دسته‌ها */
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);
+padding:16px 18px;margin-bottom:14px}
+.panel h3{margin:0 0 12px;font-size:13px;color:var(--mut);font-weight:700}
+.bar-row{display:flex;align-items:center;gap:10px;margin-bottom:7px;font-size:12.5px}
+.bar-row .name{width:90px;color:var(--fg);text-align:right}
+.bar-row .track{flex:1;height:9px;background:#0f141d;border-radius:5px;overflow:hidden}
+.bar-row .fill{height:100%;background:linear-gradient(90deg,var(--blue),#7fb0ff);border-radius:5px}
+.bar-row .cnt{width:46px;color:var(--mut);text-align:left}
+/* کارت بازبینی */
+.review{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:22px}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.tag{background:var(--card2);border:1px solid var(--line);border-radius:8px;padding:3px 11px;
 font-size:12px;color:var(--mut)}.tag b{color:var(--fg)}
-.btn{border:0;border-radius:10px;padding:12px 18px;font-size:15px;font-weight:700;cursor:pointer;
-color:#fff;background:linear-gradient(180deg,#2fd67c,#1cab5f);margin-top:18px}
-.ghost{background:var(--card2);border:1px solid var(--line);color:var(--mut)}
-.keys{text-align:center;color:var(--mut);font-size:12px;margin-top:14px}
-kbd{background:var(--card2);border:1px solid var(--line);border-radius:4px;padding:0 6px}
+.title{font-size:21px;font-weight:700;margin:0 0 14px;line-height:1.6;word-break:break-word}
+.pred{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:var(--card2);
+border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:16px}
+.pred .cat{font-size:18px;font-weight:800}
+.conf{font-size:30px;font-weight:800}
+.conf.hi{color:var(--ok)}.conf.mid{color:var(--amber)}.conf.lo{color:var(--bad)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{background:#1c2431;border:1px solid var(--line);color:var(--mut);border-radius:9px;
+padding:8px 13px;cursor:pointer;font-size:13px;transition:.12s}
+.chip:hover{color:var(--fg);transform:translateY(-1px)}
+.chip.star{box-shadow:inset 0 0 0 1px rgba(37,196,111,.5)}
+.chip.on{background:var(--ok);color:#04150c;font-weight:700;border-color:var(--ok)}
+.acts{display:flex;gap:10px;margin-top:18px}
+.btn{flex:1;border:0;border-radius:12px;padding:13px;font-size:15px;font-weight:700;cursor:pointer;
+color:#fff;background:linear-gradient(180deg,#2fd67c,#1cab5f)}
+.btn.ghost{flex:0 0 auto;background:var(--card2);border:1px solid var(--line);color:var(--mut)}
+.keys{text-align:center;color:var(--dim);font-size:12px;margin-top:16px}
+kbd{background:var(--card2);border:1px solid var(--line);border-radius:5px;padding:1px 7px;color:var(--mut)}
+.done{text-align:center;padding:50px 20px}
 </style></head><body><div class="wrap">
-<div class="bar"><b>بازبینی پیش‌بینی — __SESSION__</b>
-<span style="flex:1"></span><span id="cnt">۰/۰</span></div>
+<div class="head"><h1>🧹 داشبورد پالایش</h1><span class="pill">نشست __SESSION__</span>
+<span class="pill" id="prog">—</span></div>
+<div class="stats" id="stats"></div>
+<div class="panel"><h3>توزیع دسته‌های پیش‌بینی‌شده</h3><div id="cats"></div></div>
 <div id="root"></div>
-<div class="keys"><kbd>V</kbd> تأیید دسته‌ی پیشنهادی مدل · <kbd>1</kbd>…<kbd>0</kbd><kbd>Q</kbd>… انتخاب دسته ·
-<kbd>N</kbd> رد کردن</div></div>
+<div class="keys"><kbd>V</kbd> تأیید دسته‌ی پیشنهادی · <kbd>1</kbd>…<kbd>0</kbd><kbd>Q</kbd>… انتخاب دسته · <kbd>N</kbd> رد کردن</div>
+</div>
 <script>
 const CATS=__CATS__;const KEYS="1234567890QWERTYUIOP".split("");
 let cur=null,cat="";
+const fa=n=>Number(n).toLocaleString('fa-IR');
 function confCls(c){return c>=0.8?'hi':c>=0.5?'mid':'lo'}
-async function next(){const r=await fetch('/api/next').then(r=>r.json());
- if(r.done){document.getElementById('root').innerHTML='<div class="card"><h1>✅ تمام شد</h1><p>'+r.decided+' اصلاح ثبت شد. حالا بنشان:</p><code>python review_queue.py apply --session __SESSION__ --file decisions_ui___SESSION__.dsl</code></div>';return}
- cur=r.item;cat=cur.category;
- document.getElementById('cnt').textContent=r.item.done+'/'+r.item.total;render()}
+async function loadStats(){const s=await fetch('/api/stats').then(r=>r.json());
+ const cards=[['کل آگهی‌ها',s.total,'blue'],['نگه‌داشتنی',s.keep,'ok'],['حذف‌شدنی',s.delete,'bad'],
+  ['اطمینان بالا',s.high,'ok'],['اطمینان متوسط',s.mid,'amber'],['نیاز به بازبینی',s.low,'bad']];
+ document.getElementById('stats').innerHTML=cards.map(c=>
+  `<div class="stat ${c[2]}"><div class="n">${fa(c[1])}</div><div class="l">${c[0]}</div></div>`).join('');
+ const entries=Object.entries(s.cats);const max=Math.max(...entries.map(e=>e[1]),1);
+ document.getElementById('cats').innerHTML=entries.map(([k,v])=>
+  `<div class="bar-row"><span class="name">${k}</span><span class="track"><span class="fill" style="width:${v/max*100}%"></span></span><span class="cnt">${fa(v)}</span></div>`).join('');
+ document.getElementById('prog').textContent=`${fa(s.decided)} / ${fa(s.total)} بررسی‌شده`;}
+async function next(){await loadStats();const r=await fetch('/api/next').then(r=>r.json());
+ if(r.done){document.getElementById('root').innerHTML=`<div class="review done"><h1>✅ تمام شد</h1><p>${fa(r.decided)} اصلاح ثبت شد.</p><p style="color:var(--mut)">بنشان:<br><code>python review_queue.py apply --session __SESSION__</code></p></div>`;return}
+ cur=r.item;cat=cur.category;render()}
 function render(){const c=cur;const pct=Math.round(c.category_conf*100);
- document.getElementById('root').innerHTML=`<div class="card">
- <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">
-  <span class="tag">ID <b>${c.id}</b></span>
-  <span class="tag"><b>${(c.price||0).toLocaleString('fa-IR')}</b> تومان</span>
+ document.getElementById('root').innerHTML=`<div class="review">
+ <div class="meta"><span class="tag">ID <b>${c.id}</b></span>
+  <span class="tag"><b>${fa(c.price||0)}</b> تومان</span>
   <span class="tag">حذف؟ <b>${c.keep?'نه':'بله ('+Math.round(c.delete_prob*100)+'٪)'}</b></span></div>
- <h1>${esc(c.title)||'(بدون عنوان)'}</h1>
- <div class="pred"><span>پیش‌بینی مدل:</span><b style="font-size:18px">${c.category}</b>
+ <div class="title">${esc(c.title)||'(بدون عنوان)'}</div>
+ <div class="pred"><span style="color:var(--mut)">پیش‌بینی:</span><span class="cat">${c.category}</span>
   <span class="conf ${confCls(c.category_conf)}">${pct}٪</span>
-  <span style="color:var(--mut);font-size:12px">گزینه‌ی دوم: ${c.second}</span></div>
- <div class="chips">${CATS.map((k,i)=>`<button class="chip ${k===cat?'on':''} ${k===c.category?'star':''}" data-c="${k}">${k} <kbd style="opacity:.5">${KEYS[i]||''}</kbd></button>`).join('')}</div>
- <button class="btn" id="ok">تأیید → ${cat}</button>
- <button class="btn ghost" id="sk">رد کردن (N)</button></div>`;
+  <span style="color:var(--dim);font-size:12px">گزینه‌ی دوم: ${c.second}</span></div>
+ <div class="chips">${CATS.map((k,i)=>`<button class="chip ${k===cat?'on':''} ${k===c.category?'star':''}" data-c="${k}">${k} <kbd>${KEYS[i]||''}</kbd></button>`).join('')}</div>
+ <div class="acts"><button class="btn" id="ok">تأیید → ${cat}</button>
+  <button class="btn ghost" id="sk">رد کردن (N)</button></div></div>`;
  document.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{cat=b.dataset.c;render()});
  document.getElementById('ok').onclick=send;document.getElementById('sk').onclick=skip}
 const esc=s=>String(s||'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
@@ -197,8 +242,7 @@ def main():
     ap.add_argument("--session", default="PREDICT")
     ap.add_argument("--host", default="0.0.0.0")
     ap.add_argument("--port", type=int, default=8078)
-    ap.add_argument("--source", choices=["bundle", "db"], default="bundle",
-                    help="bundle: از training_bundle (قابل‌حمل)؛ db: از market.db (زنده)")
+    ap.add_argument("--source", choices=["bundle", "db"], default="bundle")
     args = ap.parse_args()
 
     _ensure_models()
@@ -210,9 +254,7 @@ def main():
         STATE["dsl"].write_text(f"// بازبینی پیش‌بینی مدل — {args.session}\n", encoding="utf-8")
 
     globals()["PAGE"] = PAGE.replace("__CATS__", json.dumps(CATEGORIES))
-    print(f"🤖 بازبینی پیش‌بینی — {len(STATE['items']):,} آگهی، از کم‌اطمینان‌ترین")
-    print(f"   فایل اصلاحات: {STATE['dsl']}")
-    print(f"   بعد از پایان: python review_queue.py apply --session {args.session} --file {STATE['dsl'].name}")
+    print(f"🧹 داشبورد پالایش — {len(STATE['items']):,} آگهی، از کم‌اطمینان‌ترین")
     print(f"   ➜  http://{args.host}:{args.port}")
     import uvicorn
     uvicorn.run(app, host=args.host, port=args.port, log_level="warning")
