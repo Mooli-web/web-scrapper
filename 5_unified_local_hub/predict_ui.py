@@ -129,6 +129,30 @@ def api_skip():
     return {"ok": True}
 
 
+@app.post("/api/undo")
+def api_undo():
+    """آخرین تصمیم را از فایل برمی‌دارد — اشتباه زدن کلید اجتناب‌ناپذیر است."""
+    if not STATE["decided"]:
+        return {"ok": False, "msg": "چیزی برای برگرداندن نیست"}
+    p = STATE["dsl"]
+    lines = p.read_text(encoding="utf-8").splitlines()
+    last = None
+    for i in range(len(lines) - 1, -1, -1):
+        if lines[i].strip() and not lines[i].startswith("//"):
+            last = i
+            break
+    if last is None:
+        return {"ok": False, "msg": "چیزی برای برگرداندن نیست"}
+    removed = lines.pop(last)
+    p.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    try:
+        STATE["decided"].discard(int(removed.split()[0]))
+    except (ValueError, IndexError):
+        pass
+    STATE["pos"] = max(0, STATE["pos"] - 1)
+    return {"ok": True, "removed": removed, "done": len(STATE["decided"])}
+
+
 @app.get("/api/stats")
 def api_stats():
     a = STATE["all"]
@@ -215,7 +239,7 @@ kbd{background:var(--card2);border:1px solid var(--line);border-radius:5px;paddi
 <div class="stats" id="stats"></div>
 <div class="panel"><h3>توزیع دسته‌های پیش‌بینی‌شده (کل داده)</h3><div id="cats"></div></div>
 <div id="root"></div>
-<div class="keys"><kbd>V</kbd> تأیید دسته · <kbd>J</kbd> حذف با دلیل انتخابی · <kbd>1</kbd>…<kbd>0</kbd><kbd>Q</kbd>… دسته · <kbd>A</kbd><kbd>B</kbd>… دلیل · <kbd>N</kbd> رد</div>
+<div class="keys"><kbd>V</kbd> تأیید دسته · <kbd>J</kbd> حذف با دلیل انتخابی · <kbd>1</kbd>…<kbd>0</kbd><kbd>Q</kbd>… دسته · <kbd>A</kbd><kbd>B</kbd>… دلیل · <kbd>N</kbd> رد · <kbd>Z</kbd> برگرداندن آخری</div>
 </div>
 <script>
 const CATS=__CATS__, REASONS=__REASONS__;
@@ -252,18 +276,20 @@ function render(){const c=cur;const pct=Math.round(c.category_conf*100);
  </div>
  <div class="acts"><button class="btn v" id="bv">تأیید → ${cat}</button>
   <button class="btn j" id="bj">حذف ← ${reason}</button>
-  <button class="btn ghost" id="bn">رد (N)</button></div></div>`;
+  <button class="btn ghost" id="bn">رد (N)</button>
+  <button class="btn ghost" id="bu">↶ برگردان (Z)</button></div></div>`;
  document.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{cat=b.dataset.c;render()});
  document.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{reason=b.dataset.r;render()});
  document.getElementById('bv').onclick=()=>send('keep');document.getElementById('bj').onclick=()=>send('junk');
- document.getElementById('bn').onclick=skip}
+ document.getElementById('bn').onclick=skip;document.getElementById('bu').onclick=undo}
 const esc=s=>String(s||'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
 async function send(v){const body=v==='keep'?{id:cur.id,verdict:'keep',category:cat}:{id:cur.id,verdict:'junk',reason_code:reason};
  const r=await fetch('/api/decide',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
  if(!r.ok){alert((await r.json()).detail);return}next()}
 async function skip(){await fetch('/api/skip',{method:'POST'});next()}
+async function undo(){const r=await fetch('/api/undo',{method:'POST'}).then(r=>r.json());if(!r.ok)return;next()}
 document.addEventListener('keydown',e=>{if(e.target.tagName==='INPUT')return;const k=e.key.toUpperCase();
- if(k==='V')send('keep');else if(k==='J')send('junk');else if(k==='N')skip();
+ if(k==='V')send('keep');else if(k==='J')send('junk');else if(k==='N')skip();else if(k==='Z')undo();
  else{const i=KEYS.indexOf(k);if(i>=0&&i<CATS.length){cat=CATS[i];render();}
   else{const r=RKEYS.indexOf(k);if(r>=0&&r<REASONS.length){reason=REASONS[r];render();}}}});
 next();
