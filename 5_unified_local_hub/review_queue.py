@@ -66,6 +66,7 @@ REASON_CODES = (
     "PRICE_BELOW_FLOOR", "PRICE_PLACEHOLDER", "TRADE_REQUEST", "PARTS_OR_BROKEN",
     "COUNTERFEIT_CLAIM", "OWN_BRAND_KEPT", "ACCESSORY", "SERVICE_NOT_PRODUCT",
     "OUT_OF_SCOPE", "AMBIGUOUS_NO_MODEL", "BUNDLE_UNPRICED", "PRICE_UNREALISTIC",
+    "MODEL_REJECT",   # رد خودکار توسط مدل (اطمینان بالا) — ماشین تولید می‌کند نه انسان
 )
 
 # ⚠️ AMBIGUOUS_NO_MODEL عملاً دو چیز کاملاً متفاوت را قاطی می‌کند:
