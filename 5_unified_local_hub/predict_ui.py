@@ -13,7 +13,7 @@
     python predict_ui.py --source db         # از market.db
 """
 from __future__ import annotations
-import argparse, json, sys
+import argparse, json, sys, threading, time
 from collections import Counter
 from pathlib import Path
 
@@ -384,6 +384,20 @@ renderFilters();load();
 </script></body></html>"""
 
 
+def _auto_loop(source: str, interval: int, t_del: float, t_cat: float):
+    """حلقه‌ی پالایش خودکار در پس‌زمینه — هر interval ثانیه آگهی‌های جدید را
+    بررسی می‌کند و با --apply-db در market.db می‌نشاند. تا وقتی داشبورد روشن است
+    ادامه می‌یابد (بدون Task Scheduler)."""
+    import auto_purify
+    print(f"🔄 پالایش خودکار پس‌زمینه روشن شد: هر {interval} ثانیه، --apply-db")
+    while True:
+        try:
+            auto_purify.run_once(source, t_del, t_cat, False, True)
+        except Exception as e:                       # هرگز داشبورد را نخوابان
+            print(f"   ⚠️ خطا در پالایش خودکار: {e}")
+        time.sleep(interval)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -393,6 +407,10 @@ def main():
     ap.add_argument("--source", choices=["bundle", "db"], default="bundle")
     ap.add_argument("--threshold", type=float, default=0.9,
                     help="اطمینان دسته زیر این → صف بازبینی (پیش‌فرض ۰.۹۰)")
+    ap.add_argument("--auto-watch", type=int, default=0, metavar="SEC",
+                    help="پالایش خودکار پس‌زمینه هر SEC ثانیه با --apply-db (0=خاموش)")
+    ap.add_argument("--t-del", type=float, default=0.95, help="آستانه‌ی اطمینان حذف خودکار")
+    ap.add_argument("--t-cat", type=float, default=0.90, help="آستانه‌ی اطمینان دسته‌بندی خودکار")
     args = ap.parse_args()
 
     _ensure_models()
@@ -420,6 +438,9 @@ def main():
                             .replace("__REASONS__", json.dumps(REASONS))
     print(f"🧹 داشبورد پالایش — {len(STATE['all']):,} آگهی، صف غیرمطمئن‌ها: {len(STATE['queue']):,}")
     print(f"   آستانه‌ی اطمینان: {args.threshold} (زیر آن → صف بازبینی)")
+    if args.auto_watch > 0:
+        threading.Thread(target=_auto_loop, daemon=True,
+                         args=(args.source, args.auto_watch, args.t_del, args.t_cat)).start()
     print(f"   ➜  http://{args.host}:{args.port}")
     import uvicorn
     uvicorn.run(app, host=args.host, port=args.port, log_level="warning")
