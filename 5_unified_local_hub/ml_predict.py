@@ -42,13 +42,20 @@ _C = joblib.load(ML / "model_category.pkl")
 
 
 def predict(title: str, price: int = 0) -> dict:
-    """کیفیت (حذف/نگه‌داشت) + دسته‌ی یک آگهی."""
+    """کیفیت (حذف/نگه‌داشت) + دسته + درصد اطمینان دسته."""
     pq = _Q["model"].predict_proba(_feat(_Q, title, price))[0]
     keep_cls = list(_Q["classes"]).index(1)          # 1 = keep
     delete_prob = float(pq[1 - keep_cls])
     keep = bool(pq[keep_cls] >= 0.5)
-    cat = _C["cats"][_C["model"].predict(_feat(_C, title, price))[0]]
-    return {"keep": keep, "category": cat, "delete_prob": round(delete_prob, 3)}
+    pc = _C["model"].predict_proba(_feat(_C, title, price))[0]
+    ci = int(pc.argmax())
+    cat = _C["cats"][ci]
+    cat_conf = float(pc[ci])
+    # دومین دسته‌ی محتمل — برای وقتی اطمینان پایین است و انسان باید تصمیم بگیرد
+    order = pc.argsort()[::-1]
+    second = _C["cats"][int(order[1])] if len(order) > 1 else ""
+    return {"keep": keep, "category": cat, "category_conf": round(cat_conf, 3),
+            "second": second, "delete_prob": round(delete_prob, 3)}
 
 
 if __name__ == "__main__":
