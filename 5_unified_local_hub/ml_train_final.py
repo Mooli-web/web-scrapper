@@ -13,7 +13,7 @@
 خروجی: exports/ml/model_quality.pkl و model_category.pkl (joblib).
 """
 from __future__ import annotations
-import json, sys
+import json, sys, subprocess
 from pathlib import Path
 import numpy as np
 from collections import defaultdict
@@ -34,6 +34,13 @@ SEED = 42
 
 def load(name):
     return [json.loads(l) for l in (ML / name).read_text(encoding="utf-8").splitlines() if l.strip()]
+
+
+def _ensure_exports():
+    """اگر داده‌ی export نبود، ml_stats.py --export را اجرا می‌کند."""
+    if not (ML / "quality_train.jsonl").exists() or not (ML / "category_train.jsonl").exists():
+        print("⚙️  داده‌ی آموزش یافت نشد؛ در حال export از ml_stats …")
+        subprocess.run([sys.executable, "ml_stats.py", "--export"], cwd=HUB, check=True)
 
 
 def canon_map():
@@ -73,6 +80,7 @@ def apply_vec(char, word, texts, num):
 
 
 def main():
+    _ensure_exports()
     canon = canon_map()
     # ── تسک A ───────────────────────────────────────────────
     A = load("quality_train.jsonl")
