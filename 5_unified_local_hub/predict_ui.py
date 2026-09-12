@@ -316,6 +316,17 @@ def main():
     STATE["dsl"].parent.mkdir(parents=True, exist_ok=True)
     if not STATE["dsl"].exists():
         STATE["dsl"].write_text(f"// بازبینی پیش‌بینی مدل — {args.session}\n", encoding="utf-8")
+    else:
+        # از قبل تصمیم‌گرفته‌ها را بار کن تا بعد از بستن/بازکردن دوباره نشان ندهد
+        for line in STATE["dsl"].read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line or line.startswith("//"):
+                continue
+            try:
+                STATE["decided"].add(int(line.split()[0]))
+            except (ValueError, IndexError):
+                pass
+        print(f"   ↻ {len(STATE['decided']):,} تصمیم قبلی از فایل بار شد (دوباره نشان داده نمی‌شوند)")
 
     globals()["PAGE"] = PAGE.replace("__CATS__", json.dumps(CATEGORIES)) \
                             .replace("__REASONS__", json.dumps(REASONS))
