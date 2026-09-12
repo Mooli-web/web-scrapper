@@ -58,9 +58,10 @@ def load_items(source: str):
 
 
 def _build_queue():
-    """فقط غیرمطمئن‌ها: حذف خودکارنشده و اطمینان دسته زیر آستانه."""
+    """فقط غیرمطمئن‌ها: نامطلوب نباشد، حذف خودکارنشده، و اطمینان دسته زیر آستانه."""
     t, td = STATE["threshold"], 0.95
-    q = [it for it in STATE["all"] if it["delete_prob"] < td and it["category_conf"] < t]
+    q = [it for it in STATE["all"]
+         if it["wanted"] and it["delete_prob"] < td and it["category_conf"] < t]
     q.sort(key=lambda x: x["category_conf"])
     STATE["queue"] = q
 

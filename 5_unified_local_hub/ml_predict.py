@@ -20,9 +20,16 @@ from scipy.sparse import hstack, csr_matrix
 HUB = Path(__file__).resolve().parent
 sys.path.insert(0, str(HUB))
 from ml_baseline import normalize_text as norm  # noqa
+try:
+    from core.taxonomy import normalize_category
+except ImportError:  # pragma: no cover
+    from taxonomy import normalize_category
 
 ML = HUB / "exports" / "ml"
 REP = re.compile(r"^(\d)\1{5,}$")
+# صاحب داده این دسته‌ها را نمی‌خواهد (بی‌نام‌ونشان/بی‌قیمت‌مشخص/بی‌استاندارد)
+# → به‌جای دسته‌بندی، حذف می‌شوند.
+UNWANTED = {"accessories", "other"}
 
 
 def _num(title, price):
@@ -54,7 +61,13 @@ def predict(title: str, price: int = 0) -> dict:
     # دومین دسته‌ی محتمل — برای وقتی اطمینان پایین است و انسان باید تصمیم بگیرد
     order = pc.argsort()[::-1]
     second = _C["cats"][int(order[1])] if len(order) > 1 else ""
-    return {"keep": keep, "category": cat, "category_conf": round(cat_conf, 3),
+    # accessory/other نامطلوب‌اند. accessories را تاکسونومی با هسته‌ی عنوان
+    # («شارژر/کابل/گلس») قابل اتکا می‌گیرد؛ other را فقط وقتی که تاکسونومی و
+    # مدل هر دو بگویند (تا گوشی ناشناخته‌ای که تاکسونومی other می‌دهد حذف نشود).
+    tax = normalize_category(None, title)
+    unwanted = (tax == "accessories") or (tax == "other" and cat == "other")
+    return {"keep": keep and not unwanted, "wanted": not unwanted, "tax": tax,
+            "category": cat, "category_conf": round(cat_conf, 3),
             "second": second, "delete_prob": round(delete_prob, 3)}
 
 

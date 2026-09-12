@@ -83,6 +83,10 @@ def main():
     _ensure_exports()
     canon = canon_map()
     # ── تسک A ───────────────────────────────────────────────
+    # مدل حذف فقط «آشغال واقعی» را یاد می‌گیرد (فیک/قیمت/خارج از حوزه).
+    # accessories/other را این‌جا حذف نمی‌کنیم چون عنوانشان نام دستگاه دارد
+    # («شارژر گوشی سامسونگ») و مدل حذف را آلوده می‌کند. حذفشان با سیاست
+    # دسته‌بندی انجام می‌شود (ml_predict.wanted).
     A = load("quality_train.jsonl")
     textsA = [norm(r["title"]) for r in A]
     numA = nums(A)
@@ -98,10 +102,7 @@ def main():
     joblib.dump({"model": mA, "char": chA, "word": wdA, "classes": list(mA.classes_)},
                 ML / "model_quality.pkl")
 
-    # ── تسک B: ۱۶ دسته مستقیم ───────────────────────────────
-    # آزمایش شد: fallback آستانه‌ای `other` را بدتر کرد (F1 .19 در برابر .42)،
-    # چون آگهی‌های other در ۱۵ دسته‌ی دیگر با اعتماد متوسط جذب می‌شوند نه پایین.
-    # پس همان ۱۶-دسته‌ی مستقیم بهترین گزینه‌ی ساده است.
+    # ── تسک B: ۱۶ دسته (accessories/other هم شناخته می‌شوند تا حذف شوند) ──
     B = load("category_train.jsonl")
     cats = sorted({r["label"] for r in B})
     c2i = {c: i for i, c in enumerate(cats)}
@@ -114,12 +115,12 @@ def main():
     mB = LogisticRegression(class_weight="balanced", max_iter=3000).fit(XB[trB], yB[trB])
     pB = mB.predict(XB[teB])
     print("=" * 58)
-    print("تسک B — ۱۶ دسته مستقیم (LogisticRegression)")
+    print(f"تسک B — {len(cats)} دسته‌ی هسته (LogisticRegression)")
     print(f"  accuracy={accuracy_score(yB[teB], pB):.3f}  "
           f"macroF1={f1_score(yB[teB], pB, average='macro'):.3f}")
     rep = classification_report(yB[teB], pB, target_names=cats, digits=2, output_dict=True)
-    for c in ("other", "accessories"):
-        print(f"    {c:<12} F1={rep[c]['f1-score']:.2f} (n={int(rep[c]['support'])})")
+    for c in sorted(cats, key=lambda c: rep[c]["f1-score"])[:3]:
+        print(f"    ضعیف‌ترین: {c:<12} F1={rep[c]['f1-score']:.2f} (n={int(rep[c]['support'])})")
     joblib.dump({"model": mB, "char": chB, "word": wdB, "cats": cats},
                 ML / "model_category.pkl")
     print("=" * 58)

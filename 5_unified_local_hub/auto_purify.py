@@ -51,15 +51,19 @@ def run_once(source, t_del, t_cat, dry, apply_db):
     auto, manual = [], []
     for x in todo:
         pr = P.predict(x["title"], x["price"])
-        if pr["delete_prob"] >= t_del:
+        if not pr["wanted"]:
+            auto.append(f"{x['id']} j MODEL_REJECT # لوازم جانبی/متفرقه — نامطلوب")
+        elif pr["delete_prob"] >= t_del:
             auto.append(f"{x['id']} j MODEL_REJECT # اطمینان حذف {pr['delete_prob']:.2f}")
         elif pr["category_conf"] >= t_cat:
             auto.append(f"{x['id']} s {pr['category']} # اطمینان {pr['category_conf']:.2f}")
         else:
             manual.append({**x, **pr})
 
+    n_unwanted = sum(1 for a in auto if "نامطلوب" in a)
     print(f"📊 بررسی {len(todo):,} آگهی بازبینی‌نشده")
-    print(f"   خودکار حذف:        {sum(1 for a in auto if ' j ' in a):,}")
+    print(f"   خودکار حذف (نامطلوب/آشغال): {sum(1 for a in auto if ' j ' in a):,} "
+          f"(از آن لوازم جانبی/متفرقه: {n_unwanted:,})")
     print(f"   خودکار دسته‌بندی:  {sum(1 for a in auto if ' s ' in a):,}")
     print(f"   صف بازبینی دستی:   {len(manual):,}")
 
