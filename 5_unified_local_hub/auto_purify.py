@@ -76,9 +76,12 @@ def run_once(source, t_del, t_cat, dry, apply_db):
     bad = [a for a in auto if not rq.parse_dsl(a + "\n")]
     if bad:
         print(f"   ⚠️ {len(bad)} سطر نامعتبر رد شد")
+    # apply به queue.jsonl/clusters.jsonl نیاز دارد → اول build (اگر نیست)
+    if not (HUB / "exports" / "review" / "clusters.jsonl").exists():
+        print("   ⚙️  صف را می‌سازم (review_queue build)…")
+        subprocess.run([sys.executable, "review_queue.py", "build"], cwd=HUB, check=True)
     subprocess.run([sys.executable, "review_queue.py", "apply", "--session", "AUTO",
-                    "--file", AUTO_DSL.name], cwd=HUB, check=True,
-                   stdout=subprocess.DEVNULL)
+                    "--file", str(AUTO_DSL)], cwd=HUB, check=True)
     print(f"   ✅ {len(auto):,} تصمیم خودکار در دفترکل نشست (نشست AUTO)")
 
     # صف دستی → فایل جداگانه
