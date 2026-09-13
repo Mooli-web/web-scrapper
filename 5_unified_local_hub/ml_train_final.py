@@ -37,10 +37,10 @@ def load(name):
 
 
 def _ensure_exports():
-    """اگر داده‌ی export نبود، ml_stats.py --export را اجرا می‌کند."""
-    if not (ML / "quality_train.jsonl").exists() or not (ML / "category_train.jsonl").exists():
-        print("⚙️  داده‌ی آموزش یافت نشد؛ در حال export از ml_stats …")
-        subprocess.run([sys.executable, "ml_stats.py", "--export"], cwd=HUB, check=True)
+    """همیشه داده‌ی آموزش را تازه از دفترکل + برچسب‌های دستی export می‌کند،
+    تا آموزش هرگز روی داده‌ی کهنه نرود (export ~۱ ثانیه است)."""
+    print("⚙️  export داده‌ی آموزش از ml_stats (تازه، AUTO حذف می‌شود) …")
+    subprocess.run([sys.executable, "ml_stats.py", "--export"], cwd=HUB, check=True)
 
 
 def canon_map():
