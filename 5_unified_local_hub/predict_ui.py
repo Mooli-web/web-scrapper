@@ -32,6 +32,12 @@ REASONS = [c for c in rq.REASON_CODES if c != "MODEL_REJECT"]   # دلایل ا�
 STATE = {"all": [], "queue": [], "pos": 0, "dsl": None, "session": "",
          "decided": set(), "threshold": 0.9}
 
+# ---- بازبینی قیمت (price_check) ----
+PSTATE = {"flags": [], "pos": 0, "dsl": None, "decided": set()}
+SIGNAL_REASON = {"BELOW_FLOOR": "PRICE_BELOW_FLOOR",
+                 "PLACEHOLDER": "PRICE_PLACEHOLDER",
+                 "ABOVE_CEILING": "PRICE_UNREALISTIC"}
+
 
 def _ensure_models():
     if not (HUB / "exports/ml/model_category.pkl").exists() or \
@@ -83,6 +89,41 @@ def _next_item():
 
 def _append_dsl(line):
     with STATE["dsl"].open("a", encoding="utf-8") as fh:
+        fh.write(line + "\n")
+        fh.flush()
+        import os
+        os.fsync(fh.fileno())
+
+
+def _load_price_flags(source: str):
+    """price_check را اجرا و price_flags.jsonl را بار می‌کند."""
+    import subprocess
+    pf = HUB / "exports" / "review" / "price_flags.jsonl"
+    try:
+        subprocess.run([sys.executable, "price_check.py", "--source", source],
+                       cwd=HUB, check=True, capture_output=True)
+    except Exception as e:
+        print(f"   ⚠️ price_check اجرا نشد: {e}")
+    flags = []
+    if pf.exists():
+        for l in pf.read_text(encoding="utf-8").splitlines():
+            if l.strip():
+                flags.append(json.loads(l))
+    flags.sort(key=lambda f: f["price"])
+    return flags
+
+
+def _price_next():
+    while PSTATE["pos"] < len(PSTATE["flags"]) and \
+            PSTATE["flags"][PSTATE["pos"]]["id"] in PSTATE["decided"]:
+        PSTATE["pos"] += 1
+    if PSTATE["pos"] >= len(PSTATE["flags"]):
+        return None
+    return PSTATE["flags"][PSTATE["pos"]]
+
+
+def _append_price_dsl(line):
+    with PSTATE["dsl"].open("a", encoding="utf-8") as fh:
         fh.write(line + "\n")
         fh.flush()
         import os
@@ -198,6 +239,87 @@ def api_browse(category: str = "", status: str = "", limit: int = 200):
         for it in items[:limit]]}
 
 
+class PriceDecide(BaseModel):
+    id: int
+    verdict: str            # keep | junk
+    reason_code: str = ""
+
+
+@app.get("/api/price/stats")
+def api_price_stats():
+    from collections import Counter
+    sig = Counter(f["signal"] for f in PSTATE["flags"])
+    return {"total": len(PSTATE["flags"]), "decided": len(PSTATE["decided"]),
+            "signals": dict(sig)}
+
+
+@app.get("/api/price/next")
+def api_price_next():
+    it = _price_next()
+    if it is None:
+        return {"done": True, "decided": len(PSTATE["decided"]), "total": len(PSTATE["flags"])}
+    return {"done": False, "item": {**it, "position": PSTATE["pos"] + 1,
+                                    "total": len(PSTATE["flags"]),
+                                    "done": len(PSTATE["decided"]),
+                                    "reason": SIGNAL_REASON.get(it["signal"], "PRICE_UNREALISTIC")}}
+
+
+@app.post("/api/price/decide")
+def api_price_decide(body: PriceDecide):
+    flag = next((f for f in PSTATE["flags"] if f["id"] == body.id), None)
+    if body.verdict == "junk":
+        reason = body.reason_code or (SIGNAL_REASON.get(flag["signal"], "PRICE_UNREALISTIC")
+                                      if flag else "PRICE_UNREALISTIC")
+        if reason not in REASONS:
+            raise HTTPException(400, f"کد دلیل نامعتبر: {reason}")
+        dsl = f"{body.id} j {reason}"
+    elif body.verdict == "keep":
+        cat = flag["category"] if flag else ""
+        if cat not in CATEGORIES:
+            raise HTTPException(400, f"دسته‌ی نامعتبر برای نگه‌داشتن: {cat}")
+        dsl = f"{body.id} s {cat}"
+    else:
+        raise HTTPException(400, "verdict نامعتبر")
+    try:
+        parsed = rq.parse_dsl(dsl + "\n")
+        assert len(parsed) == 1 and parsed[0].get("id") == body.id
+    except Exception as e:
+        raise HTTPException(400, f"پارسر رد کرد: {e}")
+    _append_price_dsl(dsl)
+    PSTATE["decided"].add(body.id)
+    PSTATE["pos"] += 1
+    return {"ok": True, "done": len(PSTATE["decided"]), "total": len(PSTATE["flags"])}
+
+
+@app.post("/api/price/skip")
+def api_price_skip():
+    PSTATE["pos"] += 1
+    return {"ok": True}
+
+
+@app.post("/api/price/undo")
+def api_price_undo():
+    if not PSTATE["decided"]:
+        return {"ok": False, "msg": "چیزی برای برگرداندن نیست"}
+    p = PSTATE["dsl"]
+    lines = p.read_text(encoding="utf-8").splitlines()
+    last = None
+    for i in range(len(lines) - 1, -1, -1):
+        if lines[i].strip() and not lines[i].startswith("//"):
+            last = i
+            break
+    if last is None:
+        return {"ok": False, "msg": "چیزی برای برگرداندن نیست"}
+    removed = lines.pop(last)
+    p.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    try:
+        PSTATE["decided"].discard(int(removed.split()[0]))
+    except (ValueError, IndexError):
+        pass
+    PSTATE["pos"] = max(0, PSTATE["pos"] - 1)
+    return {"ok": True, "removed": removed, "done": len(PSTATE["decided"])}
+
+
 @app.get("/", response_class=HTMLResponse)
 def index():
     return PAGE.replace("__SESSION__", STATE["session"])
@@ -206,6 +328,11 @@ def index():
 @app.get("/browse", response_class=HTMLResponse)
 def browse():
     return BROWSE_PAGE.replace("__CATS__", json.dumps(CATEGORIES))
+
+
+@app.get("/prices", response_class=HTMLResponse)
+def prices():
+    return PRICE_PAGE
 
 
 PAGE = r"""<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8">
@@ -269,7 +396,8 @@ kbd{background:var(--card2);border:1px solid var(--line);border-radius:5px;paddi
 </style></head><body><div class="wrap">
 <div class="head"><h1>🧹 داشبورد پالایش</h1><span class="pill">نشست __SESSION__</span>
 <span class="pill">صف بررسی: <b id="qsize">—</b></span><span class="pill" id="prog">—</span>
-<a href="/browse" style="margin-right:auto;color:var(--blue);text-decoration:none;font-size:13px">📦 مرور کالاها ←</a></div>
+<a href="/browse" style="margin-right:auto;color:var(--blue);text-decoration:none;font-size:13px">📦 مرور کالاها</a>
+<a href="/prices" style="color:var(--amber);text-decoration:none;font-size:13px">💰 بازبینی قیمت ←</a></div>
 <div class="stats" id="stats"></div>
 <div class="panel"><h3>توزیع دسته‌های پیش‌بینی‌شده (کل داده)</h3><div id="cats"></div></div>
 <div id="root"></div>
@@ -392,6 +520,87 @@ renderFilters();load();
 </script></body></html>"""
 
 
+PRICE_PAGE = r"""<!doctype html><html lang="fa" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>بازبینی قیمت</title>
+<style>
+:root{--bg:#0a0d12;--card:#141922;--card2:#1b2230;--line:#26303f;--fg:#eef2f8;--mut:#8b96a8;
+--dim:#616d80;--ok:#25c46f;--bad:#f4574d;--amber:#e8b64c;--blue:#4c8dff;--rad:16px}
+*{box-sizing:border-box}html{color-scheme:dark}
+body{margin:0;background:radial-gradient(1000px 500px at 80% -10%,#2e1212 0%,var(--bg) 55%);
+color:var(--fg);font:15px/1.7 Vazirmatn,Tahoma,system-ui,sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:24px 18px 50px}
+.head{display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap}
+.head h1{font-size:20px;margin:0;font-weight:800}
+a.back{color:var(--blue);text-decoration:none;font-size:13px}
+.pill{background:var(--card2);border:1px solid var(--line);border-radius:20px;padding:4px 14px;font-size:12px;color:var(--mut)}
+.pill b{color:var(--fg)}
+.review{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:22px}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.tag{background:var(--card2);border:1px solid var(--line);border-radius:8px;padding:3px 11px;font-size:12px;color:var(--mut)}.tag b{color:var(--fg)}
+.title{font-size:20px;font-weight:700;margin:0 0 14px;line-height:1.6;word-break:break-word}
+.pricebox{display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:15px 18px;margin-bottom:16px}
+.pricebox .p{font-size:30px;font-weight:800;color:var(--bad)}
+.pricebox .sig{font-size:13px;color:var(--amber);font-weight:700}
+.pricebox .det{font-size:12px;color:var(--mut)}
+.box{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--card2);margin-bottom:14px}
+.box.bad{background:rgba(244,87,77,.05);border-color:rgba(244,87,77,.3)}
+.box h4{margin:0 0 10px;font-size:13px;color:var(--bad)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{background:#1c2431;border:1px solid var(--line);color:var(--mut);border-radius:9px;padding:7px 12px;cursor:pointer;font-size:12.5px}
+.chip:hover{color:var(--fg)}
+.chip.onr{background:var(--bad);color:#fff;font-weight:700;border-color:var(--bad)}
+.acts{display:flex;gap:10px;margin-top:6px}
+.btn{flex:1;border:0;border-radius:12px;padding:13px;font-size:15px;font-weight:700;cursor:pointer;color:#fff}
+.btn.v{background:linear-gradient(180deg,#2fd67c,#1cab5f)}
+.btn.j{background:linear-gradient(180deg,#ff6a5f,#e04238)}
+.btn.ghost{flex:0 0 auto;background:var(--card2);border:1px solid var(--line);color:var(--mut)}
+.keys{text-align:center;color:var(--dim);font-size:12px;margin-top:16px}
+kbd{background:var(--card2);border:1px solid var(--line);border-radius:5px;padding:1px 7px;color:var(--mut)}
+.done{text-align:center;padding:50px 20px}
+</style></head><body><div class="wrap">
+<div class="head"><h1>💰 بازبینی قیمت</h1><a class="back" href="/">← داشبورد</a>
+<span class="pill" id="prog">—</span></div>
+<div id="root"></div>
+<div class="keys"><kbd>J</kbd> حذف (قیمت خراب) · <kbd>V</kbd> قیمت درست است · <kbd>A</kbd><kbd>B</kbd><kbd>X</kbd> دلیل · <kbd>N</kbd> رد · <kbd>Z</kbd> برگردان</div>
+</div>
+<script>
+const PREASONS=["PRICE_BELOW_FLOOR","PRICE_PLACEHOLDER","PRICE_UNREALISTIC"],PRKEYS="ABX".split("");
+let cur=null,reason="";
+const fa=n=>Number(n).toLocaleString('fa-IR');
+async function next(){const r=await fetch('/api/price/next').then(r=>r.json());
+ if(r.done){document.getElementById('root').innerHTML=`<div class="review done"><h1>✅ صف قیمت تمام شد</h1><p>${fa(r.decided)} تصمیم ثبت شد.</p><p style="color:var(--mut)">بنشان:<br><code>python review_queue.py apply --session PRICE</code></p></div>`;document.getElementById('prog').textContent='';return}
+ cur=r.item;reason=r.reason;render();
+ document.getElementById('prog').textContent=`${fa(r.done)} / ${fa(r.total)} بررسی‌شده`;}
+function render(){const c=cur;
+ document.getElementById('root').innerHTML=`<div class="review">
+ <div class="meta"><span class="tag">ID <b>${c.id}</b></span><span class="tag">دسته: <b>${c.category||'—'}</b></span>
+  <span class="tag">سیگنال: <b>${c.signal}</b></span></div>
+ <div class="title">${esc(c.title)||'(بدون عنوان)'}</div>
+ <div class="pricebox"><span class="p">${fa(c.price)}</span><span style="color:var(--mut)">تومان</span>
+  <span class="sig">${c.signal}</span><span class="det">${esc(c.detail)}</span></div>
+ <div class="box bad"><h4>🗑 اگر قیمت خراب است → دلیل حذف</h4>
+  <div class="chips">${PREASONS.map(k=>`<button class="chip ${k===reason?'onr':''}" data-r="${k}">${k} <kbd style="opacity:.5">${PRKEYS[PREASONS.indexOf(k)]}</kbd></button>`).join('')}</div></div>
+ <div class="acts"><button class="btn v" id="bv">✓ قیمت درست است (V)</button>
+  <button class="btn j" id="bj">حذف ← ${reason} (J)</button>
+  <button class="btn ghost" id="bn">رد (N)</button>
+  <button class="btn ghost" id="bu">↶ (Z)</button></div></div>`;
+ document.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{reason=b.dataset.r;render()});
+ document.getElementById('bv').onclick=()=>send('keep');document.getElementById('bj').onclick=()=>send('junk');
+ document.getElementById('bn').onclick=skip;document.getElementById('bu').onclick=undo;}
+const esc=s=>String(s||'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+async function send(v){const body=v==='keep'?{id:cur.id,verdict:'keep'}:{id:cur.id,verdict:'junk',reason_code:reason};
+ const r=await fetch('/api/price/decide',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+ if(!r.ok){alert((await r.json()).detail);return}next();}
+async function skip(){await fetch('/api/price/skip',{method:'POST'});next();}
+async function undo(){const r=await fetch('/api/price/undo',{method:'POST'}).then(r=>r.json());if(!r.ok)return;next();}
+document.addEventListener('keydown',e=>{if(e.target.tagName==='INPUT')return;const k=e.key.toUpperCase();
+ if(k==='V')send('keep');else if(k==='J')send('junk');else if(k==='N')skip();else if(k==='Z')undo();
+ else{const i=PRKEYS.indexOf(k);if(i>=0&&i<PREASONS.length){reason=PREASONS[i];render();}}});
+next();
+</script></body></html>"""
+
+
 def _auto_loop(source: str, interval: int, t_del: float, t_cat: float):
     """حلقه‌ی پالایش خودکار در پس‌زمینه — هر interval ثانیه آگهی‌های جدید را
     بررسی می‌کند و با --apply-db در market.db می‌نشاند. تا وقتی داشبورد روشن است
@@ -441,6 +650,23 @@ def main():
             except (ValueError, IndexError):
                 pass
         print(f"   ↻ {len(STATE['decided']):,} تصمیم قبلی از فایل بار شد (دوباره نشان داده نمی‌شوند)")
+
+    # ---- بازبینی قیمت (price_check) ----
+    PSTATE["flags"] = _load_price_flags(args.source)
+    PSTATE["dsl"] = rq.REVIEW / "decisions_ui_PRICE.dsl"
+    if not PSTATE["dsl"].exists():
+        PSTATE["dsl"].write_text("// بازبینی قیمت (price_check)\n", encoding="utf-8")
+    else:
+        for line in PSTATE["dsl"].read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line or line.startswith("//"):
+                continue
+            try:
+                PSTATE["decided"].add(int(line.split()[0]))
+            except (ValueError, IndexError):
+                pass
+    print(f"💰 صف بازبینی قیمت: {len(PSTATE['flags']):,} پرچم "
+          f"({len(PSTATE['decided'])} قبلاً بررسی‌شده) — در /prices")
 
     globals()["PAGE"] = PAGE.replace("__CATS__", json.dumps(CATEGORIES)) \
                             .replace("__REASONS__", json.dumps(REASONS))
