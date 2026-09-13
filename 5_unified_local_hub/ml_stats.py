@@ -62,7 +62,11 @@ def main() -> int:
 
     # ---- برچسب ایجنت ----
     lab: dict[int, dict] = {}
+    n_auto_skipped = 0
     for lid, d in latest_decisions().items():
+        if d.get("session") == "AUTO":
+            n_auto_skipped += 1   # پیش‌بینی خود مدل — وارد آموزش نشود (دوری)
+            continue
         lab[lid] = {"decision": d["decision"],
                     "category": d.get("category") or "",
                     "reason": d.get("reason_code") or "",
@@ -116,6 +120,7 @@ def main() -> int:
     print(f"  برچسب‌خورده:           {labeled:>7,}  ({labeled/total*100:.1f}٪)")
     print(f"    ایجنت:               {sum(1 for L in lab.values() if L['source']=='agent'):>7,}")
     print(f"    دستی (تو):           {sum(1 for L in lab.values() if L['source']=='manual'):>7,}")
+    print(f"    AUTO حذف‌شده (دوری):  {n_auto_skipped:>7,}  (پیش‌بینی خود مدل، آموزش نمی‌شود)")
     print(f"  نگه‌داشتنی (keep):     {len(keep):>7,}")
     print(f"  حذف (delete):          {len(delete):>7,}")
     print(f"  نامطمئن (کنار):        {uncertain:>7,}")
