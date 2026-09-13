@@ -47,22 +47,29 @@ def load_items(source: str):
         from database.db_manager import LocalDatabaseManager
         db = LocalDatabaseManager()
         with db.get_connection() as c:
-            for r in c.execute("SELECT id, title_fa, price_toman FROM store_listings"):
-                rows.append({"id": r[0], "title": r[1] or "", "price": r[2] or 0})
+            for r in c.execute("SELECT id, title_fa, price_toman, store_key FROM store_listings"):
+                rows.append({"id": r[0], "title": r[1] or "", "price": r[2] or 0,
+                             "source": r[3] or ""})
     else:
         for l in (HUB / "exports/training_bundle/listings.jsonl").read_text(encoding="utf-8").splitlines():
             r = json.loads(l)
             rows.append({"id": r["id"], "title": r.get("title_fa") or "",
-                         "price": r.get("price_toman") or 0})
+                         "price": r.get("price_toman") or 0,
+                         "source": r.get("store_key") or ""})
     return [{**r, **P.predict(r["title"], r["price"])} for r in rows]
 
 
 def _build_queue():
-    """فقط غیرمطمئن‌ها: نامطلوب نباشد، حذف خودکارنشده، و اطمینان دسته زیر آستانه."""
+    """فقط غیرمطمئن‌ها: نامطلوب نباشد، حذف خودکارنشده، و اطمینان دسته زیر آستانه.
+
+    ترتیب بازبینی: اول دیجی‌کالا (دسته‌بندی‌اش ساده‌تر است)، بعد بقیه‌ی منابع؛
+    درون هر گروه قیمت نزولی (گران‌ترها اول، چون معمولاً هرز نیستند و ارزش
+    نگه‌داشتن دارند)."""
     t, td = STATE["threshold"], 0.95
     q = [it for it in STATE["all"]
          if it["wanted"] and it["delete_prob"] < td and it["category_conf"] < t]
-    q.sort(key=lambda x: x["category_conf"])
+    q.sort(key=lambda x: (0 if x.get("source") == "digikala" else 1,
+                          -(x.get("price") or 0)))
     STATE["queue"] = q
 
 
@@ -290,6 +297,7 @@ async function next(){await loadStats();const r=await fetch('/api/next').then(r=
 function render(){const c=cur;const pct=Math.round(c.category_conf*100);
  document.getElementById('root').innerHTML=`<div class="review">
  <div class="meta"><span class="tag">ID <b>${c.id}</b></span><span class="tag"><b>${fa(c.price||0)}</b> تومان</span>
+  <span class="tag">منبع: <b>${c.source||'—'}</b></span>
   <span class="tag">حذف خودکار؟ <b>${c.delete_prob>=0.95?'بله':'نه'} (${Math.round(c.delete_prob*100)}٪)</b></span></div>
  <div class="title">${esc(c.title)||'(بدون عنوان)'}</div>
  <div class="pred"><span style="color:var(--mut)">پیش‌بینی مدل:</span><span class="cat">${c.category}</span>
